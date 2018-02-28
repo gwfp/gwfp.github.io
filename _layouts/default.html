@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta http=equiv="content-type" content="text/html"; charset="utf-8">
-	<title>{{ page.title }}</title>
-</head>
+<html lang="zh-CN">
+
+	{% include head.html %}
+
 <body>
-	{{ content }}
+   <div class="contianer-fluid">
+	<div class="row-fluid">	
+	   <div class="col-xs-12 span12">	
+		{% include header.html %}
+		<div class="row-fluid">
+		  <div class="col-xs-9 span9">
+		  <!--menu-->
+		  {% include nav.html %}
+		  <!--articals-->
+		    {{ content }}
+		  </div>
+		  
+ 		  <!--side-->
+		  <div class="col-xs-3 span3">
+		   
+		  </div>
+		
+		</div>
+	   </div>	
+		{% include footer.html %}		
+		{% include foot.html %}
+ 	</div><!--first row-fluid-->
+   </div><!--end contianer-fluid-->
 </body>
 </html>

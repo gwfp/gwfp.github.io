@@ -1,0 +1,19 @@
+#Author
+title: gwfp的驿站
+author: gwfp
+
+
+#Directory
+source_dir: source
+
+
+#Build setting
+
+
+#Markdown
+markdown: kramdown
+
+#RSS
+
+
+#Plugins

@@ -1,0 +1,13 @@
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="with=device-width, initial-scale=1" >
+	<title>{% if page.title %}{{ page.title | escape }} | {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+	<link rel="stylesheet" href="{{ "/static/css/normalize.css" | prepend: site.baseurl}}">
+	<link rel="stylesheet" href="{{ "/static/css/bootstrap.min.css" | prepend: site.baseurl}}"/>
+	<link rel="stylesheet" href="{{ "/static/css/main.css" | prepend: site.baseurl }}"/>
+ 	<!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
