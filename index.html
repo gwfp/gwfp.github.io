@@ -8,16 +8,17 @@ title: 驿站大门
 
 <ul>
 	{% for post in site.posts %}
-	<li class="text-right" style="list-style-type:none;margin-bottom:5px">
+	<li class="text-right" style="margin-bottom:0px">
 		<h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
 		<h4><small>{{ post.date | date:"%b %-d, %Y" }}</small></h4>
+		<p align=right>
 		{% if post.description %}
 			{{ post.description | strip_html | strip_newlines | truncate:100 }}
 		{% else %}
 			{{ post.content | strip_html | strip_newlines | truncate: 100 }}
 		{% endif %}
-			
-			<p align=right><a class="btn" href="{{ post.url | prepend: site.baseurl }}">Read more »</a></p>
+		<a class="btn" href="{{ post.url | prepend: site.baseurl }}">Read more »</a></p>
+	<hr>
 	</li>
 	{% endfor %}
 <ul>

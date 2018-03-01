@@ -1,0 +1,37 @@
+/* index.html */
+li{
+	list-style-type:none;
+}
+
+
+.featured-tags h5 a {
+	color: #4d4d4d;
+}
+
+.featured-tags h5 a:hover {
+	color: #00BFFF;
+}
+
+.featured-tags .sidebar-tags a {
+	display: inline-block;
+	color: #bfbfbf;
+	border: 1px solid rgba(255,255,255,8);
+	border-color: #bfbfbf;
+	border-radius: 999em;
+	padding: 0 10px;
+	margin: 0 1px;
+	margin-bottom: 6px;
+	line-height: 24px;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.featured-tags .sidebar-tags a:hover {
+	color:#00BFFF;
+	border-color:#00BFFF;
+}
+
+
+
+/* tags.html */
+
