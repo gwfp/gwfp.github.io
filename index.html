@@ -5,9 +5,8 @@ title: 驿站大门
 
 ---
 
-
 <ul>
-	{% for post in site.posts %}
+	{% for post in paginator.posts %}
 	<li class="text-right" style="margin-bottom:0px">
 		<h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
 		<h4><small>{{ post.date | date:"%b %-d, %Y" }}</small></h4>

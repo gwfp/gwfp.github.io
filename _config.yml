@@ -2,13 +2,14 @@
 title: gwfp的驿站
 author: gwfp
 
-
+#Build setting
+        
 #Directory
 source_dir: source
 
-
-#Build setting
-
+#paginate
+paginate: 5
+paginate_path: "/blog/page:num/"
 
 #Markdown
 markdown: kramdown
@@ -17,3 +18,4 @@ markdown: kramdown
 
 
 #Plugins
+gems: [jekyll-paginate]
