@@ -1,6 +1,6 @@
 <!--tags-->
 <div class="featured-tags">
-		<h5><a href="{{ "/tags/" | prepend: site.baseurl}}">TAGS</a></h5>
+		<h5><a href="{{ "/tags" | prepend: site.baseurl}}">TAGS</a></h5>
 		<div class="sidebar-tags" role="presentation">
 			{% for tag in site.tags %}
 			<a href= "{{ site.baseurl }}/tags/#{{tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
