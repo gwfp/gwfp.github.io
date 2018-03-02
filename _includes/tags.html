@@ -3,7 +3,7 @@
 		<h5><a href="{{ "/tags/" | prepend: site.baseurl}}">TAGS</a></h5>
 		<div class="sidebar-tags" role="presentation">
 			{% for tag in site.tags %}
-				<a href="#" title="{{ tag[0] }}" rel="{{tag[1].size}}">
+			<a href= "{{ site.baseurl }}/tags/#{{tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
 						{{ tag[0] }}(<small>({{tag[1].size}})</small>
 				</a>
 			{% endfor %}

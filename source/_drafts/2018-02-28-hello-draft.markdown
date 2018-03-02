@@ -1,6 +1,6 @@
 ---
 layout: default
-categories: update draft
+category: draft
 tags: draft
 ---
 

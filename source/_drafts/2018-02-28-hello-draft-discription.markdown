@@ -1,8 +1,8 @@
 ---
 layout: default
 description: 这是另一篇草稿测试
-categories: update draft
-tags: draft, markdown
+category: draft
+tags: [draft,  markdown]
 ---
 
 

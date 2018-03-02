@@ -1,7 +1,7 @@
 ---
 layout: default
-categories: update draft
-tags: draft, markdown, css
+category: draft
+tags: [draft, markdown, css]
 ---
 # 这是 H1
 一、CSS3圆角的优点

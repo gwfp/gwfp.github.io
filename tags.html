@@ -5,4 +5,36 @@ title: Tags
 
 ---
 
-<h2>tags</h2>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<!--标签云-->
+			<div class="page-tags">
+			<div class="tag_cloud">
+				{% for tag in site.tags %}
+				<a href="#{{ tag[0] }}" title:{{ tag[0] }} rel="{{ tag[1].size }}">{{ tag[0] }}<small>({{ tag[1].size }})</small></a>
+				{% endfor %}
+			</div>
+			<!--标签列表-->
+			<div class="tag-list">
+				{% for tag in site.tags %}
+					<span class="tag-title" id="{{ tag[0] }}">
+						<span class="tag-text">{{ tag[0] }}</span>			
+					</span>
+					<ul>
+					{% for post in tag[1] %}
+					<li>
+						<a href="{{ post.url | prepend: site.baseurl }}">
+								<h2>{{ post.title }}</h2>
+						</a>
+					</li>
+					{% endfor %}
+					<hr>
+					</ul>
+				{% endfor %}
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
