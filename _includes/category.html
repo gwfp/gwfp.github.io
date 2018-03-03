@@ -1,8 +1,8 @@
 <div class="featured-tags">
-	<h5><a href="{{ "/categories" | prepend: site.baseurl}}">CATEGORIES</a></h5>
+	<h5><a href="{{ "/categories/" | prepend: site.baseurl}}">CATEGORIES</a></h5>
 	<div class="sidebar-tags" role="presentation">
 		{% for category in  site.categories %}
-		<a href="{{ site.baseurl }}/categories#{{ category | first }}">
+		<a href="{{ site.baseurl }}/categories/#{{ category | first }}">
 			{{ category | first }}<small>({{ category | last | size }})</small>
 		</a>
 		{% endfor %}

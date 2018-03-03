@@ -4,7 +4,7 @@ layout: default
 title: 驿站大门
 
 ---
-
+<!-- artical -->
 <ul>
 	{% for post in paginator.posts %}
 	<li class="text-right" style="margin-bottom:0px">
@@ -20,4 +20,20 @@ title: 驿站大门
 	<hr>
 	</li>
 	{% endfor %}
-<ul>
+</ul>
+
+<!--pager-->
+<nav aria-label="...">
+<ul class="pager">
+	{% if paginator.previous_page %}
+	<li class="previous"><a href="{{ paginator.previous_page_path }}">&laquo; Prev</a></li>
+	{% else %}
+	<li class="previous disabled"><a href="#">&laquo; Prev</a></li>
+	{% endif %}	
+	{% if paginator.next_page %}"
+	<li class="next"><a href="{{ paginator.next_page_path }}">Next &raquo;</a></li>
+	{% else %}
+	<li class="next disabled"><a href="#">Next &raquo;</a></li>
+	{% endif %}	
+</ul>
+<nav>
