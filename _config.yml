@@ -15,7 +15,9 @@ paginate_path: "/blog/page:num/"
 markdown: kramdown
 
 #RSS
-
+name: gwfp's Post Station
+description: 心仪的东西到手后，才真正的要开始奋斗了．
+url: https://gwfp.github.io
 
 #Plugins
 gems: [jekyll-paginate]
