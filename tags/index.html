@@ -23,10 +23,7 @@ title: Tags
 					</span>
 					<ul>
 					{% for post in tag[1] %}
-					<li>
-						<a href="{{ post.url | prepend: site.baseurl }}">
-								<h2>{{ post.title }}</h2>
-						</a>
+					<li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 					</li>
 					{% endfor %}
 					<hr>
