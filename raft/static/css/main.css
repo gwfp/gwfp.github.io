@@ -34,4 +34,37 @@ li{
 
 
 /* tags.html */
+.page-tags {
+	margin:25px;
+}
 
+.tag_cloud {
+	margin:20px 0 15px 0;
+}
+
+.tag_cloud a{
+	display: inline-block;
+	color: #FFF;
+	border: 1px solid rgba(255,255,255,8);
+	border-color: #bfbfbf;
+	border-radius: 999em;
+	padding: 0 10px;
+	margin: 0 2px;
+	margin-bottom: 8px;
+	line-height: 28px;
+	font-size: 14px;
+	background: #79CDCD;
+}
+
+.tag_cloud a:hover{
+	background: #4A708B;
+}
+
+.tag-list {
+	
+}
+
+.tag-title {
+	font-size: 20px;
+	line-height: 2;
+}

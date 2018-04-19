@@ -1,7 +1,7 @@
 ---
 layout: default
 category: 数据分析基础
-tags: [numpy]
+tags: [numpy, draft]
 ---
 
 Numpy
