@@ -84,7 +84,7 @@ $$\bar{x}=\frac{\sum_{i=0}^{N}X_i}{N}$$
 		
 #### 标准化(Standardization)
 			
-####标准计分(standard score):标准化后的数据
+#### 标准计分(standard score):标准化后的数据
 
 #### 大数定理
 
