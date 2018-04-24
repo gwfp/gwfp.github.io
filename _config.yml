@@ -11,9 +11,9 @@ source_dir: source
 paginate: 10
 paginate_path: "/blog/page:num/"
 
-'#Markdown
+#Markdown
 markdown: kramdown
-'
+
 
 #RSS
 name: gwfp's Post Station
