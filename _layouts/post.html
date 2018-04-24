@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	{% include head_post.html %}
+
+<body>
+   <div class="contianer-fluid">
+	<div class="row-fluid">	
+	   <div class="col-sm-12">	
+		{% include header.html %}
+		<div class="row-fluid">
+		  <div class="col-sm-9">
+		  <!--menu-->
+		  {% include nav.html %}
+		  <!--articals-->
+		    {{ content }}
+		  </div>
+		  
+ 		  <!--side-->
+		  <div class="col-sm-3">
+		   {% include side.html %}
+		  </div>
+		
+		</div>
+	   </div>	
+		{% include footer.html %}		
+		{% include foot.html %}
+ 	</div><!--first row-fluid-->
+   </div><!--end contianer-fluid-->
+</body>
+</html>

@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="with=device-width, initial-scale=1" >
-	<title>Tags | gwfp的驿站</title>
+	<title>Matplotlib使用 | gwfp的驿站</title>
 	<link rel="stylesheet" href="/static/css/normalize.css">
 	<link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="/static/css/main.css"/>
@@ -13,7 +13,9 @@
         <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-	
+	<script type="text/javascript" async
+	src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
 </head>
 
 
@@ -55,75 +57,96 @@
 </nav>
 
 		  <!--articals-->
-		    <div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			<!--标签云-->
-			<div class="page-tags">
-			<div class="tag_cloud">
-				
-				<a href="#numpy" title:numpy rel="1">numpy<small>(1)</small></a>
-				
-				<a href="#统计学" title:统计学 rel="1">统计学<small>(1)</small></a>
-				
-				<a href="#　数学基础" title:　数学基础 rel="1">　数学基础<small>(1)</small></a>
-				
-				<a href="#mathplotlib" title:mathplotlib rel="1">mathplotlib<small>(1)</small></a>
-				
-			</div>
-			<!--标签列表-->
-			<div class="tag-list">
-				
-					<span class="tag-title" id="numpy">
-						<span class="tag-text">numpy</span>			
-					</span>
-					<ul>
-					
-					<li><a href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/17/Numpy%E4%BD%BF%E7%94%A8.html">Numpy使用</a>
-					</li>
-					
-					<hr>
-					</ul>
-				
-					<span class="tag-title" id="统计学">
-						<span class="tag-text">统计学</span>			
-					</span>
-					<ul>
-					
-					<li><a href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/19/%E7%BB%9F%E8%AE%A1%E5%AD%A6.html">统计学</a>
-					</li>
-					
-					<hr>
-					</ul>
-				
-					<span class="tag-title" id="　数学基础">
-						<span class="tag-text">　数学基础</span>			
-					</span>
-					<ul>
-					
-					<li><a href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/19/%E7%BB%9F%E8%AE%A1%E5%AD%A6.html">统计学</a>
-					</li>
-					
-					<hr>
-					</ul>
-				
-					<span class="tag-title" id="mathplotlib">
-						<span class="tag-text">mathplotlib</span>			
-					</span>
-					<ul>
-					
-					<li><a href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/23/Matplotlib%E4%BD%BF%E7%94%A8.html">Matplotlib使用</a>
-					</li>
-					
-					<hr>
-					</ul>
-				
-			</div>
-			</div>
-		</div>
-	</div>
-</div>
+		    <h1 id="mathplotlib">mathplotlib</h1>
 
+<h2 id="section">　载入</h2>
+
+<blockquote>
+  <p>import matplotlib as mpl
+  import matplotlib.pyplot as plt #部分载入</p>
+</blockquote>
+
+<h2 id="section-1">绘图</h2>
+
+<h3 id="x-nplinspace0-10-20">x =np.linspace(0, 10 ,20)</h3>
+
+<h3 id="sinynpsinx">siny=np.sin(x)</h3>
+
+<h3 id="cosynpcosx">cosy=np.cos(x)</h3>
+
+<h3 id="section-2">绘制折线图</h3>
+
+<blockquote>
+  <p>plt.plot(x, siny)
+  plt.show()</p>
+</blockquote>
+
+<h3 id="section-3">同时绘制两条折线图</h3>
+
+<blockquote>
+  <p>plt.plot(x, siny)
+  plt.plot(x, cosy)
+  plt.show()</p>
+</blockquote>
+
+<h3 id="section-4">对绘制曲线选择颜色</h3>
+
+<blockquote>
+  <p>plt.plot(x, cosy, color=”red”)</p>
+</blockquote>
+
+<h3 id="section-5">对绘制曲线选择线条样式</h3>
+
+<blockquote>
+  <p>plt.plot(x, cosy, color=”red”, linestyle=”–”)</p>
+</blockquote>
+
+<h3 id="section-6">对ｘ轴取值范围调节</h3>
+
+<blockquote>
+  <p>plt.xlim(-5, -15)</p>
+</blockquote>
+
+<h3 id="y-">对ｘ, y 同时调节</h3>
+
+<blockquote>
+  <p>plt.axis([-1,11,-2,2]) # x轴取值(-1~11),ｙ轴取值(-2,2)</p>
+</blockquote>
+
+<h3 id="y--1">ｘ, y 轴上添加字符串</h3>
+
+<blockquote>
+  <p>plt.xlabel(“x axis”)
+  plt.ylabel(“y value”)</p>
+</blockquote>
+
+<h3 id="section-7">为绘制的折线加上图示</h3>
+
+<blockquote>
+  <p>plt.plot(x, siny, label=”sin(x)”)
+  plt.plot(x, cosy, label=”cos(x)”)
+  plt.legend()	
+  plt.show()</p>
+</blockquote>
+
+<h3 id="section-8">为绘制的折线加上标题</h3>
+
+<blockquote>
+  <p>plt.title(“this is title”)</p>
+</blockquote>
+
+<h3 id="section-9">绘制散点图</h3>
+
+<blockquote>
+  <p>plt.scatter(x,siny)
+  plt.show()</p>
+</blockquote>
+
+<h3 id="section-10">改变散点图的不透明度</h3>
+
+<blockquote>
+  <p>plt.scatter(x, siny, alpha=0.5)</p>
+</blockquote>
 
 		  </div>
 		  
@@ -144,10 +167,6 @@
 						统计学(<small>(1)</small>
 				</a>
 			
-			<a href= "/tags/#　数学基础" title="　数学基础" rel="1">
-						　数学基础(<small>(1)</small>
-				</a>
-			
 			<a href= "/tags/#mathplotlib" title="mathplotlib" rel="1">
 						mathplotlib(<small>(1)</small>
 				</a>
@@ -162,8 +181,8 @@
 	<h5><a href="/categories/">CATEGORIES</a></h5>
 	<div class="sidebar-tags" role="presentation">
 		
-		<a href="/categories/#机器学习基础">
-			机器学习基础<small>(3)</small>
+		<a href="/categories/#数据分析基础">
+			数据分析基础<small>(3)</small>
 		</a>
 		
 	</div>

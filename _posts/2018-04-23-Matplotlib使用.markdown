@@ -1,7 +1,7 @@
 ---
-layout: default
-category: 数据分析基础
-tags: numpy
+layout: post
+category: 机器学习基础
+tags: [mathplotlib,　函数库]
 --- 
 
 mathplotlib

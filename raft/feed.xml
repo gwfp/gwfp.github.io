@@ -5,83 +5,813 @@
     <description>心仪的东西到手后，才真正的要开始奋斗了．</description>
     <link>https://gwfp.github.io/</link>
     <atom:link href="https://gwfp.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 19 Apr 2018 14:44:39 +0800</pubDate>
-    <lastBuildDate>Thu, 19 Apr 2018 14:44:39 +0800</lastBuildDate>
+    <pubDate>Tue, 24 Apr 2018 09:03:31 +0800</pubDate>
+    <lastBuildDate>Tue, 24 Apr 2018 09:03:31 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>hello word</title>
-        <description>&lt;h2&gt;hello word&lt;/h2&gt;
+        <title>Matplotlib使用</title>
+        <description>&lt;h1 id=&quot;mathplotlib&quot;&gt;mathplotlib&lt;/h1&gt;
 
-&lt;p&gt;测试的第一篇&lt;/p&gt;
+&lt;h2 id=&quot;section&quot;&gt;　载入&lt;/h2&gt;
 
-&lt;p&gt;01 Mar 2018&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;import matplotlib as mpl
+  import matplotlib.pyplot as plt #部分载入&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;绘图&lt;/h2&gt;
+
+&lt;h3 id=&quot;x-nplinspace0-10-20&quot;&gt;x =np.linspace(0, 10 ,20)&lt;/h3&gt;
+
+&lt;h3 id=&quot;sinynpsinx&quot;&gt;siny=np.sin(x)&lt;/h3&gt;
+
+&lt;h3 id=&quot;cosynpcosx&quot;&gt;cosy=np.cos(x)&lt;/h3&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;绘制折线图&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.plot(x, siny)
+  plt.show()&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;同时绘制两条折线图&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.plot(x, siny)
+  plt.plot(x, cosy)
+  plt.show()&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;对绘制曲线选择颜色&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.plot(x, cosy, color=”red”)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;对绘制曲线选择线条样式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.plot(x, cosy, color=”red”, linestyle=”–”)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;对ｘ轴取值范围调节&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.xlim(-5, -15)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;y-&quot;&gt;对ｘ, y 同时调节&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.axis([-1,11,-2,2]) # x轴取值(-1~11),ｙ轴取值(-2,2)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;y--1&quot;&gt;ｘ, y 轴上添加字符串&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.xlabel(“x axis”)
+  plt.ylabel(“y value”)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;为绘制的折线加上图示&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.plot(x, siny, label=”sin(x)”)
+  plt.plot(x, cosy, label=”cos(x)”)
+  plt.legend()	
+  plt.show()&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-8&quot;&gt;为绘制的折线加上标题&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.title(“this is title”)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-9&quot;&gt;绘制散点图&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.scatter(x,siny)
+  plt.show()&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-10&quot;&gt;改变散点图的不透明度&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;plt.scatter(x, siny, alpha=0.5)&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
-        <pubDate>Thu, 01 Mar 2018 00:00:00 +0800</pubDate>
-        <link>https://gwfp.github.io/hello/2018/03/01/hello-world.html</link>
-        <guid isPermaLink="true">https://gwfp.github.io/hello/2018/03/01/hello-world.html</guid>
+        <pubDate>Mon, 23 Apr 2018 00:00:00 +0800</pubDate>
+        <link>https://gwfp.github.io/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/23/Matplotlib%E4%BD%BF%E7%94%A8.html</link>
+        <guid isPermaLink="true">https://gwfp.github.io/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/23/Matplotlib%E4%BD%BF%E7%94%A8.html</guid>
         
-        <category>first</category>
+        <category>mathplotlib</category>
         
         
-        <category>hello</category>
+        <category>机器学习基础</category>
         
       </item>
     
       <item>
-        <title>hello word</title>
-        <description>&lt;h2&gt;hello word&lt;/h2&gt;
+        <title>统计学</title>
+        <description>&lt;h1 id=&quot;statistics&quot;&gt;统计学statistics&lt;/h1&gt;
 
-&lt;p&gt;测试的第一篇&lt;/p&gt;
+&lt;h2 id=&quot;section&quot;&gt;数据分类&lt;/h2&gt;
 
-&lt;p&gt;28 Feb 2018&lt;/p&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;不可测量数据&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;分类数据&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;数据间并非相等间隔的数据
+例，柔道段位&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;可测量数据&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-4&quot;&gt;数值数据&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ps 有些分类数据 会 被当做数值数据处理
+例，“非常喜欢，一般，不喜欢” \n会被作为 “1，0，-1”处理&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;数据状态&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;数值数据&lt;/h3&gt;
+
+&lt;h4 id=&quot;population&quot;&gt;总体(population)&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;μ总体平均值&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;sample&quot;&gt;样本(sample)&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;X_mean 样本平均值&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;section-7&quot;&gt;组&lt;/h4&gt;
+
+&lt;h4 id=&quot;class-midpoint&quot;&gt;组中值(class midpoint):分类后范围的中间值&lt;/h4&gt;
+
+&lt;h4 id=&quot;section-8&quot;&gt;分组&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;通过“史特吉斯公式”求出组距&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;relative-frequency&quot;&gt;相对次数(relative frequency):所在组的数据个数/数据总数&lt;/h4&gt;
+
+&lt;h4 id=&quot;central-tendency&quot;&gt;集中趋势（central tendency）&lt;/h4&gt;
+
+&lt;h4 id=&quot;mean&quot;&gt;平均数（mean)&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;算术平均数 \(\bar{x}=\frac{\sum_{i=0}^{N}X_i}{N}\)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bar{x}=\frac{\sum_{i=0}^{N}X_i}{N}&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;几何平均数&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;调和平均数（harmonic）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;median&quot;&gt;中位数(median):数字按小大顺序排列，取中间的值&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如为偶数，取中间两个值的平均数&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;mode&quot;&gt;众数(mode):出现次数最多的数&lt;/h4&gt;
+
+&lt;h4 id=&quot;varience&quot;&gt;方差(varience)&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-9&quot;&gt;总体方差  &amp;gt; 诸方差公式：总体方差的简单算法&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;σ^2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h6 id=&quot;unbiased-estimator&quot;&gt;样本方差  &amp;gt; 总体方差的无偏估计（unbiased estimator)）&lt;/h6&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;S^2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;standard-deviation&quot;&gt;标准差（standard deviation）&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;σ&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;S&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;deviation-score&quot;&gt;离差（deviation score）:单项数值与平均值之间的差&lt;/h4&gt;
+
+&lt;h4 id=&quot;standardization&quot;&gt;标准化(Standardization)&lt;/h4&gt;
+
+&lt;h4 id=&quot;standard-score&quot;&gt;标准计分(standard score):标准化后的数据&lt;/h4&gt;
+
+&lt;h4 id=&quot;section-10&quot;&gt;大数定理&lt;/h4&gt;
+
+&lt;h4 id=&quot;section-11&quot;&gt;中心极限定理&lt;/h4&gt;
+
+&lt;h3 id=&quot;section-12&quot;&gt;分类数据&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-13&quot;&gt;…&lt;/h4&gt;
+
+&lt;h2 id=&quot;random-variable&quot;&gt;随机变量（random variable）&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-14&quot;&gt;分类&lt;/h3&gt;
+
+&lt;h4 id=&quot;discrete-&quot;&gt;离散变量（ discrete ）&lt;/h4&gt;
+
+&lt;h4 id=&quot;continuous&quot;&gt;连续变量（continuous)&lt;/h4&gt;
+
+&lt;h3 id=&quot;section-15&quot;&gt;机率密度函数&lt;/h3&gt;
+
+&lt;h4 id=&quot;binomial-distribution&quot;&gt;二项分布(binomial distribution)&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;在n长时间内发生的期望为λ，\n单位时间内概率为λ/n\n在单位时间内发生次数为K的概率 =&amp;gt;
+泊松分布：单位时间内独立事件\n发生次数的概率分布 =&amp;gt;
+发生次数K=0，\n计算时间 =&amp;gt;
+指数分布：独立事件的时间间隔\n的概率分布 =&amp;gt;
+泊松分布和指数分布的前提是，事件之间不能有关联，否则就不能运用上面的公式。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;section-16&quot;&gt;期望&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;np&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;normal-distribution&quot;&gt;正态分布（normal distribution）&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-17&quot;&gt;平均值为0，标准差为1&lt;/h4&gt;
+
+&lt;h4 id=&quot;section-18&quot;&gt;标准正太分布&lt;/h4&gt;
+
+&lt;h4 id=&quot;empirical-rule68-95-997rule&quot;&gt;经验法则(Empirical rule):68-95-99.7rule&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;正态分布均值左右1个标准差内的概率为68%， 
+两个标准差内的概论为95%，
+三个标准差内的概率为99.7&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
-        <pubDate>Wed, 28 Feb 2018 00:00:00 +0800</pubDate>
-        <link>https://gwfp.github.io/hello/2018/02/28/hello-world.html</link>
-        <guid isPermaLink="true">https://gwfp.github.io/hello/2018/02/28/hello-world.html</guid>
+        <pubDate>Thu, 19 Apr 2018 00:00:00 +0800</pubDate>
+        <link>https://gwfp.github.io/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/19/%E7%BB%9F%E8%AE%A1%E5%AD%A6.html</link>
+        <guid isPermaLink="true">https://gwfp.github.io/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/19/%E7%BB%9F%E8%AE%A1%E5%AD%A6.html</guid>
         
-        <category>first</category>
+        <category>统计学</category>
+        
+        <category>　数学基础</category>
         
         
-        <category>hello</category>
+        <category>机器学习基础</category>
         
       </item>
     
       <item>
-        <title>hello word</title>
-        <description>&lt;h2&gt;hello word&lt;/h2&gt;
+        <title>Numpy使用</title>
+        <description>&lt;h1 id=&quot;numpy&quot;&gt;numpy&lt;/h1&gt;
 
-&lt;p&gt;测试的第一篇&lt;/p&gt;
+&lt;h3 id=&quot;section&quot;&gt;传入&lt;/h3&gt;
 
-&lt;p&gt;26 Feb 2018&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;创建数字矩阵&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;创建０矩阵&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-3&quot;&gt;单行矩阵&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&#39;np.zeros(10)&#39;  # 默认float 指定int型　np.zeros(10, dtype=int）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-4&quot;&gt;３行４列矩阵&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; np.zeros((3,4)) #np.zeros(shape=(3,4))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;创建１矩阵&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.ones((3,4)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-6&quot;&gt;创建全ｎ矩阵&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.full((3,5), 666) #np.full(shape=(3,5), fill_value=666.0) #如果是666是int型
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-7&quot;&gt;创建循环数列&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-8&quot;&gt;从０到１０，每0.2取点&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.arange(0,10,0.2) #np.arange(起始数，截至数， 步长) 默认起始为０步长为１
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-9&quot;&gt;从０到２０，等距截出５个数（包含开始数和截至数）&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.linspace(0,20,5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-10&quot;&gt;创建随机数列&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-11&quot;&gt;含有１０个元素，０开始不超过１０的随机整数数列&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.random.randint(0,10,size=10) #取到0,但取不到１０
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-12&quot;&gt;３行５列的矩阵, ０开始不超过１０的随机整数数列&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.random.randint(0,10,size=(3,5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-13&quot;&gt;创建每次相同的随机数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.random.seed(666) 
+np.random.randint(0,10,size=(3,5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-14&quot;&gt;创建１０个随机浮点数向量&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.random.random(10)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-15&quot;&gt;创建３行５列的浮点数矩阵&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.random.random((3,5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-16&quot;&gt;创建均值为１０方差为１００的符合正态分布的随机浮点数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.random.normal(10,100,size=10)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-17&quot;&gt;数组的基本属性&lt;/h3&gt;
+
+&lt;h4 id=&quot;xnparange15reshape35&quot;&gt;X=np.arange(15).reshape(3,5)&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-18&quot;&gt;查看数组的维度&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X.ndim
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-19&quot;&gt;查看数组的维度，并显示每个维度上有多少数组&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-20&quot;&gt;查看数组元素个数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X.size
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-21&quot;&gt;访问第２行２列的元素&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X[2,2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-22&quot;&gt;访问前２行前３个数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X[:2,:3］
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-23&quot;&gt;访问前２行前4个数,间隔为２&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X[:2,:4:2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-24&quot;&gt;矩阵的基本性质&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-25&quot;&gt;矩阵运算&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-26&quot;&gt;矩阵求反&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X[::-1,::-1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-27&quot;&gt;矩阵取第一行&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X[:, 0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-28&quot;&gt;矩阵取第一列&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X[0, :]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-29&quot;&gt;子矩阵	　　&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-30&quot;&gt;创建子矩阵&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;subX = X[:2,:3] #修改subX会影响原矩阵
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-31&quot;&gt;创建单独的子矩阵&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;subX = X[:2,:3].copy() $此时subX的修改不会影响原矩阵
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-32&quot;&gt;改变矩阵的维度&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-33&quot;&gt;将数组改变为５行３列的数组&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Ａ = X.reshape(5,3) 
+#1,转变后元素个数须与转换前相等
+#2,reshape不会改变原矩阵，需要存储在其他变量里
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-34&quot;&gt;将矩阵转换为３行的矩阵&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;x.reshape(3,-1)
+　　 ##### 将矩阵转换为３列的矩阵
+
+x.reshape(-1,3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-35&quot;&gt;矩阵的合并&lt;/h4&gt;
+
+&lt;h5 id=&quot;a--nparange6reshape2-1&quot;&gt;A = np.arange(6).reshape(2,-1)&lt;/h5&gt;
+
+&lt;h5 id=&quot;b--nparange610reshape2-1&quot;&gt;B = np.arange(6,10).reshape(2,-1)&lt;/h5&gt;
+
+&lt;h5 id=&quot;c--npfull3666&quot;&gt;c = np.full(3,666)&lt;/h5&gt;
+
+&lt;h5 id=&quot;d--npfull21666&quot;&gt;d = np.full((2,1),666)&lt;/h5&gt;
+
+&lt;h5 id=&quot;section-36&quot;&gt;#在矩阵后添加新矩阵行&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.concatenate([A,B])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-37&quot;&gt;在矩阵后添加新矩阵列&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.concatenate([A,B], axis=1)　#axis=０为添加行　１添加列　２，３．．表示添加到更高维度(如矩阵的第３维...)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-38&quot;&gt;在矩阵后添加新的矩阵行&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.vstack([A,c])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-39&quot;&gt;在矩阵后添加新的矩阵列&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.hstack([A,d])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-40&quot;&gt;矩阵的分割&lt;/h4&gt;
+
+&lt;h5 id=&quot;x-nparange10&quot;&gt;x= np.arange(10)&lt;/h5&gt;
+
+&lt;h5 id=&quot;a--nparange16reshape44&quot;&gt;A = np.arange(16).reshape((4,4))&lt;/h5&gt;
+
+&lt;h5 id=&quot;x&quot;&gt;将向量x以３，７为节点分割&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;x1, x2, x3 = np.split(x, [3,7]) # x1 = array([0, 1, 2])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-41&quot;&gt;将矩阵按照第二行来分割&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A1, A2 = np.split(A,[2])　# A1 = array([[0, 1, 2, 3],[4, 5, 6, 7]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-42&quot;&gt;将矩阵按照第二列来分割&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A1, A2 = np.split(A,[2], axis=1) #　A1 = array([[ 0,  1],
+   					        [ 4,  5],
+   						[ 8,  9],
+   						[12, 13]]) ##### 以垂直方式分割矩阵
+
+upper, lower = np.vsplit(A, [2])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-43&quot;&gt;以水平方式分割矩阵&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;left, right = np.hsplit(A, [2])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-44&quot;&gt;矩阵的运算&lt;/h4&gt;
+
+&lt;h5 id=&quot;x--nparange1-16reshape3-5&quot;&gt;X = np.arange(1, 16).reshape((3, 5))&lt;/h5&gt;
+&lt;p&gt;##### A = np.arange(4).reshape(2,2)
+##### B　=　np.full((2,2),10)
+##### v = np.array([1,2])&lt;/p&gt;
+
+&lt;h5 id=&quot;section-45&quot;&gt;矩阵与数的运算&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;加　X+1, 减 X-1, 乘 X*2, 除　X/2(浮点除)　X//2(整数除),　乘方 X**2,　求余 X%2,
+　　　　	
+绝对值 np.abs(X), 正弦 np.sin(X), e^X np.exp(X), 3^X np.power(3, X),
+	
+以ｅ为底的自然对数　log(X)，以１０为底的自然对数log10,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-46&quot;&gt;矩阵与矩阵间的运算&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;加　A+B, 减　A-B, 
+	
+乘　A.dot(B) #　A*B只是对应位相乘，并非矩阵乘法，
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;at&quot;&gt;矩阵的转置　A.T&lt;/h5&gt;
+
+&lt;h5 id=&quot;section-47&quot;&gt;向量与矩阵间运算&lt;/h5&gt;
+
+&lt;h5 id=&quot;section-48&quot;&gt;将向量进行堆叠&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.tile(v,(2,1)) #　行堆叠２次　列堆叠一次
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-49&quot;&gt;矩阵逆运算&lt;/h5&gt;
+
+&lt;h5 id=&quot;section-50&quot;&gt;矩阵的逆&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;invA = np.linalg.inv(A)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-51&quot;&gt;矩阵的伪逆&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pinvX = np.linalg.pinv(X)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-52&quot;&gt;聚合操作&lt;/h4&gt;
+
+&lt;h5 id=&quot;l-nprandomrandom100reshape1010&quot;&gt;L =np.random.random(100).reshape(10,10)&lt;/h5&gt;
+
+&lt;h5 id=&quot;section-53&quot;&gt;求矩阵所有项的和&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.sum(L)
+　　 ##### 求矩阵某列的和(沿着行=逐列)
+	 
+np.sum(L, axis=0)　# axis = 1　逐行
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-54&quot;&gt;求矩阵中最小值&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.min(L)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-55&quot;&gt;求矩阵中最大值&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.max(L)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-56&quot;&gt;矩阵所有元素的乘&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.prod(L)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-57&quot;&gt;矩阵所有元素的平均值&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.mean(L)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-58&quot;&gt;矩阵所有元素的中位数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.median(L)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-59&quot;&gt;矩阵中的百分位&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.percentile(L,50)　#　求矩阵Ｌ中50%都小于的数
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-60&quot;&gt;求多个百分位的点&lt;/h5&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	　　　　
+for percent in (0, 25, 50, 75, 100):
+    print(np.percentile(L, percent))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-61&quot;&gt;矩阵中元素的方差&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.var(L)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-62&quot;&gt;矩阵中元素的标准差&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.std(L)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-63&quot;&gt;索引&lt;/h4&gt;
+
+&lt;h5 id=&quot;xnprandomnormal01size100000reshape1000-1&quot;&gt;X=np.random.normal(0,1,size=100000).reshape(1000,-1)&lt;/h5&gt;
+
+&lt;h5 id=&quot;section-64&quot;&gt;求向量ｘ中最小值的位置&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.argmin(X) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-65&quot;&gt;排序&lt;/h4&gt;
+
+&lt;h5 id=&quot;x--nparange16&quot;&gt;x = np.arange(16)&lt;/h5&gt;
+
+&lt;h5 id=&quot;x--nprandomrandint10-size44&quot;&gt;X = np.random.randint(10, size=(4,4))&lt;/h5&gt;
+
+&lt;h5 id=&quot;section-66&quot;&gt;乱序向量ｘ&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.random.shuffle(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-67&quot;&gt;对向量ｘ进行排序&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.sort(x) #　不改变x
+
+x.sort(x)　 #　改变ｘ
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-68&quot;&gt;对矩阵Ｘ进行排序&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.sort(X)　#　对每行进行排序，默认axis=1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-69&quot;&gt;排序及索引&lt;/h4&gt;
+
+&lt;h5 id=&quot;section-70&quot;&gt;排序后显示索引&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.argsort(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-71&quot;&gt;以９分割所有的数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.partition(x, 9)　#　9左右两边不一定有序
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-72&quot;&gt;以９分割所有的数以索引方式显示&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.argpartition(x, 9)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;fancy-indexing&quot;&gt;Fancy Indexing&lt;/h4&gt;
+
+&lt;h5 id=&quot;x--nparange16-1&quot;&gt;x = np.arange(16)&lt;/h5&gt;
+&lt;p&gt;##### X = x.reshape(4, -1)&lt;/p&gt;
+
+&lt;h5 id=&quot;section-73&quot;&gt;访问向量ｘ索引为３，５，８的元素的值&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ind = [3, 5, 8]
+x[ind]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-74&quot;&gt;按照索引从ｘ中取出值，并排列成矩阵&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ind = np.array([[0,2],[1,3]])
+x[ind]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-75&quot;&gt;从矩阵Ｘ中取出(0,1),(1,2),(2,3)这几个点&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;row = np.array([0,1,2])
+col = np.array([1,2,3])
+x[row, col]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;bool023&quot;&gt;用bool从１到３行中取出0,2,3列&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;col = [True, False, True, True]
+X[1:3,　col]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;numpyarray&quot;&gt;numpy.array比较&lt;/h4&gt;
+
+&lt;h5 id=&quot;x--nparange16-2&quot;&gt;x = np.arange(16)&lt;/h5&gt;
+
+&lt;h5 id=&quot;x--xreshape4--1&quot;&gt;X = x.reshape(4, -1)&lt;/h5&gt;
+
+&lt;h5 id=&quot;x3bool&quot;&gt;向量x&amp;lt;3的值用bool函数表示&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;x &amp;lt; 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;bool&quot;&gt;矩阵Ｘ&amp;gt;6的值用bool函数表示&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X&amp;gt;6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-76&quot;&gt;计算向量ｘ中&amp;gt;３的数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.sum(x&amp;gt;3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-77&quot;&gt;计算向量ｘ中&amp;gt;=３的数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.count_nonzero(x&amp;gt;=3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-78&quot;&gt;矩阵Ｘ中是否有０元素&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.any(X) #　True　表示存在
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-79&quot;&gt;是否矩阵Ｘ中所有元素都     0&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.all(X&amp;lt;0) # False 表示有数不大于０
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-80&quot;&gt;向量ｘ中&amp;gt;3同时&amp;lt;10的元素个个数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.sum((x&amp;gt;3) &amp;amp; (x&amp;lt;10))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-81&quot;&gt;向量ｘ中!=0的元素个个数&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;np.sum(~(x==0))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;section-82&quot;&gt;取出Ｘ矩阵最后一行可以被３整除的行&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;X[X[:,-1]%3 == 0, :]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
-        <pubDate>Mon, 26 Feb 2018 00:00:00 +0800</pubDate>
-        <link>https://gwfp.github.io/hello/2018/02/26/hello-world.html</link>
-        <guid isPermaLink="true">https://gwfp.github.io/hello/2018/02/26/hello-world.html</guid>
+        <pubDate>Tue, 17 Apr 2018 00:00:00 +0800</pubDate>
+        <link>https://gwfp.github.io/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/17/Numpy%E4%BD%BF%E7%94%A8.html</link>
+        <guid isPermaLink="true">https://gwfp.github.io/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/2018/04/17/Numpy%E4%BD%BF%E7%94%A8.html</guid>
         
-        <category>first</category>
-        
-        
-        <category>hello</category>
-        
-      </item>
-    
-      <item>
-        <title>hello word</title>
-        <description>&lt;h2&gt;hello word&lt;/h2&gt;
-
-&lt;p&gt;测试的第一篇&lt;/p&gt;
-
-&lt;p&gt;25 Feb 2018&lt;/p&gt;
-</description>
-        <pubDate>Sun, 25 Feb 2018 00:00:00 +0800</pubDate>
-        <link>https://gwfp.github.io/hello/2018/02/25/hello-world.html</link>
-        <guid isPermaLink="true">https://gwfp.github.io/hello/2018/02/25/hello-world.html</guid>
-        
-        <category>first</category>
+        <category>numpy</category>
         
         
-        <category>hello</category>
+        <category>机器学习基础</category>
         
       </item>
     

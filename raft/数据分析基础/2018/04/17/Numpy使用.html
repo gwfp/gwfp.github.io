@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="with=device-width, initial-scale=1" >
+	<title>Numpy使用 | gwfp的驿站</title>
+	<link rel="stylesheet" href="/static/css/normalize.css">
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/static/css/main.css"/>
+ 	<!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+	<script type="text/javascript" async
+	src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+</head>
+
+
+<body>
+   <div class="contianer-fluid">
+	<div class="row-fluid">	
+	   <div class="col-sm-12">	
+		<div class="container-fluid">
+	<div class="row-fluid">
+			<div class="col-sm-9 ">
+				<h2 class="text-right">gwfp's 驿站</h2>
+			</div>
+			<div class="col-sm-3 ">
+					<img height="60" src="/static/images/miaopasi.gif">
+			</div>
+	<div>
+</div>
+
+		<div class="row-fluid">
+		  <div class="col-sm-9">
+		  <!--menu-->
+		  <nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="#">关于</a></li>
+			</ul>
+		</div>
+		<div class="navbar-header navbar-right">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">首页</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/index">首页</a>
+		</div>
+	</div>
+</nav>
+
+		  <!--articals-->
+		    <h1 id="numpy">numpy</h1>
+
+<h3 id="section">传入</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import numpy as np
+</code></pre>
+</div>
+
+<h3 id="section-1">创建数字矩阵</h3>
+
+<h4 id="section-2">创建０矩阵</h4>
+
+<h5 id="section-3">单行矩阵</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>'np.zeros(10)'  # 默认float 指定int型　np.zeros(10, dtype=int）
+</code></pre>
+</div>
+
+<h5 id="section-4">３行４列矩阵</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> np.zeros((3,4)) #np.zeros(shape=(3,4))
+</code></pre>
+</div>
+
+<h4 id="section-5">创建１矩阵</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.ones((3,4)
+</code></pre>
+</div>
+
+<h4 id="section-6">创建全ｎ矩阵</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.full((3,5), 666) #np.full(shape=(3,5), fill_value=666.0) #如果是666是int型
+</code></pre>
+</div>
+
+<h4 id="section-7">创建循环数列</h4>
+
+<h5 id="section-8">从０到１０，每0.2取点</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.arange(0,10,0.2) #np.arange(起始数，截至数， 步长) 默认起始为０步长为１
+</code></pre>
+</div>
+
+<h5 id="section-9">从０到２０，等距截出５个数（包含开始数和截至数）</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.linspace(0,20,5)
+</code></pre>
+</div>
+
+<h4 id="section-10">创建随机数列</h4>
+
+<h5 id="section-11">含有１０个元素，０开始不超过１０的随机整数数列</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.random.randint(0,10,size=10) #取到0,但取不到１０
+</code></pre>
+</div>
+
+<h5 id="section-12">３行５列的矩阵, ０开始不超过１０的随机整数数列</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.random.randint(0,10,size=(3,5))
+</code></pre>
+</div>
+
+<h5 id="section-13">创建每次相同的随机数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.random.seed(666) 
+np.random.randint(0,10,size=(3,5))
+</code></pre>
+</div>
+
+<h5 id="section-14">创建１０个随机浮点数向量</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.random.random(10)
+</code></pre>
+</div>
+
+<h5 id="section-15">创建３行５列的浮点数矩阵</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.random.random((3,5))
+</code></pre>
+</div>
+
+<h5 id="section-16">创建均值为１０方差为１００的符合正态分布的随机浮点数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.random.normal(10,100,size=10)
+</code></pre>
+</div>
+
+<h3 id="section-17">数组的基本属性</h3>
+
+<h4 id="xnparange15reshape35">X=np.arange(15).reshape(3,5)</h4>
+
+<h5 id="section-18">查看数组的维度</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X.ndim
+</code></pre>
+</div>
+
+<h5 id="section-19">查看数组的维度，并显示每个维度上有多少数组</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X.shape
+</code></pre>
+</div>
+
+<h5 id="section-20">查看数组元素个数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X.size
+</code></pre>
+</div>
+
+<h5 id="section-21">访问第２行２列的元素</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X[2,2]
+</code></pre>
+</div>
+
+<h5 id="section-22">访问前２行前３个数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X[:2,:3］
+</code></pre>
+</div>
+
+<h5 id="section-23">访问前２行前4个数,间隔为２</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X[:2,:4:2]
+</code></pre>
+</div>
+
+<h3 id="section-24">矩阵的基本性质</h3>
+
+<h4 id="section-25">矩阵运算</h4>
+
+<h5 id="section-26">矩阵求反</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X[::-1,::-1]
+</code></pre>
+</div>
+
+<h5 id="section-27">矩阵取第一行</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X[:, 0]
+</code></pre>
+</div>
+
+<h5 id="section-28">矩阵取第一列</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X[0, :]
+</code></pre>
+</div>
+
+<h4 id="section-29">子矩阵	　　</h4>
+
+<h5 id="section-30">创建子矩阵</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>subX = X[:2,:3] #修改subX会影响原矩阵
+</code></pre>
+</div>
+
+<h5 id="section-31">创建单独的子矩阵</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>subX = X[:2,:3].copy() $此时subX的修改不会影响原矩阵
+</code></pre>
+</div>
+
+<h4 id="section-32">改变矩阵的维度</h4>
+
+<h5 id="section-33">将数组改变为５行３列的数组</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Ａ = X.reshape(5,3) 
+#1,转变后元素个数须与转换前相等
+#2,reshape不会改变原矩阵，需要存储在其他变量里
+</code></pre>
+</div>
+
+<h5 id="section-34">将矩阵转换为３行的矩阵</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>x.reshape(3,-1)
+　　 ##### 将矩阵转换为３列的矩阵
+
+x.reshape(-1,3)
+</code></pre>
+</div>
+
+<h4 id="section-35">矩阵的合并</h4>
+
+<h5 id="a--nparange6reshape2-1">A = np.arange(6).reshape(2,-1)</h5>
+
+<h5 id="b--nparange610reshape2-1">B = np.arange(6,10).reshape(2,-1)</h5>
+
+<h5 id="c--npfull3666">c = np.full(3,666)</h5>
+
+<h5 id="d--npfull21666">d = np.full((2,1),666)</h5>
+
+<h5 id="section-36">#在矩阵后添加新矩阵行</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.concatenate([A,B])
+</code></pre>
+</div>
+
+<h5 id="section-37">在矩阵后添加新矩阵列</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.concatenate([A,B], axis=1)　#axis=０为添加行　１添加列　２，３．．表示添加到更高维度(如矩阵的第３维...)
+</code></pre>
+</div>
+
+<h5 id="section-38">在矩阵后添加新的矩阵行</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.vstack([A,c])
+</code></pre>
+</div>
+
+<h5 id="section-39">在矩阵后添加新的矩阵列</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.hstack([A,d])
+</code></pre>
+</div>
+
+<h4 id="section-40">矩阵的分割</h4>
+
+<h5 id="x-nparange10">x= np.arange(10)</h5>
+
+<h5 id="a--nparange16reshape44">A = np.arange(16).reshape((4,4))</h5>
+
+<h5 id="x">将向量x以３，７为节点分割</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>x1, x2, x3 = np.split(x, [3,7]) # x1 = array([0, 1, 2])
+</code></pre>
+</div>
+
+<h5 id="section-41">将矩阵按照第二行来分割</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>A1, A2 = np.split(A,[2])　# A1 = array([[0, 1, 2, 3],[4, 5, 6, 7]])
+</code></pre>
+</div>
+
+<h5 id="section-42">将矩阵按照第二列来分割</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>A1, A2 = np.split(A,[2], axis=1) #　A1 = array([[ 0,  1],
+   					        [ 4,  5],
+   						[ 8,  9],
+   						[12, 13]]) ##### 以垂直方式分割矩阵
+
+upper, lower = np.vsplit(A, [2])
+</code></pre>
+</div>
+
+<h5 id="section-43">以水平方式分割矩阵</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>left, right = np.hsplit(A, [2])
+</code></pre>
+</div>
+
+<h4 id="section-44">矩阵的运算</h4>
+
+<h5 id="x--nparange1-16reshape3-5">X = np.arange(1, 16).reshape((3, 5))</h5>
+<p>##### A = np.arange(4).reshape(2,2)
+##### B　=　np.full((2,2),10)
+##### v = np.array([1,2])</p>
+
+<h5 id="section-45">矩阵与数的运算</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>加　X+1, 减 X-1, 乘 X*2, 除　X/2(浮点除)　X//2(整数除),　乘方 X**2,　求余 X%2,
+　　　　	
+绝对值 np.abs(X), 正弦 np.sin(X), e^X np.exp(X), 3^X np.power(3, X),
+	
+以ｅ为底的自然对数　log(X)，以１０为底的自然对数log10,
+</code></pre>
+</div>
+
+<h5 id="section-46">矩阵与矩阵间的运算</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>加　A+B, 减　A-B, 
+	
+乘　A.dot(B) #　A*B只是对应位相乘，并非矩阵乘法，
+</code></pre>
+</div>
+
+<h5 id="at">矩阵的转置　A.T</h5>
+
+<h5 id="section-47">向量与矩阵间运算</h5>
+
+<h5 id="section-48">将向量进行堆叠</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.tile(v,(2,1)) #　行堆叠２次　列堆叠一次
+</code></pre>
+</div>
+
+<h5 id="section-49">矩阵逆运算</h5>
+
+<h5 id="section-50">矩阵的逆</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>invA = np.linalg.inv(A)
+</code></pre>
+</div>
+
+<h5 id="section-51">矩阵的伪逆</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pinvX = np.linalg.pinv(X)
+</code></pre>
+</div>
+
+<h4 id="section-52">聚合操作</h4>
+
+<h5 id="l-nprandomrandom100reshape1010">L =np.random.random(100).reshape(10,10)</h5>
+
+<h5 id="section-53">求矩阵所有项的和</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.sum(L)
+　　 ##### 求矩阵某列的和(沿着行=逐列)
+	 
+np.sum(L, axis=0)　# axis = 1　逐行
+</code></pre>
+</div>
+
+<h5 id="section-54">求矩阵中最小值</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.min(L)
+</code></pre>
+</div>
+
+<h5 id="section-55">求矩阵中最大值</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.max(L)
+</code></pre>
+</div>
+
+<h5 id="section-56">矩阵所有元素的乘</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.prod(L)
+</code></pre>
+</div>
+
+<h5 id="section-57">矩阵所有元素的平均值</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.mean(L)
+</code></pre>
+</div>
+
+<h5 id="section-58">矩阵所有元素的中位数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.median(L)
+</code></pre>
+</div>
+
+<h5 id="section-59">矩阵中的百分位</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.percentile(L,50)　#　求矩阵Ｌ中50%都小于的数
+</code></pre>
+</div>
+
+<h5 id="section-60">求多个百分位的点</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code>	　　　　
+for percent in (0, 25, 50, 75, 100):
+    print(np.percentile(L, percent))
+</code></pre>
+</div>
+
+<h5 id="section-61">矩阵中元素的方差</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.var(L)
+</code></pre>
+</div>
+
+<h5 id="section-62">矩阵中元素的标准差</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.std(L)
+</code></pre>
+</div>
+
+<h4 id="section-63">索引</h4>
+
+<h5 id="xnprandomnormal01size100000reshape1000-1">X=np.random.normal(0,1,size=100000).reshape(1000,-1)</h5>
+
+<h5 id="section-64">求向量ｘ中最小值的位置</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.argmin(X) 
+</code></pre>
+</div>
+
+<h4 id="section-65">排序</h4>
+
+<h5 id="x--nparange16">x = np.arange(16)</h5>
+
+<h5 id="x--nprandomrandint10-size44">X = np.random.randint(10, size=(4,4))</h5>
+
+<h5 id="section-66">乱序向量ｘ</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.random.shuffle(x)
+</code></pre>
+</div>
+
+<h5 id="section-67">对向量ｘ进行排序</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.sort(x) #　不改变x
+
+x.sort(x)　 #　改变ｘ
+</code></pre>
+</div>
+
+<h5 id="section-68">对矩阵Ｘ进行排序</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.sort(X)　#　对每行进行排序，默认axis=1
+</code></pre>
+</div>
+
+<h4 id="section-69">排序及索引</h4>
+
+<h5 id="section-70">排序后显示索引</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.argsort(x)
+</code></pre>
+</div>
+
+<h5 id="section-71">以９分割所有的数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.partition(x, 9)　#　9左右两边不一定有序
+</code></pre>
+</div>
+
+<h5 id="section-72">以９分割所有的数以索引方式显示</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.argpartition(x, 9)
+</code></pre>
+</div>
+
+<h4 id="fancy-indexing">Fancy Indexing</h4>
+
+<h5 id="x--nparange16-1">x = np.arange(16)</h5>
+<p>##### X = x.reshape(4, -1)</p>
+
+<h5 id="section-73">访问向量ｘ索引为３，５，８的元素的值</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ind = [3, 5, 8]
+x[ind]
+</code></pre>
+</div>
+
+<h5 id="section-74">按照索引从ｘ中取出值，并排列成矩阵</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ind = np.array([[0,2],[1,3]])
+x[ind]
+</code></pre>
+</div>
+
+<h5 id="section-75">从矩阵Ｘ中取出(0,1),(1,2),(2,3)这几个点</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>row = np.array([0,1,2])
+col = np.array([1,2,3])
+x[row, col]
+</code></pre>
+</div>
+
+<h5 id="bool023">用bool从１到３行中取出0,2,3列</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>col = [True, False, True, True]
+X[1:3,　col]
+</code></pre>
+</div>
+
+<h4 id="numpyarray">numpy.array比较</h4>
+
+<h5 id="x--nparange16-2">x = np.arange(16)</h5>
+
+<h5 id="x--xreshape4--1">X = x.reshape(4, -1)</h5>
+
+<h5 id="x3bool">向量x&lt;3的值用bool函数表示</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>x &lt; 3
+</code></pre>
+</div>
+
+<h5 id="bool">矩阵Ｘ&gt;6的值用bool函数表示</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X&gt;6
+</code></pre>
+</div>
+
+<h5 id="section-76">计算向量ｘ中&gt;３的数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.sum(x&gt;3)
+</code></pre>
+</div>
+
+<h5 id="section-77">计算向量ｘ中&gt;=３的数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.count_nonzero(x&gt;=3)
+</code></pre>
+</div>
+
+<h5 id="section-78">矩阵Ｘ中是否有０元素</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.any(X) #　True　表示存在
+</code></pre>
+</div>
+
+<h5 id="section-79">是否矩阵Ｘ中所有元素都     0</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.all(X&lt;0) # False 表示有数不大于０
+</code></pre>
+</div>
+
+<h5 id="section-80">向量ｘ中&gt;3同时&lt;10的元素个个数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.sum((x&gt;3) &amp; (x&lt;10))
+</code></pre>
+</div>
+
+<h5 id="section-81">向量ｘ中!=0的元素个个数</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>np.sum(~(x==0))
+</code></pre>
+</div>
+
+<h5 id="section-82">取出Ｘ矩阵最后一行可以被３整除的行</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>X[X[:,-1]%3 == 0, :]
+</code></pre>
+</div>
+
+		  </div>
+		  
+ 		  <!--side-->
+		  <div class="col-sm-3">
+		   <div class="sidebar-container">
+<hr>
+<!--tags-->
+<div class="featured-tags">
+		<h5><a href="/tags/">TAGS</a></h5>
+		<div class="sidebar-tags" role="presentation">
+			
+			<a href= "/tags/#numpy" title="numpy" rel="1">
+						numpy(<small>(1)</small>
+				</a>
+			
+			<a href= "/tags/#统计学" title="统计学" rel="1">
+						统计学(<small>(1)</small>
+				</a>
+			
+			<a href= "/tags/#　数学基础" title="　数学基础" rel="1">
+						　数学基础(<small>(1)</small>
+				</a>
+			
+			<a href= "/tags/#mathplotlib" title="mathplotlib" rel="1">
+						mathplotlib(<small>(1)</small>
+				</a>
+			
+		</div>
+</div>
+
+
+
+<hr>
+<div class="featured-tags">
+	<h5><a href="/categories/">CATEGORIES</a></h5>
+	<div class="sidebar-tags" role="presentation">
+		
+		<a href="/categories/#数据分析基础">
+			数据分析基础<small>(1)</small>
+		</a>
+		
+		<a href="/categories/#机器学习基础">
+			机器学习基础<small>(2)</small>
+		</a>
+		
+	</div>
+</div>
+
+<hr>
+</div>
+
+		  </div>
+		
+		</div>
+	   </div>	
+		<footer>
+	<div class="col-xs-12 span9">
+		<p class="text-center">
+			<h5>Know more about<a href="#">gwfp</a>.</h5>
+		</p>
+	</div>
+</footer>
+		
+			<script src="https://code.jquery.com/jquery.js"></script>
+ 	<script src=/static/js/bootstrap.min.js ></script>
+	<script src=/static/js/main.js ></script>
+
+
+ 	</div><!--first row-fluid-->
+   </div><!--end contianer-fluid-->
+</body>
+</html>
