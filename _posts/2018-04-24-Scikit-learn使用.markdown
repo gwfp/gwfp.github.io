@@ -14,7 +14,7 @@ scikit-learn
 	from sklearn.model_selection import train_test_split
 	...
 	X_train, X_test, y_train, y_test = train_test_split(X, y, /
-		test_size=0.5, random_state=666) #test_size默认0.2,seed:666
+	test_size=0.5, random_state=666) #test_size默认0.2,seed:666
 
 ##　算法实现
 
