@@ -11,4 +11,4 @@ Logistic Regression
 
 #### Logistic回归方程
 
-\\(\frac{1}{1+e^{-x}})
+\(\frac{1}{1+e^{-x}})
