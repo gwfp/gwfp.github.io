@@ -7,7 +7,7 @@ tags: [scikit-learn,　函数库]
 scikit-learn
 ==============
 
-##　基础操作
+## 基础操作
 
 ### train_test_split
 
@@ -16,9 +16,9 @@ scikit-learn
 	X_train, X_test, y_train, y_test = train_test_split(X, y, /
 	test_size=0.5, random_state=666) #test_size默认0.2,seed:666
 
-##　算法实现
+## 算法实现
 
-###　KNN算法
+### KNN算法
 
 	训练集: X_train , 结果集:　y_train, 投票个数:k, 输入:Ｘ
 	#初始化
