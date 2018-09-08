@@ -1,7 +1,7 @@
 ---
 layout: post
 category: 机器学习基础
-tags: [统计学,　数学基础]
+tags: [统计学,数学基础]
 ---
 统计学statistics
 ==============
