@@ -10,5 +10,7 @@ Logistic Regression
 ### logistic回归分析
 
 #### Logistic回归方程
+$$
+y = \frac{1}{1+e^{-x}}
+$$
 
-\(\frac{1}{1+e^{-x}})
