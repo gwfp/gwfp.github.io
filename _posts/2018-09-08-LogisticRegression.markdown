@@ -15,6 +15,7 @@ Logistic Regression
 $$
 \widehat{p}=\sigma (\theta ^{T}\cdot x_{b})=\frac{1}{1+e^{-\theta ^{T}\cdot x_{b}}}
 $$
+#### Logistic回归的损失函数
 
 #### 极大似然法(maximum likehood method)
 
