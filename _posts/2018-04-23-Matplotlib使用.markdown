@@ -1,7 +1,7 @@
 ---
 layout: post
 category: 机器学习基础
-tags: [mathplotlib,　函数库]
+tags: [mathplotlib,函数库]
 --- 
 
 mathplotlib
