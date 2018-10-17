@@ -236,7 +236,7 @@ numpy
 	
 ### 聚合操作
 
-####L =np.random.random(100).reshape(10,10)
+#### L =np.random.random(100).reshape(10,10)
 	    
 #### 求矩阵所有项的和
 		
@@ -297,13 +297,17 @@ numpy
 	
 #### X = np.random.randint(10, size=(4,4))
  	    
-#### 乱序向量ｘ
+#### 乱序向量ｘ(乱序原向量)
 
     np.random.shuffle(x)
 
-#### 按索引乱序向量x
+#### 乱序向量x（新建一个新的乱序向量）
 
-	index = np.random.permutation(x)
+	np.random.permutation(x)
+
+#### 乱序向量索引
+
+	index = np.random.permutation(len(x))
 	x[index] #　得到乱序后的矩阵
 
 #### 按索引乱序矩阵Ｘ
