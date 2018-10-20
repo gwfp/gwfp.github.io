@@ -407,3 +407,41 @@ numpy
 #### 取出Ｘ矩阵最后一行可以被３整除的行
 
     X[X[:,-1]%3 == 0, :]
+
+## 数值归一化
+
+> 将所有的数据映射到同一尺度
+
+### x = np.random.randint(0, 100, size=100)
+
+### X = np.random.randint(0,100,(50,2))
+
+### X = np.array(X, dtype=float)
+
+### 最值归一化 normalization
+
+> 将所有数据映射到0-1之间
+$$
+        x_{scale} = \frac{x-x_{min}}{x_{max}-x_{min}}
+$$
+
+1. 适用于分布有明显边界的特征值
+
+2. 受outliner影响大
+
+	x = (x - np.min(x))/(np.max(x)-np.min(x))
+
+	X[:, 0] = (X[:,0] - np.min(X[:, 0]))/(np.max(X[:,0]) - np.min(X[:, 0]))
+
+### 均值方差归一化 standardization
+
+> 将所有数据归一到均值为0方差为1的分布中（x_mean为均值 S为方差）
+$$
+        x_{scale} = \frac{x-x_{mean}}{S}
+$$
+
+1. 适用于分布没有明显的边界
+
+2. 有可能存在极端数据值
+
+	X[:, 0] = (X[:,0] - np.mean(X[:, 0]))/np.std(X[:,0])

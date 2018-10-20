@@ -81,8 +81,11 @@ scikit-learn
 	knn_clf.prdict(X_test)
         knn_clf.score(X_test, y_test)
 	
+### 数据归一化
 
-#### LogisticRegression
+
+
+### LogisticRegression
 
 	
 
