@@ -141,6 +141,35 @@ $$
 		score = sum(y_true == y_predict) / len(y_true)
 		return score	
 	
+### preproceing | 数值归一化 
+
+	import numpy as np
+
+	class StandardScaler:
+
+ 	       	def __init__(self):
+        	        self.mean_ = None
+               		self.scale_ = None
+
+		def fit(self, X):
+                	assert X.ndim == 2, "The dimension of X must be 2"
+
+                	self.mean_ = np.array([np.mean(X[:,i]) for i in range(X.shape[1])])
+                	self.scale_ = np.array([np.std(X[:,i]) for i in range(X.shape[1])])
+                	return self
+
+		def transform(self, X):
+	                '''将X根据StandarScaler进行均值方差归一化处理'''
+        	        assert X.ndim == 2, "The dimension of X must be 2"
+        	        assert self.mean_ is not None and self.scale_ is not None, \
+                	        "must fit before transform!"
+			assert X.shape[1] == len(self.mean_)
+
+	                resX = np.empty(shape=X.shape, dtype=float)
+        	        for col in range(X.shape[1]):
+                	        resX[:, col] = (X[:,col] - self.mean_[col]) / self.scale_[col]
+          	        return resX
+
 
 ### KNNtest | 测试
 
@@ -152,6 +181,7 @@ $$
 
 	from model_selection import train_test_split
 	from KNN import KNNClassifier
+	from preprocessing import StandardScaler
 
 
 	def main():
@@ -159,13 +189,29 @@ $$
 		X = iris.data
 		y = iris.target 
 	
+		#对数据集进行分割
 		X_train, X_test, y_train , y_test = train_test_split(X, y, 0.2)
 
-		my_knn_clf = KNNClassifier(k=3)
-		my_knn_clf.fit(X_train, y_train)
+		#对X_train进行数据归一化
+	        standardScaler = StandardScaler()
+	        standardScaler.fit(X_train)
+	        X_train = standardScaler.transform(X_train)
 
-		score = my_knn_clf.score(X_test, y_test)
-		print(sore)
+		#对X_test进行数据归一化（应使用X_train的mean和Scale，待改进）
+ 	        standardScalertest = StandardScaler()
+		standardScalertest.fit(X_test)
+	        X_test = standardScalertest.transform(X_test)
+	
+		#KNN计算
+	        my_knn_clf = KNNClassifier(k=3)
+	        my_knn_clf.fit(X_train, y_train)
+		
+		#预测结果
+	        y_predict = my_knn_clf.predict(X_test)
+
+		#预测准确度得分
+	        score1 = my_knn_clf.score(X_test, y_test)
+	        print(score1)
 
 	if __name__ == '__main__':
 		main()

@@ -16,6 +16,10 @@ scikit-learn
 	X_train, X_test, y_train, y_test = train_test_split(X, y, /
 	test_size=0.5, random_state=666) #test_size默认0.2,seed:666
 
+### 数据归一化StandardScaler
+
+	
+
 ## 算法实现
 
 ### KNN算法
@@ -81,7 +85,6 @@ scikit-learn
 	knn_clf.prdict(X_test)
         knn_clf.score(X_test, y_test)
 	
-### 数据归一化
 
 
 
