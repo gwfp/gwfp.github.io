@@ -18,7 +18,13 @@ scikit-learn
 
 ### 数据归一化StandardScaler
 
+	from sklearn.preprocessing import StandardScaler
 	
+	'''数据归一化'''
+        standardScaler = StandardScaler()
+        standardScaler.fit(X_train)
+        X_train = standardScaler.transform(X_train)
+        X_test_standard = standardScaler.transform(X_test)
 
 ## 算法实现
 

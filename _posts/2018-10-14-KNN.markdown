@@ -197,10 +197,8 @@ $$
 	        standardScaler.fit(X_train)
 	        X_train = standardScaler.transform(X_train)
 
-		#对X_test进行数据归一化（应使用X_train的mean和Scale，待改进）
- 	        standardScalertest = StandardScaler()
-		standardScalertest.fit(X_test)
-	        X_test = standardScalertest.transform(X_test)
+		#对X_test进行数据归一化（使用X_train的mean和Scale）
+	        X_test = standardScaler.transform(X_test)
 	
 		#KNN计算
 	        my_knn_clf = KNNClassifier(k=3)
