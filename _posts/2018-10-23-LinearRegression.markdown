@@ -44,15 +44,27 @@ $$
 > 即找到a,b使得(1.4)最小
 
 > 分别对a和b进行求导
-$$
-	\frac{\delta J(a,b)}{\delta a} = 0	(1.5)
-$$
 
+> 对b求导
 $$
-	\frac{\delta J(a,b)}{\delta b} = 0	(1.6)	\\
+	\frac{\delta J(a,b)}{\delta b} = 0	(1.5)	\\
 	=> \sum_{i=1}^{m}2(y_{(i)}-ax_{(i)}-b)(-1) = 0  \\
-	=> \sum_{i=1}^{m}(y_{(i)}-ax_{(i)}-b) = 0       \\
-	=> \sum_{i=1}^{m}(y_{(i)})-a\sum_{i=1}^{m}(x_(i))-\sum_{i=1}^{m}b = 0 \\	=> 
+	=> \sum_{i=1}^{m}(y_{(i)}-ax_{(i)}-b) = 0        \\
+	=> \sum_{i=1}^{m}(y_{(i)})-a\sum_{i=1}^{m}(x_{(i)})-\sum_{i=1}^{m}b = 0 \\	=> mb = \sum_{i=1}^{m}(y_{(i)})-a\sum_{i=1}^{m}(x_{(i)})  \\
+	=> b = \bar{y}-a\bar{x}  （1.6）
 $$
 
+> 对a求导
+$$
+	\frac{\delta J(a,b)}{\delta a} = 0	(1.7)   \\
+	=>  \sum_{i=1}^{m}2(y_{(i)}-ax_{(i)}-b)(-x_{(i)}) = 0	\\
+	=> \sum_{i=1}^{m}(y_{(i)}-ax_{(i)}-b)x_{(i)} = 0	 （1.8）\\
+	=> 将（1.6） 带入 （1.8）   \\
+	=> \sum_{i=1}^{m}(y_{(i)}-ax_{(i)}-\bar{y}-a\bar{x})x_{(i)} = 0  \\
+	=> a = \frac{\sum_{i=1}^{m}(x_{i}y_{(i)}-x_{(i)}\bar{y})}{\sum_{i=1}^{m}((x_{(i)})^2-\bar{x}x_{(i)})} 	(1.9.1) \\
+	=> \sum_{i=1}^{m}x_{(i)}\bar{y} = \bar{y}\sum_{i=1}^{m}x_{(i)}=m\bar{y}\bar{x}= \bar{x}\sum_{i=1}^{m}y_{(i)}=\sum_{i=1}^{m}y_{(i)}\bar{x} \\
+	=> m\bar{y}\bar{x}=\sum_{i=1}^{m}\bar{x}\bar{y} \\
+	=> a = \frac{\sum_{i=1}^{m}(x_{i}y_{(i)}-x_{(i)}\bar{y}-\bar{x}y_{(i)}+\bar{x}\bar{y})}{\sum_{i=1}^{m}((x_{(i)})^2-\bar{x}x_{(i)}-\bar{x}x_{(i)}+\bar{x}^2)}  \\
+	=> a = \frac{\sum_{i=1}^{m}(x_{i}-\bar{x})(y_{(i)}-\bar{y})}{\sum_{i=1}^{m}(x_{(i)}-\bar{x})^2} 	(1.9.2) 
+$$
 
