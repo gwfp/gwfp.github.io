@@ -46,16 +46,13 @@ $$
 > 分别对a和b进行求导
 $$
 	\frac{\delta J(a,b)}{\delta a} = 0	(1.5)
-	
-	
-	
 $$
 
 $$
-	\frac{\delta J(a,b)}{\delta b} = 0	(1.6)
-	=> \sum_{i=1}^{m}2(y_{(i)}-ax_{(i)}-b)(-1) = 0
-	=> \sum_{i=1}^{m}(y_{(i)}-ax_{(i)}-b) = 0
-	=> \sum_{i=1}^{m}(y_{(i)})-a\sum_{i=1}^{m}(x_(i))-\sum_{i=1}^{m}b = 0
+	\frac{\delta J(a,b)}{\delta b} = 0	(1.6)	\\
+	=> \sum_{i=1}^{m}2(y_{(i)}-ax_{(i)}-b)(-1) = 0  \\
+	=> \sum_{i=1}^{m}(y_{(i)}-ax_{(i)}-b) = 0       \\
+	=> \sum_{i=1}^{m}(y_{(i)})-a\sum_{i=1}^{m}(x_(i))-\sum_{i=1}^{m}b = 0 \\	=> 
 $$
 
 
