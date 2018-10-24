@@ -16,15 +16,33 @@ $$
 
 > y has to be explained/forecasted on the basis of one single independent variable, x.(y and x both are interval variables)
 
-> 假设我们找到了z最佳拟合直线方程 
+> 假设我们找到了最佳拟合直线方程 
 $$
-    y_{i} = ax_{i} + b,
+    y_{i} = ax_{i} + b, (1.0)
 $$
-> 对于每个样本点\\(x^{i}) ，线性试图回归学得
+
+> 对于每个样本点
 $$
-        \hat{y}^{i} = a x_{i} +b 使得 \hat{y}^{i} \cong y_{i}	
+  (x^{i})     (1.1)
 $$
+
+>，线性试图回归学得
+$$
+        \hat{y}_{i} = a x_{i} +b 使得 \hat{y}_{i} \cong y_{i}  (1.2)	
+$$
+
 > 使用“最小二乘法” 使得均方差最小化
+$$
+	\sum_{i-1}^{m}(y_{i} - \hat{y}_{i})^2   (1.3)
+$$
+> 尽可能小
+
+>  将（1.2）带入 （1.3）
+$$
+	\sum_{i-1}^{m}(y_{i} - ax_{i}+b)^2  (1.4)
+$$
+> 即找到a,b使得(1.4)最小
+
 
 
 
