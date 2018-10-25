@@ -16,6 +16,8 @@ $$
 
 > y has to be explained/forecasted on the basis of one single independent variable, x.(y and x both are interval variables)
 
+### 简单线性回归函数推导
+
 > 假设我们找到了最佳拟合直线方程 
 $$
     y_{i} = ax_{i} + b, (1.0)
@@ -68,3 +70,89 @@ $$
 	=> a = \frac{\sum_{i=1}^{m}(x_{i}-\bar{x})(y_{(i)}-\bar{y})}{\sum_{i=1}^{m}(x_{(i)}-\bar{x})^2} 	(1.9.2) 
 $$
 
+### 简单线性回归实现
+
+	import numpy as np
+
+	
+	class SimpleLinearRegression:
+	
+		def __init__(self):
+			'''初始化Simple Linear Regression 模型'''
+			self.a_ = None
+			self.b_ = None
+
+		def fit(self, x_train, y_train):
+			assert x_train.ndim ==1, \
+				"Simple Linear Regressor can only solve single feature taining data."
+			assert len(x_train) == len(y_train), \
+				"the size of x train must be equal to the size of y train"
+	
+			x_mean = np.mean(x_train)
+			y_mean = np.mean(y_train)
+
+			#向量积的方法, 带了性能的提升
+			num = (x_train - x_mean).dot(y_train - y_mean)
+			d = (x_train - x_mean).dot(x_train - x_mean)
+		
+			self.a_ = num / d
+			self.b_ = y_mean - self.a_ * x_mean
+
+			return self
+
+		def predict(self, x_predict):
+			'''给定待预测数据集x_predict, 返回表示x_predict的结果向量'''
+			assert x_predict.ndim == 1,  \
+				"Simple Linear Regressior can only solve single feature training data."
+			assert self.a_ is not None and self.b_ is not None, \
+				"must fit before predict!"
+		
+			return np.array([self._predict(x) for x in x_predict])
+
+		def _predict(self, x_single):
+			'''给定单个待预测数据x_single, 返回x的预测结果值'''
+			return self.a_ * x_single + self.b_
+
+		def __repr__(self):
+			return "SimpleLinearRegression()"
+
+	
+	def main():
+		x = np.array([1., 2., 3., 4., 5.])
+		y = np.array([1., 3., 2., 3., 5.])
+	
+		reg1 = SimpleLinearRegression()
+		reg1.fit(x, y)
+
+		print("a=",reg1.a_,",b=",reg1.b_)
+		x_predict = 6	
+		print(reg1.predict(np.array([x_predict])))
+
+	if __name__ == '__main__':
+		main()
+
+
+## 回归函数的准确度
+
+### 均方误差 MSE （Mean Squared Error）
+$$
+	MSE = \frac{1}{m}\sum_{i=1}^{m}(y_{test}^{(i)}-\hat{y}_{test}^{(i)})^{2}
+$$
+
+### 均方根物产 RMSE （Root Mean Squared Error）
+$$
+	RMSE = \sqrt{MSE} = \sqrt{\frac{1}{m}\sum_{i=1}^{m}(y_{test}^{(i)}-\hat{y}_{test}^{(i)})^{2}}
+$$
+
+### 平均绝对误差 MAE （Mean Absolute Error）
+$$
+	MAE = \frac{1}{m}\sum_{i=1}^{m}\left | y_{test}^{(i)}-\hat{y}_{test}^{(i)} \right |
+$$
+
+### R Squared
+$$
+	R^2 = 1-\frac{SS_{residual}}{SS_{total}} \\
+	= 1-\frac{\sum_{i=1}^{m}(\hat{y}_{(i)}-y_{(i)})^2}{\sum_{i=1}^{m}(\bar{y}-y_{(i)})^2} \\
+	= 1-\frac{\sum_{i=1}^{m}(\hat{y}_{(i)}-y_{(i)})^2/m}{\sum_{i=1}^{m}(\bar{y}-y_{(i)})^2/m} \\
+	= 1-\frac{MSE(\hat{y}, y)}{Var(y)} 
+$$
