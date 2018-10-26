@@ -73,7 +73,8 @@ $$
 ### 简单线性回归实现
 
 	import numpy as np
-
+	
+	from metrics import r2_score
 	
 	class SimpleLinearRegression:
 	
@@ -112,6 +113,10 @@ $$
 		def _predict(self, x_single):
 			'''给定单个待预测数据x_single, 返回x的预测结果值'''
 			return self.a_ * x_single + self.b_
+		
+		def score(self, x_test, y_test):
+                	y_predict = self.predict(x_test)
+                	return r2_score(y_test, y_predict)
 
 		def __repr__(self):
 			return "SimpleLinearRegression()"
@@ -139,7 +144,7 @@ $$
 	MSE = \frac{1}{m}\sum_{i=1}^{m}(y_{test}^{(i)}-\hat{y}_{test}^{(i)})^{2}
 $$
 
-### 均方根物产 RMSE （Root Mean Squared Error）
+### 均方根误差 RMSE （Root Mean Squared Error）
 $$
 	RMSE = \sqrt{MSE} = \sqrt{\frac{1}{m}\sum_{i=1}^{m}(y_{test}^{(i)}-\hat{y}_{test}^{(i)})^{2}}
 $$
@@ -156,3 +161,34 @@ $$
 	= 1-\frac{\sum_{i=1}^{m}(\hat{y}_{(i)}-y_{(i)})^2/m}{\sum_{i=1}^{m}(\bar{y}-y_{(i)})^2/m} \\
 	= 1-\frac{MSE(\hat{y}, y)}{Var(y)} 
 $$
+
+1. R^2 <= 1。R^2 越大越好, 当预测的模型完全拟合数据时,R^2得到最大值1。
+2. R^2 = 0 当模型的差错等于基准模型的差错时R^2为0。
+3. R^2 < 0 很有可能我们的数据不存在任何线性关系。
+
+### 准确度计算的实现
+
+	def mean_squared_error(y_true, y_predict):
+        	'''计算 MSE'''
+        	assert len(y_true) == len(y_predict), \
+	          "the size of y_true must be equal to the size of y_predict"
+
+	        return np.sum((y_true - y_predict) ** 2) / len(y_true)
+
+	def root_mean_squared_error(y_true, y_predict):
+	        '''计算 RMSE'''
+	        return sqrt(mean_squared_error(y_true, y_predict))
+
+	def mean_absolute_error(y_true, y_predict):
+	        assert len(y_true) == len(y_predict), \
+	          "the size of y_true must be equal to the size of y_predict"
+
+	        return np.sum(np.absolute(y_true - y_predict)) / len(y_true)
+
+	def r2_score(y_true, y_predict):
+	        '''计算y_true和y_predict之间的R Square'''
+
+	        return 1 - mean_squared_error(y_true, y_predict)/np.var(y_true)
+
+
+

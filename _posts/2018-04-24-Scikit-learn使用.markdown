@@ -26,6 +26,11 @@ scikit-learn
         X_train = standardScaler.transform(X_train)
         X_test_standard = standardScaler.transform(X_test)
 
+### 准确度
+
+	from sklearn.metrics import r2_score
+	r2_score(y_test, y_predict)	
+
 ## 算法实现
 
 ### KNN算法
