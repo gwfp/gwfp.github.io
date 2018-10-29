@@ -137,6 +137,37 @@ $$
 		main()
 
 
+## 多元线性回归
+
+> 存在
+$$
+	\hat{y} = X_{b}\cdot \theta 
+$$
+
+> 使得
+$$
+        \sum_{i=1}^{m}(y_{i} - \hat{y}_{i})^2   (2.1)
+$$
+> 尽可能小
+
+> 其中
+$$
+	X_{b}=\begin{bmatrix}
+ 	1  X_{1}^{(1)}  ...  X_{n}^{(1)}  \\ 
+ 	1  X_{1}^{(1)}  ...  X_{n}^{(1)}  \\ 
+  	...............  ...                 \\ 
+ 	1  X_{1}^{(1)}  ...  X_{n}^{(1)} 
+	\end{bmatrix}   \\
+
+	\theta=\begin{bmatrix}
+	\theta _{0}\\ 
+	\theta _{1}\\ 
+	...\\ 
+	\theta _{n}\\ 
+	\end{bmatrix}
+$$
+
+
 ## 回归函数的准确度
 
 ### 均方误差 MSE （Mean Squared Error）
