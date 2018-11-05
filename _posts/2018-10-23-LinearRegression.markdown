@@ -257,5 +257,5 @@ $$
 
 	        return 1 - mean_squared_error(y_true, y_predict)/np.var(y_true)
 
-
+## 线性回归对数据的可解释性
 
