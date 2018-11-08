@@ -43,5 +43,36 @@ $$
 	J(\theta ) = MSE(y,\hat{y})=\frac{1}{m}\sum_{i=1}^{m}(y_{i} - \hat{y}_{i})^2 
 $$
 
+### 线性回归中梯度下降法的向量表示
+
+$$
+	\bigtriangledown J (\theta ) = \frac{m}{2}\cdot X_{b}^{T}\cdot (X_{b}\theta - y)
+$$
+
+### 批量梯度下降法 Batch Gradient Descent
+
+$$
+	J(\theta _{n})- J(_{n-1}) < \epsilon 
+$$
+
+### 随机梯度下降法 Stochastic Gradient Descent
+
+> 模拟退火 ：学习率随时间增加逐渐递减
+$$
+	\eta = \frac{ t_{0}}{i _ iters - t_{1}}
+$$
+
+## 小批量梯度下降法 Mini-Batch Gradient Descent
+
+## 梯度的调试
+
+> 模拟出对应曲线上某一点的导数
+$$
+	\frac{dJ}{d\theta } =\frac{J(\theta - \varepsilon ) - J(\theta + \varepsilon )}{2\varepsilon }
+$$
+
+
+
+
 
 

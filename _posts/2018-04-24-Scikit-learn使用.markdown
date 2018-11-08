@@ -18,6 +18,11 @@ scikit-learn
 
 ### 数据归一化StandardScaler
 
+> 把所有数据映射到0-1之间
+$$
+	X_{scale} = \frac{x-x_{min}}{x_{max}-x_{min}}
+$$
+
 	from sklearn.preprocessing import StandardScaler
 	
 	'''数据归一化'''
