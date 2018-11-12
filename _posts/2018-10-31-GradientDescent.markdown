@@ -62,7 +62,9 @@ $$
 	\eta = \frac{ t_{0}}{i _ iters - t_{1}}
 $$
 
-## 小批量梯度下降法 Mini-Batch Gradient Descent
+### 小批量梯度下降法 Mini-Batch Gradient Descent
+
+> 每一次对 k 个样本进行计算
 
 ## 梯度的调试
 

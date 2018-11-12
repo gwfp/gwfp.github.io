@@ -1,0 +1,11 @@
+---
+layout: post
+category: 机器学习基础
+tags: [PCA,算法,主成分分析]
+---
+
+
+主成分分析法 Principal Component Analysis
+================
+
+
