@@ -31,6 +31,19 @@ $$
         X_train = standardScaler.transform(X_train)
         X_test_standard = standardScaler.transform(X_test)
 
+### 降维
+
+#### PCA
+
+> 用PCA () 方法，对数据进行降维
+
+	from  sklearn.decomposition import PCA
+
+	# 保留90%的维度信息
+	pca = PCA(0.9)
+    	pca.fit(X)
+	X_reduction = pca.transform(X)
+
 ### 准确度
 
 	from sklearn.metrics import r2_score
@@ -101,6 +114,61 @@ $$
 	knn_clf.prdict(X_test)
         knn_clf.score(X_test, y_test)
 	
+
+#### PCA降维后使用KNN
+	
+	# -*- coding: utf-8 -*-
+
+	import numpy as np
+	from sklearn import datasets
+	import matplotlib
+	matplotlib.use('TkAgg')
+	import matplotlib.pyplot as plt
+	from sklearn.model_selection import train_test_split
+	from sklearn.decomposition import PCA
+	from sklearn.neighbors import KNeighborsClassifier
+
+
+	def main():
+		digits = datasets.load_digits()
+		X = digits.data
+		y = digits.target
+
+ 		X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=666)
+
+		'''
+		pca 对数据降维 并保持 95% 的维度信息
+		'''
+		pca = PCA(0.95)
+		pca.fit(X_train)
+		# 计算保留95%维度信息时最多降维到多少维度
+		print(pca.n_components_)
+		X_train_reduction = pca.transform(X_train)
+		X_test_reduction = pca.transform(X_test)
+
+		# 解释方差相应的比例，表示数据能表示百分之多少的数据维持的方差
+		print(pca.explained_variance_ratio_)
+    
+		knn_clf = KNeighborsClassifier()
+		knn_clf.fit(X_train_reduction, y_train)
+
+		score = knn_clf.score(X_test_reduction, y_test)
+		print(score)
+
+		'''
+		将数据降到2维进行可视化
+		'''
+		pca_2 = PCA(n_components=2)
+		pca_2.fit(X)
+		X_reduction =pca_2.transform(X)
+
+		for i in range(10):
+			plt.scatter(X_reduction[y==i,0], X_reduction[y==i,1], alpha=0.8)
+		plt.show()
+
+
+	if __name__ == '__main__':
+		main()
 
 
 
