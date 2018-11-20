@@ -35,13 +35,13 @@ $$
 
 #### PCA
 
-> 用PCA () 方法，对数据进行降维
+> 用PCA (Principal Component Analysis) 方法，对数据进行降维
 
 	from  sklearn.decomposition import PCA
 
 	# 保留90%的维度信息
 	pca = PCA(0.9)
-    	pca.fit(X)
+	pca.fit(X)
 	X_reduction = pca.transform(X)
 
 ### 准确度
@@ -133,8 +133,7 @@ $$
 		digits = datasets.load_digits()
 		X = digits.data
 		y = digits.target
-
- 		X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=666)
+		X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=666)
 
 		'''
 		pca 对数据降维 并保持 95% 的维度信息
