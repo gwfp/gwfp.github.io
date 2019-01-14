@@ -176,7 +176,7 @@ tags: [机器学习]
 
 #### 过拟合(Overfitting)
 
-/Volumes/disport/WorkSpace/githubspace/gwfp.github.io/_posts > 过拟合：算法所训练的数据模型过多地表达了数据间的噪音关系。
+> 过拟合：算法所训练的数据模型过多地表达了数据间的噪音关系。
 
 
 #### 学习曲线
@@ -210,18 +210,22 @@ tags: [机器学习]
 #### 模型正则化 Regularization
 
 > 限制参数的大小
+$$
+L1 正则项: \alpha \frac{1}{2}\sum_{i=1}^{n}\theta _{i}^{2}	\
+L2 正则项：\alpha \sum_{i=1}^{n}\left | \theta _{i} \right |
+$$
 
-> 岭回归 Ridge Regression ：使下式尽可能小
+> 岭回归 Ridge Regression ：使下式尽可能小	\
 $$
 	J(\theta )=MSE(y,\hat{y}|\theta )+\alpha \frac{1}{2}\sum_{i=1}^{n}\theta _{i}^{2}
 $$
 
-> LASSO Regression: 使下式尽可能小
+> LASSO Regression: 使下式尽可能小	\
 $$
 	J(\theta )=MSE(y,\hat{y}|\theta )+\alpha \sum_{i=1}^{n}\left | \theta _{i} \right |
 $$
 
-> 弹性网 Elastic Net ：
+> 弹性网 Elastic Net ：		\
 $$
 	J(\theta )=MSE(y,\hat{y}|\theta )+r\alpha \sum_{i=1}^{n}\left | \theta _{i} \right | + \frac{1-r}{2}\alpha \sum_{i=1}^{n}\theta _{i}^{2}
 $$

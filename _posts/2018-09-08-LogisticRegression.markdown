@@ -44,3 +44,12 @@ $$
 > 设样本出现的概率为P，令似然函数取最大值是的P，称作“极大似然估计值”
 
 ### 决策边界 Decision Boundary
+
+$$
+	\hat{p}=\sigma (\theta ^{T}\cdot x_{b})=\frac{1}{1+e^{-\theta ^{T}\cdot x_{b}}}		\\
+	\hat{y} = 1 ==> \hat{p} >= 0.5 ==> \theta ^{T}\cdot x_{b} >= 0	\\
+	\hat{y} = 1 ==> \hat{p} < 0.5 ==> \theta ^{T}\cdot x_{b} < 0  \\
+	决策边界：\theta ^{T}\cdot x_{b} = 0
+$$
+
+
