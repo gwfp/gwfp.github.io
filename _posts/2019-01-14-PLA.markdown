@@ -1,0 +1,50 @@
+---
+layout: post
+category: 机器学习基础
+tags: [Percetron,感知学习,算法]
+---
+
+
+感知学习算法  Percetron Learning Algorithm
+================
+
+##  PLA 的分析原则
+
+> 解决的是对于二维或者高维的 线性可分 问题的分类，最终将问题分为两类——是或者不是。
+
+## PLA的目标
+
+### 目标函数
+
+$$
+	h(x)=sign((\sum_{i=1}^{d}w_{i}x_{i})-threshold)  \
+	    =sign((\sum_{i=1}^{d}w_{i}x_{i})-(threshold)\cdot (+x_{0}))
+	    =sign(\sum_{i=0}^{d}w_{i}x_{i})
+	    =sign(w^{T}x)
+$$
+
+### 学习过程
+
+#### start from some w0,and 'correct' its mistakes on D
+
+####  linear separable:
+ 
+> for t = 0,1,...
+  1. find a mistake of wt called (Xn(t), yn(t))
+$$
+	=sign(w^{T}x) != yn(t)
+$$
+  2. correct the mistake by
+$$
+	w_{t+1} <- w_{t} + y_{n(t)}X_{n(t)}
+$$
+...untile no more mistakes
+return last w(called w(PLA)) as g
+
+$$
+	D <=> exist perfect w_{t} such that yn = sign(w_{n}^{T}X_{n})
+$$
+
+#### not linear separable:
+
+
