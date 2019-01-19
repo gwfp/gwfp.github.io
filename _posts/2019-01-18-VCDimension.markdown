@@ -31,8 +31,32 @@ $$
 	P_{D} = [D_{BAD}]	\\
 	      = P_{D}[D1_{BAD}^{H_{1}} or D2_{BAD}^{H_{2}} or ... or DM_{BAD}^{H_{M}}]	\\
 	      \leqslant  P_{D}[D1_{BAD}^{H_{1}}]+P_{D}[D2_{BAD}^{H_{1}}]+...+P_{D}[DM_{BAD}^{H_{M}}]	\\
-	      \leqslant  2e^{-2\epsilon ^{2}N}+2e^{-2\epsilon ^{2}N}+...+2e^{-2\epsilon ^{2}N}	\\
-	      = 2Me^{-2\epsilon ^{2}N} 
+	      \leqslant  2e^{-2\epsilon ^{2}N}+2e^{-2\epsilon ^{2}N}+...+2e^{-2\epsilon ^{2}N} 		\\
+	      = 2Me^{-2\epsilon ^{2}N}	(1) 
 $$
 
+> 样本M情况下，接受一定忍受度情况下，需要最小的N(样本)
+$$
+	忍受度为\delta，错误差为\epsilon，样本数为M	\\
+	N=\frac{1}{2\epsilon^{2}}ln\frac{2M}{\delta } 
+$$
+
+## 当数据整体是无限的
+
+> 1.公式(1)使用了union bound方法，缺点是没有考虑到每个抽样中BAD重叠的问题。当整体数据量无限大时，会导致上限过分大。\\
+  2.如果两个hypothesis非常接近(h1,h2),那么有很大几率Ein(h1)=Ein(h2) \\
+  3.将这些hypothesis归类。
+
+### 成长函数  Growth Function
+ 
+> 1.假设平面上所有的线都是一个hypothesis。（H' = {all lines in R^2}），此时有无限多条线，也就有无限多个hypothesis。对平面上N个点进行分类，将Ein=Eout的hypothesis进行合并形成dichotomy，上限为2^N.	\\
+  2.使用mH'(N)替换公式（1）中的M \\
+  3.mH'(N) 就是成长函数上限为 2^N
+$$
+	m_{H'}(N)=\underset{x_{1},x_{2}...x_(N)}{max}\left | H'(x_{1},x_{2}...x_(N)) \right |
+$$
+
+
+
+ 
 
