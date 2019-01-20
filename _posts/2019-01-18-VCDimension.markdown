@@ -47,16 +47,90 @@ $$
   2.如果两个hypothesis非常接近(h1,h2),那么有很大几率Ein(h1)=Ein(h2) \\
   3.将这些hypothesis归类。
 
+### effective number of line
+
+> 一般情况下有效的分类线会小于M，所以现在我们可以做出一个重要的式子变换，用effective(N)来代替公式(1)中的M。
+$$
+	P[|E_{in}(g)-E_{out}(g)|>\epsilon ]\leqslant 2\cdot M\cdot e^{-2\epsilon ^{2}N}	\\
+	=> P[|E_{in}(g)-E_{out}(g)|>\epsilon ]\leqslant 2\cdot effective(N)\cdot e^{-2\epsilon ^{2}N}	\\
+	\\
+	effective(N) < 2^{N}
+$$
+当N足够大时候
+$$
+	2\cdot effective(N)\cdot e^{-2\epsilon ^{2}N}
+$$
+趋向于0.说明
+$$
+	P[|E_{in}(g)-E_{out}(g)|>\epsilonz]
+$$
+发生坏事的几率很低。
+
 ### 成长函数  Growth Function
  
-> 1.假设平面上所有的线都是一个hypothesis。（H' = {all lines in R^2}），此时有无限多条线，也就有无限多个hypothesis。对平面上N个点进行分类，将Ein=Eout的hypothesis进行合并形成dichotomy，上限为2^N.	\\
+> 1.假设平面上所有的线都是一个hypothesis。（H' = {all lines in R^2}），此时有无限多条线，也就有无限多个hypothesis。对平面上N个点进行分类，将Ein=Eout的hypothesis进行合并形成dichotomy，dichotomies根据平面上点的不同进行取值，此时dochotomies上限为2^N.	\\
   2.使用mH'(N)替换公式（1）中的M \\
-  3.mH'(N) 就是成长函数上限为 2^N
+  3.mH'(N) 就是成长函数，hypothesis在N个点上能产生多少dichotomy。
+
+#### growth function
+> 1.从点出发来看，得到线的的种类是有限的(maximum kinds of lines with respect to N inputs x1, x2,...,xn <=> effective number of lines)
+  2.某个数量的点可能在不同情况下，出现不同的分割种类的数量（三个点不共线时一条线可有8种不同的情形将点分割为两个部分，但共线情况下有两种情况无法优一条线分割，所以只有6种情况），以最多的那种情况计算(三个点时记8种)。
 $$
 	m_{H'}(N)=\underset{x_{1},x_{2}...x_(N)}{max}\left | H'(x_{1},x_{2}...x_(N)) \right |
 $$
 
+### 成长函数中的Break Point
+
+> 从第k个点开始，无法做出所有的dichotomy,即开始出现某种点排列的情形无法用一个dichotomy分割(if no k inputs can be shattered by H',call k a break posint for H).
+$$
+	m_{H'}(k) < 2^{k}
+$$
+
+> break point 与 成长函数的复杂度有关
+$$
+	m_{H'}(N) = O(N^{k-1})
+$$
+
+#### positive rays
+
+> 成长函数
+$$
+	m_{H'}(N) = N + 1
+$$
+
+> break point : 2	\\
+  当N=1的时候，1+1=2^1,两边相等；当N=2的时候，2+1<2^2两边不等，所以break point就是2。
+
+> 成长复杂度：O(N^{2-1})=O(N)
+
+#### positive intervals
+
+> 成长函数
+$$
+	m_{H'}(N) = C_{n+1}^{2} + 1 	\\
+		  = \frac{1}{2}N^{2}+\frac{1}{2}N+1
+$$
+
+> break point : 3
+
+#### convex set
+
+>成长函数
+$$
+	m_{H'}(N) = 2^{N}
+$$
+
+> break point ： no break point
+
+#### 2D perceptrons
+
+> 成长函数，in some cases(N<4)。
+$$
+	m_{H'}(N) < 2^{N}
+$$ 
+
+> break point : 4
 
 
- 
+
 
