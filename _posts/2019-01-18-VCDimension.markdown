@@ -62,7 +62,7 @@ $$
 $$
 趋向于0.说明
 $$
-	P[|E_{in}(g)-E_{out}(g)|>\epsilonz]
+	P[|E_{in}(g)-E_{out}(g)|>\epsilon]
 $$
 发生坏事的几率很低。
 
@@ -73,7 +73,7 @@ $$
   3.mH'(N) 就是成长函数，hypothesis在N个点上能产生多少dichotomy。
 
 #### growth function
-> 1.从点出发来看，得到线的的种类是有限的(maximum kinds of lines with respect to N inputs x1, x2,...,xn <=> effective number of lines)
+> 1.从点出发来看，得到线的的种类是有限的(maximum kinds of lines with respect to N inputs x1, x2,...,xn <=> effective number of lines)	\\
   2.某个数量的点可能在不同情况下，出现不同的分割种类的数量（三个点不共线时一条线可有8种不同的情形将点分割为两个部分，但共线情况下有两种情况无法优一条线分割，所以只有6种情况），以最多的那种情况计算(三个点时记8种)。
 $$
 	m_{H'}(N)=\underset{x_{1},x_{2}...x_(N)}{max}\left | H'(x_{1},x_{2}...x_(N)) \right |
@@ -86,9 +86,36 @@ $$
 	m_{H'}(k) < 2^{k}
 $$
 
-> break point 与 成长函数的复杂度有关
+> break point 与 成长函数的复杂度有关:从这个点开始，增长函数增速开始放缓了。
 $$
 	m_{H'}(N) = O(N^{k-1})
+$$
+
+### Bounding Function
+
+> 成长函数最多有多少种可能(maximum possible m_(H')(N) when break point = k).
+$$
+	B(N,k) \leqslant \sum_{i=0}^{k-1}C_{n}^{i}	(2)
+$$
+
+> Vapnik-Cervonenkis(VC) bound: When N large enough, Bad Bound for Grneral H‘.
+$$
+	P[\exists h \in h's.t.|E_{in}(h)-E_{out}(h)|>\epsilon ]\leqslant 4m_{h'}(2N)\cdot e^{-\frac{1}{8}\epsilon ^{2}N}
+$$
+
+### Recap:More on Grow Function
+
+> when break point = k.
+$$
+	\sum_{i=0}^{k-1}C_{n}^{i}\leqslant N^{k-1}
+$$
+
+> For any g=A(D) in H' and 'statistical' large D.
+$$
+	P_{D}[|E_{in}(g)-E_{out}(g)|>\epsilon ]	\\
+	\leqslant P[\exists h \in h's.t.|E_{in}(h)-E_{out}(h)|>\epsilon]  \\
+	\leqslant 4m_{h'}(2N)\cdot e^{-\frac{1}{8}\epsilon ^{2}N}	\\
+	\leqslant 4(2N)^{k-1}\cdot e^{-\frac{1}{8}\epsilon ^{2}N}
 $$
 
 #### positive rays
@@ -130,7 +157,6 @@ $$
 $$ 
 
 > break point : 4
-
 
 
 
