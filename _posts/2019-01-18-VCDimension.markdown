@@ -91,11 +91,32 @@ $$
 	m_{H'}(N) = O(N^{k-1})
 $$
 
+### Recap:More on Grow Function
+> when break point = k.	\\
+$$
+	\sum_{i=0}^{k-1}C_{n}^{i}\leqslant N^{k-1}
+$$
+
+> For any g=A(D) in H' and 'statistical' large D.if k exists and k>3:
+$$
+	P_{D}[|E_{in}(g)-E_{out}(g)|>\epsilon ]	\\
+	\leqslant P[\exists h \in h's.t.|E_{in}(h)-E_{out}(h)|>\epsilon]  \\
+	\leqslant 4m_{h'}(2N)\cdot e^{-\frac{1}{8}\epsilon ^{2}N}	\\
+	\leqslant 4(2N)^{d_{VC}}\cdot e^{-\frac{1}{8}\epsilon ^{2}N}	\\	
+$$
+
 ### Bounding Function
 
 > 成长函数最多有多少种可能(maximum possible m_(H')(N) when break point = k).
 $$
 	B(N,k) \leqslant \sum_{i=0}^{k-1}C_{n}^{i}	(2)
+$$
+
+### VC-Dimension
+
+> 最大的no-break point点（theformal name of maximum non-break point,the most inputs H' that can shatter.)
+$$
+	d_{VC} = 'k_{minimum}'-1
 $$
 
 > Vapnik-Cervonenkis(VC) bound: When N large enough, BAD BOUND for Grneral H‘.
@@ -121,28 +142,6 @@ $$
 	E_{out}(g)\leqslant E_{in}(g)+\underset{\Omega (N,H'\delta )}{\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}}	\\
 $$
 ![avatar](https://gwfp.github.io/static/images/190118/VCmessage.png)
-
-### VC-Dimension
-
-> 最大的no-break point点（theformal name of maximum non-break point,the most inputs H' that can shatter.)
-$$
-	d_{VC} = 'k_{minimum}'-1
-$$
-
-### Recap:More on Grow Function
-
-> when break point = k.
-$$
-	\sum_{i=0}^{k-1}C_{n}^{i}\leqslant N^{k-1}
-$$
-
-> For any g=A(D) in H' and 'statistical' large D.if k exists and k>3:
-$$
-	P_{D}[|E_{in}(g)-E_{out}(g)|>\epsilon ]	\\
-	\leqslant P[\exists h \in h's.t.|E_{in}(h)-E_{out}(h)|>\epsilon]  \\
-	\leqslant 4m_{h'}(2N)\cdot e^{-\frac{1}{8}\epsilon ^{2}N}	\\
-	\leqslant 4(2N)^{d_{VC}}\cdot e^{-\frac{1}{8}\epsilon ^{2}N}	\\	
-$$
 
 #### positive raysVC-Dimension
 
