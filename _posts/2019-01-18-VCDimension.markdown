@@ -103,6 +103,27 @@ $$
 	P[\exists h \in h's.t.|E_{in}(h)-E_{out}(h)|>\epsilon ]\leqslant 4m_{h'}(2N)\cdot e^{-\frac{1}{8}\epsilon ^{2}N}
 $$
 
+> VC GOOD probability:set
+$$
+	\delta = 4(2N)^{d_{VC}}\cdot e^{-\frac{1}{8}\epsilon ^{2}N}	\\
+      =>\frac{\delta }{4(2N)^{d_{VC}}}=e^{-\frac{1}{8}\epsilon ^{2}N}	\\
+      =>ln(\frac{4(2N)^{d_{VC}}}{\delta})=\frac{1}{8}\epsilon ^{2}N	\\
+      =>\epsilon =\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\	
+$$
+gen .error
+$$
+	|E_{in}(g)-E_{out}(g)|\leqslant \sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\
+      => E_{in}(g)-\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\ 
+      \leqslant E_{out}	\leqslant E_{in}(g)+\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}
+$$
+
+### VC-Dimension
+
+> 最大的no-break point点（theformal name of maximum non-break point,the most inputs H' that can shatter.)
+$$
+	d_{VC} = 'k_{minimum}'-1
+$$
+
 ### Recap:More on Grow Function
 
 > when break point = k.
@@ -110,15 +131,15 @@ $$
 	\sum_{i=0}^{k-1}C_{n}^{i}\leqslant N^{k-1}
 $$
 
-> For any g=A(D) in H' and 'statistical' large D.
+> For any g=A(D) in H' and 'statistical' large D.if k exists and k>3:
 $$
 	P_{D}[|E_{in}(g)-E_{out}(g)|>\epsilon ]	\\
 	\leqslant P[\exists h \in h's.t.|E_{in}(h)-E_{out}(h)|>\epsilon]  \\
 	\leqslant 4m_{h'}(2N)\cdot e^{-\frac{1}{8}\epsilon ^{2}N}	\\
-	\leqslant 4(2N)^{k-1}\cdot e^{-\frac{1}{8}\epsilon ^{2}N}
+	\leqslant 4(2N)^{d_{VC}}\cdot e^{-\frac{1}{8}\epsilon ^{2}N}	\\	
 $$
 
-#### positive rays
+#### positive raysVC-Dimension
 
 > 成长函数
 $$
@@ -129,6 +150,11 @@ $$
   当N=1的时候，1+1=2^1,两边相等；当N=2的时候，2+1<2^2两边不等，所以break point就是2。
 
 > 成长复杂度：O(N^{2-1})=O(N)
+
+> VC dimension: 1 \\
+$$
+	d_{VC}=k-1=2-1=1
+$$
 
 #### positive intervals
 
