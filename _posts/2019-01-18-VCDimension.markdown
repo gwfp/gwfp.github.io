@@ -98,7 +98,7 @@ $$
 	B(N,k) \leqslant \sum_{i=0}^{k-1}C_{n}^{i}	(2)
 $$
 
-> Vapnik-Cervonenkis(VC) bound: When N large enough, Bad Bound for Grneral H‘.
+> Vapnik-Cervonenkis(VC) bound: When N large enough, BAD BOUND for Grneral H‘.
 $$
 	P[\exists h \in h's.t.|E_{in}(h)-E_{out}(h)|>\epsilon ]\leqslant 4m_{h'}(2N)\cdot e^{-\frac{1}{8}\epsilon ^{2}N}
 $$
@@ -114,8 +114,13 @@ gen .error
 $$
 	|E_{in}(g)-E_{out}(g)|\leqslant \sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\
       => E_{in}(g)-\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\ 
-      \leqslant E_{out}	\leqslant E_{in}(g)+\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}
+      \leqslant E_{out}	\leqslant E_{in}(g)+\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\
 $$
+with a high probability.
+$$
+	E_{out}(g)\leqslant E_{in}(g)+\underset{\Omega (N,H'\delta )}{\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}}	\\
+$$
+
 
 ### VC-Dimension
 
