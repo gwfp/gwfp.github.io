@@ -134,14 +134,34 @@ $$
 gen .error
 $$
 	|E_{in}(g)-E_{out}(g)|\leqslant \sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\
-      => E_{in}(g)-\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\ 
-      \leqslant E_{out}	\leqslant E_{in}(g)+\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\
+      => E_{in}(g)-\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}\leqslant E_{out}	\leqslant E_{in}(g)+\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}	\\
 $$
 with a high probability.
 $$
 	E_{out}(g)\leqslant E_{in}(g)+\underset{\Omega (N,H'\delta )}{\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}}	\\
 $$
 ![avatar](https://gwfp.github.io/static/images/190118/VCmessage.png)
+
+### VC Bound Rephrase
+
+> 知道容忍度：
+$$
+	\epsilon 	
+$$
+VC dimension：
+$$
+	d_{VC}
+$$
+保持坏事件发生几率小于
+$$
+	\delta 	
+$$
+的情况下，求最少需要多少笔元素（N的值取多少）?	\\
+$$
+	4(2N)^{d_{VC}}e^(-\frac{1}{8}\epsilon ^{2}N)\leqslant \delta 
+$$
+
+### 不同类型的成长函数、grow function、VCdimension
 
 #### positive raysVC-Dimension
 
