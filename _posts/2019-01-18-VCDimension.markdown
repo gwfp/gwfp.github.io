@@ -120,7 +120,7 @@ with a high probability.
 $$
 	E_{out}(g)\leqslant E_{in}(g)+\underset{\Omega (N,H'\delta )}{\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}}	\\
 $$
-
+![avatar](https://gwfp.github.io/static/images/190118/VCmessage.png)
 
 ### VC-Dimension
 
