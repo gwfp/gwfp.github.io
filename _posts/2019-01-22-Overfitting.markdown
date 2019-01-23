@@ -12,7 +12,7 @@ tags: [过拟合]
 
 > 我们举个开车的例子，把发生车祸比作成overfitting，那么造成车祸的原因包括：\\
   1.车速太快（VC Dimension太大);	\\
-  2.道路崎岖（noise);	\\
+  2.道路崎岖（noise ~ stochastic & deterministic);	\\
   3.对路况的了解程度（训练样本数量N不够);	\\
 
 > Ein 和Eout 表示为（d为模型阶次，N为样本数量）
@@ -29,7 +29,7 @@ $$
   (噪声水平σ2, 总数据量是N)
 $$
 	y = f(x) + \epsilon 	\\
-	\epsilon ~ Gaussian(\underset{f(x)}{\sum_{q=0}^{Q_{f}}}\alpha _{q}X^{q},\sigma ^{2})
+	\epsilon \sim  Gaussian(\underset{f(x)}{\sum_{q=0}^{Q_{f}}}\alpha _{q}X^{q},\sigma ^{2})
 $$
 
 ### stochastic noise 随机性噪音
@@ -46,20 +46,33 @@ $$
 
 ##  避免overfitting的方法
 
-> 避免overfitting的方法主要包括:
-  1. start from simple model
-  2. data cleaning/pruning
-  3. data hinting
-  4. regularization
-  5. validataion
+> 避免overfitting的方法主要包括(继续以车祸为例):
+  1. start from simple model（driver slowly）
+  2. data cleaning/pruning (use more accurate road information)
+  3. data hinting (exploit more road information)
+  4. regularization (put the brakes踩刹车)
+  5. validataion (monitor the dashboard控制仪表盘)
 
 #### start from simple model
 
-####
+#### data cleaning/pruning
 
-####
+> 对训练数据集里label明显错误的样本进行修正（data cleaning），或者对错误的样本看成是noise，进行剔除（data pruning）。
 
-####
+#### data hinting
 
-####
+> 对已知的样本进行简单的处理、变换，从而获得更多的样本。(N不够大且难以获取更多样本时使用)	\\
+  如：数字分类问题，可以对已知的数字图片进行轻微的平移或者旋转，从而让N丰富起来，达到扩大训练集的目的。这种额外获得的例子称之为virtual examples。(新构建的virtual examples要尽量合理，且是独立同分布iid)
 
+#### regularization
+
+#### validataion
+
+> Leave-One-Out
+
+> V-Fold Cross(更常用)
+
+
+## 参考内容
+1.[林轩田机器学习基石(视频)](https://www.bilibili.com/video/av36731342/?p=50)
+2.[林轩田机器学习基石(笔记)](https://blog.csdn.net/red_stone1/article/details/72673204)
