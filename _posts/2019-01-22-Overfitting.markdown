@@ -75,6 +75,9 @@ $$
 
 
 ## 参考内容
+
+[林轩田机器学习基石(视频)][1]
 [1]:https://www.bilibili.com/video/av36731342/?p=50	"林轩田机器学习基石(视频)"
+[林轩田机器学习>基石(笔记)][2]
 [2]:https://blog.csdn.net/red_stone1/article/details/72673204	"林轩田机器学习基石(笔记)"
 [3]:https://blog.csdn.net/red_stone1/article/details/71692444	"维度灾难"
