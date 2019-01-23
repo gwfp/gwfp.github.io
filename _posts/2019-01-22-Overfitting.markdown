@@ -1,7 +1,7 @@
 ---
 layout: post
 category: 机器学习基础
-tags: [过拟合]
+tags: [过拟合,正则化]
 ---
 
 
@@ -42,7 +42,7 @@ $$
 
 ## 维度灾难
 
-> 维度灾难[3]:
+> [维度灾难][3]:
   随着维度的增加，分类器性能逐步上升，到达某点之后，其性能便逐渐下降.
 
 ##  避免overfitting的方法
@@ -75,6 +75,6 @@ $$
 
 
 ## 参考内容
-1.[林轩田机器学习基石(视频)](https://www.bilibili.com/video/av36731342/?p=50)
-2.[林轩田机器学习基石(笔记)](https://blog.csdn.net/red_stone1/article/details/72673204)
-[3].[维度灾难](https://blog.csdn.net/red_stone1/article/details/71692444)
+[1].https://www.bilibili.com/video/av36731342/?p=50	"林轩田机器学习基石(视频)"
+[2].https://blog.csdn.net/red_stone1/article/details/72673204	"林轩田机器学习基石(笔记)"
+[3]:https://blog.csdn.net/red_stone1/article/details/71692444	"维度灾难"
