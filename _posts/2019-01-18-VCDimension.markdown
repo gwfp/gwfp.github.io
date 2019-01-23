@@ -148,18 +148,27 @@ $$
 $$
 	\epsilon 	
 $$
-VC dimension：
+,VC dimension：
 $$
 	d_{VC}
 $$
-保持坏事件发生几率小于
+,保持坏事件发生几率小于
 $$
 	\delta 	
 $$
 的情况下，求最少需要多少笔元素（N的值取多少）?	\\
 $$
-	4(2N)^{d_{VC}}e^(-\frac{1}{8}\epsilon ^{2}N)\leqslant \delta 
+	4(2N)^{d_{VC}}e^{(-\frac{1}{8}\epsilon ^{2}N)}\leqslant \delta	\\ 
 $$
+theroy: need
+$$
+	N \approx 10000 d_{VC}
+$$
+in theory.practice:need
+$$
+	N \approx 10 d_{VC}
+$$
+in practice.
 
 ### 不同类型的成长函数、grow function、VCdimension
 
@@ -208,5 +217,39 @@ $$
 
 > break point : 4
 
+## Error Measure
+
+### Pointwise Error Measure
+
+> in-sampple:
+$$
+	E_{in}(g)=\frac{1}{N}\sum_{n=1}^{N}err(g(x_{n}),f(x_{n})) 
+$$
+
+> out-of-sample:
+$$
+	E_{out}(g)=\underset{x~p}{\varepsilon}err(g(x),f(x))
+$$
+
+### Two important Pointwise Error Measures
+
+> 0/1 error,often for Classication
+$$
+	err(\tilde{y},y)=\left |\tilde{y}-y  \right |
+$$
+
+> squared error,often for Regrassion
+$$
+	err(\tilde{y},y)=(\tilde{y}-y)^2
+$$
+
+> Linear Regression for Binary Classification
+$$
+	err_{0/1} \leqslant err_{sqr}	\\
+	=> classification_E_{out}(W)\overset{VC}{\leqslant}classification_E_{in}(W)+\sqrt{...}	\\
+	{\leqslant}regaression_E_{in}(W)+\sqrt{...} 
+$$
+
+## Weighted Classification
 
 
