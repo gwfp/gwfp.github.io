@@ -1,7 +1,7 @@
 ---
 layout: post
-category: 机器学习基础
-tags: [回归分析,逻辑回归,算法]
+category: 机器学习模型
+tags: [回归分析,逻辑回归,模型]
 ---
 
 Logistic Regression

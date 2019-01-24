@@ -1,6 +1,6 @@
 ---
 layout: post
-category: 机器学习基础
+category: 机器学习工具
 tags: [scikit-learn,函数库]
 --- 
 

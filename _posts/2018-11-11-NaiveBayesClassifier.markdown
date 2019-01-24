@@ -1,7 +1,7 @@
 ---
 layout: post
-category: 机器学习基础
-tags: [朴素贝叶斯分类器,算法]
+category: 机器学习模型
+tags: [朴素贝叶斯分类器,算法,模型]
 ---
 
 朴素贝叶斯分类器 Naive Bayes Classifier

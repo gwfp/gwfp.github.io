@@ -1,7 +1,7 @@
 ---
 layout: post
-category: 机器学习基础
-tags: [决策树,算法]
+category: 机器学习模型
+tags: [决策树,算法,模型]
 ---
 
 

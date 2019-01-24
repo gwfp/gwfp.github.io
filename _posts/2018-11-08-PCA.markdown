@@ -1,6 +1,6 @@
 ---
 layout: post
-category: 机器学习基础
+category: 机器学习算法
 tags: [PCA,算法,主成分分析,降维]
 ---
 
