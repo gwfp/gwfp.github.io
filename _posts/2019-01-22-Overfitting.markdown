@@ -15,7 +15,7 @@ tags: [过拟合,正则化]
   2.道路崎岖（noise ~ stochastic & deterministic);	\\
   3.对路况的了解程度（训练样本数量N不够);	\\
 
-> Ein 和Eout 表示为（d为模型阶次，N为样本数量）
+> Ein 和Eout 表示为（d为模型阶次，N为样本数量),Ein很小，但是Eout很大，造成了过拟合现象。
 $$
 	E_{in}=noiselevel*(1-\frac{d+1}{N})	\\
 	E_{out}==noiselevel*(1+\frac{d+1}{N})
@@ -69,12 +69,35 @@ $$
 
 #### validataion
 
-> Leave-One-Out
+> 1.先将D分成两个部分，一个是训练样本Dtrain，一个是验证集Dval。	\\
+  2.若有M个模型，那么分别对每个模型在Dtrain上进行训练，得到矩g−m。	\\
+  3.再用Dval对每个g−m进行验证，选择表现最好的矩g−m∗，则该矩对应的模型被选择。\\
+  4.最后使用该模型对整个D进行训练，得到最终的gm∗。	\\
+  (M种模型hypothesis set，Dval的数量为K)
+$$
+	E_{out}(g_{m^{*}})\leqslant E_{out}(g_{m^{*}}^{-})\leqslant E_{out}(g_{m^{*}}^{-})+\sqrt{\frac{logM}{K}}	\\
+$$
+模型个数M越少，测试集数目越大，那么
+$$
+	\sqrt{\frac{logM}{K}}
+$$
+越小，即Etest(gm*)越接近于Eout(gm*),通常设置k=N/5。
 
-> V-Fold Cross(更常用)
+> Leave-One-Out Cross Validation 留一法交叉验证	\\
+  1.k=1，也就是说验证集大小为1，即每次只用一组数据对gm进行验证。\\
+  2.每次从D中取一组作为验证集，直到所有样本都作过验证集，共计算N次，最后对验证误差求平均。	//
+$$
+	E_{loocv}(H,A)=\frac{1}{N}\sum_{n=1}^{N}e_{n}=\frac{1}{N}\sum_{n=1}^{N}err(g_{n}^{-}(x_{n}),y_{n})
+$$
 
+> V-Fold Cross V-折交叉验证 (更常用)
+  1.将N个数据分成V份,计算过程与Leave-One-Out相似。\\
+  2.计算过程与Leave-One-Out相似。(简少了计算量)		\\
+$$
+	E_{cv}(H,A)=\frac{1}{V}\sum_{v=1}^{V}E_{val}^{(V)}(g_{V}^{-})
+$$
 
 ## 参考内容
 
 1.[林轩田机器学习基石(视频)](https://www.bilibili.com/video/av36731342/?p=50)
-2.[林轩田机器学习>基石(笔记)](https://blog.csdn.net/red_stone1/article/details/72673204)
+2.[林轩田机器学习基石(笔记)](https://blog.csdn.net/red_stone1/article/details/72673204)
