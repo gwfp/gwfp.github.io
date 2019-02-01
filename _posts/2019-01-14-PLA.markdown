@@ -1,6 +1,6 @@
 ---
 layout: post
-category: 机器学习基础
+category: 机器学习模型
 tags: [Percetron,感知学习,算法]
 ---
 

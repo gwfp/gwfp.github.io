@@ -1,7 +1,7 @@
 ---
 layout: post
 category: 机器学习概念
-tags: [过拟合,正则化]
+tags: [过拟合,正则化,台大-林轩田]
 ---
 
 
@@ -56,6 +56,8 @@ $$
 
 #### start from simple model
 
+> 多项式回归
+
 #### data cleaning/pruning
 
 > 对训练数据集里label明显错误的样本进行修正（data cleaning），或者对错误的样本看成是noise，进行剔除（data pruning）。
@@ -66,6 +68,16 @@ $$
   如：数字分类问题，可以对已知的数字图片进行轻微的平移或者旋转，从而让N丰富起来，达到扩大训练集的目的。这种额外获得的例子称之为virtual examples。(新构建的virtual examples要尽量合理，且是独立同分布iid)
 
 #### regularization
+
+> L1
+$$
+	\Omega (\omega ) = \sum_{q=0}^{Q}\omega ^2_{q}=\left \| \omega  \right \|_{2}^{2}
+$$
+
+> L2 (一般比较通用)
+$$
+	\Omega (\omega ) = \sum_{q=0}^{Q} | \omega _{q}|=\left \| \omega  \right \|_{1}
+$$  
 
 #### validataion
 

@@ -1,0 +1,59 @@
+---
+layout: post
+category: 数学基础
+tags: [数学基础,线性代数]
+---
+
+
+线性代数 linear algebra
+================
+
+## 标量、向量、矩阵、张量
+
+### 标量(scalar)
+
+### 向量(vector)
+
+### 矩阵(matrix)
+
+### 张量(tensor)
+
+## 转置(transpose)
+
+## 矩阵和向量相乘
+
+## 单位矩阵和你矩阵
+
+## 线性相关和生成子空间
+
+## 范数
+
+## 特殊类型的矩阵和向量
+
+### 对角矩阵(diagonal matrix)
+
+### 对称(symmetric)
+
+### 单位向量(unit vector)
+
+### 正交矩阵(orthogonal matrix)
+
+## 特征分解
+
+> 将矩阵分解成一组特征向量和特征值 
+
+## 奇异值分解
+
+> 奇异值分解(single value decomposition, SVD),将矩阵分解为奇异向量(singular vector)和奇异值(single value)
+
+## Moore-Penrose 伪逆
+
+## 迹运算
+
+## 行列式
+
+> 记做det(A)
+
+## 参考
+
+[1]伊恩古德费洛.深度学习[M].北京:人民邮电出版社.2017:19-33

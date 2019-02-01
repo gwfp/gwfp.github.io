@@ -1,0 +1,61 @@
+---
+layout: post
+category: 数学基础
+tags: [数学基础,概率与信息论,deep-learning]
+---
+
+
+概率与信息论 Probability and Information Theory
+================
+
+## 随机变量
+
+## 概率分布(probability distribution)
+
+### 离散型变量
+
+> 离散型变量的概率分布可以用概率质量函数(probability mass function, PMF),通常用P来表示
+
+### 连续型变量
+
+> 连续型变量用概率密度函数(probability density function,PDF)
+
+## 边缘概率分布(marginal probality distribution)
+
+## 条件概率
+
+### 条件概率
+
+### 条件概率的链式法则(chain rule)/乘法法则(product rule)
+
+## 独立性和条件独立性
+
+### 互相独立(independent)
+
+### 条件独立(conditionally independent)
+
+## 期望、方差、协方差
+
+### 期望(expectation)/期望值(expected value)
+
+### 方差(variance)
+
+### 协方差(covariance)
+
+## 常用概率分布
+
+### Bernoulli 分布
+
+### Multinoulli 分布
+
+### 高斯分布(Gaussian distribution)/正态分布(normal distribution)
+
+### 指数分布和Laplace 分布
+
+### Dirac分布和经验分布
+
+## 参考
+
+[1]伊恩古德费洛.深度学习[M].北京:人民邮电出版社.2017:34-51
+
+
