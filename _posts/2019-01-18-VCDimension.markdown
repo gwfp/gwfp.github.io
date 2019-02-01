@@ -73,6 +73,7 @@ $$
   3.mH'(N) 就是成长函数，hypothesis在N个点上能产生多少dichotomy。
 
 #### growth function
+
 > 1.从点出发来看，得到线的的种类是有限的(maximum kinds of lines with respect to N inputs x1, x2,...,xn <=> effective number of lines)	\\
   2.某个数量的点可能在不同情况下，出现不同的分割种类的数量（三个点不共线时一条线可有8种不同的情形将点分割为两个部分，但共线情况下有两种情况无法优一条线分割，所以只有6种情况），以最多的那种情况计算(三个点时记8种)。
 $$
@@ -140,7 +141,7 @@ with a high probability.
 $$
 	E_{out}(g)\leqslant E_{in}(g)+\underset{\Omega (N,H'\delta )}{\sqrt{\frac{8}{N}ln(\frac{(2N)^{d_{VC}}}{\delta })}}	\\
 $$
-![avatar](https://gwfp.github.io/static/images/190118/VCmessage.png)
+![avatar](https://gwfp.github.io/static/images/19/01/18/VCmessage.png)
 
 ### VC Bound Rephrase
 
