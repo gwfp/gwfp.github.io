@@ -26,11 +26,36 @@ tags: [数学基础,线性代数]
 
 ## 线性相关和生成子空间
 
-## <span name='norm'>范数<span/>
+## <a name='norm'>范数<a/>
 
-> 范数norm：用来衡量向量大小的量	\\
+### 范数的定义
+
+> 范数norm：用来衡量向量大小的量,将向量映射到非负值的函数，即向量x的范数衡量原点到x的距离。	\\
+范数的定义形式上是：	\\
 $$
-	L^{P}\sim \left \| x \right \|_{p}=(\sum_{i}\left | x_{i} \right |^{P})^\frac{1}{P}
+	L^{p}\sim \left \| x \right \|_{p}=(\sum_{i}\left | x_{i} \right |^{p})^\frac{1}{p},(p\in R,p\geqslant 1 )	(NORM-1)	\\
+$$
+
+> 范数的性质（范数是满足下列性质的任意函数）:	\\
+1.f(x) = 0  =>  x = 0
+2.
+$$
+	f(x+y) \leqslant  f(x) + f(y)
+$$
+3.
+$$
+	\forall \alpha \in R,f(\alpha x) = \left | \alpha  \right |f(x)
+$$
+
+### 欧几里得范数(Euclidean norm)
+
+> 公式NORM-1，当p=2时的范数，表示从原点出发到向量x的欧几里得距离。经常简化为
+$$
+	\left \| x \right \|
+$$
+用来衡量向量大小时，可以简单通过点积计算：
+$$
+	x^{T}\cdot x
 $$
 
 ## 特殊类型的矩阵和向量
