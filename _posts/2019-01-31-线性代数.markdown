@@ -100,7 +100,29 @@ $$
 
 ### 单位向量(unit vector)
 
-### 正交矩阵(orthogonal matrix)
+> 具有单位<a href="norm">范数</a>(unit norm)的向量
+$$
+	\left \| x \right \|_{2} = 1
+$$
+
+### <a name='orthogonal-matrix'>正交矩阵(orthogonal matrix)</a>
+
+> 正交(orthogonal)：如果
+$$
+	x^{T}y=0
+$$
+那么，向量x和向量y正交。
+
+> 标准正交(orthonormal):
+
+> 正交矩阵： 行向量和列向量是分别标准正交的方阵
+$$
+	A^{T}A=AA^{T}=I
+$$
+即
+$$
+	A^{-1}=A^{T}
+$$
 
 ## 特征分解
 
