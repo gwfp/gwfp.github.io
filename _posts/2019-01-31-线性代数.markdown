@@ -103,7 +103,7 @@ $$
 
 ### 单位向量(unit vector)
 
-> 具有单位<a href="norm">范数</a>(unit norm)的向量
+> 具有单位<a href="#norm">范数</a>(unit norm)的向量
 $$
 	\left \| x \right \|_{2} = 1
 $$
