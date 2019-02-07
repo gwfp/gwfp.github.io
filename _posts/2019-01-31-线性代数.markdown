@@ -47,6 +47,9 @@ $$
 	\forall \alpha \in R,f(\alpha x) = \left | \alpha  \right |f(x)	\\
 $$
 
+> p从无穷到0变化时，三维空间中到原点的距离（范数）为1的点构成的[图形的变化情况](https://blog.csdn.net/lz867422770/article/details/80013600)。
+![avatar](https://gwfp.github.io/static/images/19/01/31/norm.png)
+
 ### \\(L^{2}\\) 范数
 
 > 被成为欧几里得范数(Euclidean norm)公式(NORM-1)，当p=2时的L^2范数，表示从原点出发到向量x的欧几里得距离。因为使用非常频繁，经常简化为
