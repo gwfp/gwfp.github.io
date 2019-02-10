@@ -7,3 +7,24 @@ tags: [SVM,模型]
 
 支持向量机 Support Vector Machine
 ================
+
+## 超平面(hyperplane)
+
+### 二分类问题
+	
+> 给定的各个样本数据分别属于两个类之一，而目标是确定新数据点将归属到哪个类中。
+
+### 线性可分
+
+### 超平面
+
+> 在n维空间中将两类样本分开的n-1维线形子空间。(n 维欧氏空间中维度等于 n-1 的线性子空间)。
+
+> 如果遇到的问题是n维线性不可分的，可以在更高空间(n+1维)线性可分。
+![avatar](https://gwfp.github.io/static/images/18/11/21/norm.separateinhighdemension.jpeg)
+
+### 最佳超平面
+
+## 线性可分支持向量机(Linear Support Vector Machine)
+
+## 非线性可分支持向量机
