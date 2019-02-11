@@ -21,9 +21,14 @@ tags: [SVM,模型]
 > 在n维空间中将两类样本分开的n-1维线形子空间。(n 维欧氏空间中维度等于 n-1 的线性子空间)。
 
 > 如果遇到的问题是n维线性不可分的，可以在更高空间(n+1维)线性可分。
-![avatar](https://gwfp.github.io/static/images/18/11/21/norm.separateinhighdemension.jpeg)
+![avatar](https://gwfp.github.io/static/images/18/11/21/separateinhighdemension.jpeg)
 
 ### 最佳超平面
+
+> 1.两类样本分别分隔在该超平面的两侧；	\\
+  2.两侧距离超平面最近的样本点到超平面的距离被最大化了。
+
+![avatar](https://gwfp.github.io/static/images/18/11/21/hyperplane.png)
 
 ## 线性可分支持向量机(Linear Support Vector Machine)
 
