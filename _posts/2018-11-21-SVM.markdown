@@ -23,12 +23,26 @@ tags: [SVM,模型]
 > 如果遇到的问题是n维线性不可分的，可以在更高空间(n+1维)线性可分。
 ![avatar](https://gwfp.github.io/static/images/18/11/21/separateinhighdemension.jpeg)
 
-### 最佳超平面
+### 最佳超平面(Large-Margin Separation Hyperplane)
 
 > 1.两类样本分别分隔在该超平面的两侧；	\\
+$$
+	y_{n}w^{T}x_{n} > 0
+$$
   2.两侧距离超平面最近的样本点到超平面的距离被最大化了。
 
+> GOAl: find largest-margin separation hyperplane	\\
+  超平面间的最大间隔距离为\\(\left \| \frac{1}{w} \right \|\\),即在
+$$
+	y_{i}(w^{T}x_{i}+b)\geqslant 1,i=1,2,...,n	
+$$
+时，最小化\\(\left \| w \right \|\\)，又可以转化为求
+$$
+	\frac{1}{2}w^{T}w
+$$
+的最小值。[证明](https://blog.csdn.net/red_stone1/article/details/73526457)	\\	
 ![avatar](https://gwfp.github.io/static/images/18/11/21/hyperplane.png)
+这是一个典型的二次规划问题(Quadratic Programming,QP).
 
 ## 线性可分支持向量机(Linear Support Vector Machine)
 

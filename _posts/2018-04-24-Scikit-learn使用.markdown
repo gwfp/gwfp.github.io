@@ -31,6 +31,13 @@ $$
         X_train = standardScaler.transform(X_train)
         X_test_standard = standardScaler.transform(X_test)
 
+### 数据标准化 
+
+> 经过处理的数据符合标准正态分布,即均值为1,方差为0.\\(\mu \\)为样本数据均值，\\( \sigma \\)为样本数据标准差.
+$$
+	x^{*} = \frac{x-\mu }{\sigma }
+$$
+
 ### 降维
 
 #### PCA
