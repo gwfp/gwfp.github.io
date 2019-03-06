@@ -16,6 +16,8 @@ tags: [SVM,模型]
 
 ### 线性可分
 
+> 将特征向量完美额分为不同部分。
+
 ### 超平面
 
 > 在n维空间中将两类样本分开的n-1维线形子空间。(n 维欧氏空间中维度等于 n-1 的线性子空间)。
@@ -43,6 +45,32 @@ $$
 的最小值。[证明](https://blog.csdn.net/red_stone1/article/details/73526457)	\\	
 ![avatar](https://gwfp.github.io/static/images/18/11/21/hyperplane.png)
 这是一个典型的二次规划问题(Quadratic Programming,QP).
+	(convex)quadratic objective function of (b,w)
+	linear constrains of (b,w)
+
+optimal u <- QP(Q,p,A,c)
+$$
+	\underset{u}{min}\frac{1}{2}u^{T}Qu+p^{T}u
+$$
+Subjrct to 
+$$
+	a_{m}^{T}u\geqslant C_{m}
+$$
+for m=1,2,...,M
+$$
+1. Q = \begin{bmatrix}
+0 &0_{d}^{T} \\ 
+ 0_{d} & I_{d}
+\end{bmatrix}  ;
+p = 0_{d+1};a_{n}^{T}=y_{n}\begin{bmatrix}
+1 & x_{T}^{n} 
+\end{bmatrix};c_{n}=1
+2. \begin{bmatrix}
+b\\ 
+w
+\end{bmatrix};<-QP(Q,p,A,c)
+$$
+3,retutn b & w as \\(g_{SVM}\\) 
 
 ## 线性可分支持向量机(Linear Support Vector Machine)
 

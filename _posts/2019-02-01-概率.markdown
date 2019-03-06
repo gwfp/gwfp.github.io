@@ -5,7 +5,7 @@ tags: [数学基础,概率与信息论,deep-learning]
 ---
 
 
-概率与信息论 Probability and Information Theory
+概率 Probability
 ================
 
 ## 随机变量

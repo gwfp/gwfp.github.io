@@ -1,0 +1,13 @@
+---
+layout: post
+category: 数学基础
+tags: [数学基础,概率与信息论,deep-learning]
+---
+
+
+信息论 Information Theory
+================
+
+## 参考
+
+[1]伊恩古德费洛.深度学习[M].北京:人民邮电出版社.2017:34-51
