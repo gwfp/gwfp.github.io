@@ -57,8 +57,10 @@ $$
 	a_{m}^{T}u\geqslant C_{m}
 $$
 for m=1,2,...,M	\\
+
+1.
 $$
-1. Q = \begin{bmatrix}
+Q = \begin{bmatrix}
 0 &0_{d}^{T} \\ 
  0_{d} & I_{d}
 \end{bmatrix}  ;
