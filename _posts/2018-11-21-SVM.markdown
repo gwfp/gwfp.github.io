@@ -42,9 +42,9 @@ $$
 $$
 	\frac{1}{2}w^{T}w
 $$
-的最小值。[证明](https://blog.csdn.net/red_stone1/article/details/73526457)	\\	
-![avatar](https://gwfp.github.io/static/images/18/11/21/hyperplane.png)
-这是一个典型的二次规划问题(Quadratic Programming,QP).
+(1) 的最小值。[证明](https://blog.csdn.net/red_stone1/article/details/73526457)	\\	
+![avatar](https://gwfp.github.io/static/images/18/11/21/hyperplane.png){:width='100px' height="100px"}
+这是一个典型的凸二次规划问题(Convex Quadratic Programming,QP).
 	(convex)quadratic objective function of (b,w)
 	linear constrains of (b,w)
 
@@ -68,7 +68,7 @@ $$
 
 $$
 p = 0_{d+1};a_{n}^{T}=y_{n}\begin{bmatrix}
-1 & x_{T}^{n} 
+1 & x_{n}^{T} 
 \end{bmatrix};c_{n}=1	\\
 $$
 2.
@@ -85,6 +85,34 @@ $$
 g_{SVM}
 $$
 
-## 线性可分支持向量机(Linear Support Vector Machine)
+## 对偶支持向量机(Dual Support Vector Machine)
+
+### 支持向量机
+
+#### 表示为：
+$$
+	\frac{1}{2}\left \| w \right \|^{2}	\\
+$$
+s.t.
+$$
+	y_{i}(w^{T}x_{i}+b)\geqslant 1,i=1,2,...,m
+$$
+
+### 构建拉格朗日函数(Lagrange function)
+
+$$
+	L(w,b,\alpha )=\frac{1}{2}\left \| w \right \|^{2}-\sum_{N}^{i=1}\alpha _{i}y_{i}(w\cdot x_{i}+b)+\sum_{N}^{i=1}\alpha _{i},\alpha =(\alpha _{1},\alpha _{2},...,\alpha _{N})^T
+$$
+
+### KKT(Karush-Kuhn-Tucker)条件
+
+$$
+	\left\{\begin{matrix}
+a_{i} \geqslant 0;\\ 
+y_{i}f(x_{i})-1 \geqslant 0;\\ 
+a_{i} (y_{i}f(x_{i})-1)=1
+\end{matrix}\right.
+$$
+
 
 ## 非线性可分支持向量机
