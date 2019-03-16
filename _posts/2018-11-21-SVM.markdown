@@ -21,8 +21,7 @@ tags: [SVM,模型]
 ### 超平面
 
 > 在n维空间中将两类样本分开的n-1维线形子空间。(n 维欧氏空间中维度等于 n-1 的线性子空间)。
-
-> 如果遇到的问题是n维线性不可分的，可以在更高空间(n+1维)线性可分。
+  (如果遇到的问题是n维线性不可分的，可以在更高空间(n+1维)线性可分。)
 ![avatar](https://gwfp.github.io/static/images/18/11/21/separateinhighdemension.jpeg)
 
 ### 最佳超平面(Large-Margin Separation Hyperplane)
@@ -45,6 +44,12 @@ $$
 y_{n}(w^{T}z_{n}+b)\geqslant 1,(n=1,2,...,N)	\\
 $$
 
+//( \tilde{d} //) + 1 varuables,
+N contraints
+-- suitable when //( \tilde{d} //) + 1 small
+
+physical meaning: locate "specially-scaled(b,w)"
+
 [证明](https://blog.csdn.net/red_stone1/article/details/73526457)	\\	
 ![avatar](https://gwfp.github.io/static/images/18/11/21/hyperplane.png){:width='400px' height="400px"}
 
@@ -58,3 +63,9 @@ $$
 y^{T}\alpha =0	\\
 \alpha_{n}  \geqslant 0,(n=,1,...,N)
 $$
+
+N variables,
+N + 1 simple contraints
+-- suitable when N small
+
+physical meaning: locate "SVs" & their \\( \alpha_{n} \\)
