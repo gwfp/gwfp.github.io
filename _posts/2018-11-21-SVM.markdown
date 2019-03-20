@@ -44,9 +44,9 @@ $$
 y_{n}(w^{T}z_{n}+b)\geqslant 1,(n=1,2,...,N)	\\
 $$
 
-//( \tilde{d} //) + 1 varuables,
+\\( \tilde{d} \\) + 1 varuables( \\( \tilde{d} \\) means 空间维度),
 N contraints
--- suitable when //( \tilde{d} //) + 1 small
+-- suitable when \\( \tilde{d} \\) + 1 small
 
 physical meaning: locate "specially-scaled(b,w)"
 
@@ -61,11 +61,29 @@ $$
 s.t.
 $$
 y^{T}\alpha =0	\\
-\alpha_{n}  \geqslant 0,(n=,1,...,N)
+\alpha_{n}  \geqslant 0,(n=,1,...,N)	\\
+( Q_{D}=q_{n,m}=y_{n}y_{m}z^{T}_{m}z_{m} : inner product in R^{\tilde{d}})
 $$
 
 N variables,
 N + 1 simple contraints
 -- suitable when N small
 
-physical meaning: locate "SVs" & their \\( \alpha_{n} \\)
+physical meaning: locate "SVs(zn,yn)" & their \\( \alpha_{n} \\)
+[证明](https://blog.csdn.net/red_stone1/article/details/73822768)
+
+### 核技巧 (Kernek Trick)
+
+#### kernel function
+
+$$
+	K_{\phi }(x,x^{'})=1+(x^{T}x^{'})+(x^{T}x^{'})^{2}
+$$
+
+#### kernel trick
+
+$$
+	g_{SVM}=sign(w^{T}\phi (x)+b)=sign(\sum_{n+1}^{N}\alpha _{n}y_{n}K(x_{n},x)+b)
+$$
+
+
