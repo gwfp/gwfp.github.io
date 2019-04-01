@@ -86,4 +86,24 @@ $$
 	g_{SVM}=sign(w^{T}\phi (x)+b)=sign(\sum_{n+1}^{N}\alpha _{n}y_{n}K(x_{n},x)+b)
 $$
 
+### 常用核函数
+
+#### 线性核函数
+
+$$
+	k(x_{i},x{j})=x_{i}^{T}x_{j}
+$$
+
+#### 多项式核函数（Polynomial Kernel Function）
+
+$$
+	K_{Q}(x,x')=(\zeta +\gamma x^{T}x')^{Q},r>0,\zeta >0
+$$
+
+#### 高斯核函数（Gaussian kernerl function）
+
+$$
+	g_{SVM}(x)=sign(\sum_{i=1}^{N_{s}}a_{i}^{*}y_{i}exp(-\frac{\left \| x-z \right \|^2}{2\sigma^{2} }))
+$$
+
 
