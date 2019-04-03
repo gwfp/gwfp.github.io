@@ -1,0 +1,68 @@
+---
+layout: post
+category: 学术
+tags: [dissertation,thesis]
+---
+
+如何写论文
+==============
+
+## 概述
+
+### 研究论文的目的
+
+> 解决“已有文献核目前发现的早已存在的冲突。” 	
+
+### 论文前准备
+
+> 1.写作者之所以不能写出创新的观点，是他们还没有学会批判性地阅读他人的论文.  \
+  2.必须以某种特定方式对文献进行加工处理，除非坐下来，用一张白纸记录那些文献中反复出现的主题、模式、和研究空白，否则本应涌现的批判性观点就会在漫无目的的阅读中不知所踪。	\
+  3.写作不仅仅是打字，它离不开“生成文本所必须的阅读、概述、观点生成和数据分析等写作前的活动。”，正是阅读时我们才能找到文献的“主题、优势和不足”。	\
+  
+### 不知道该写什么
+
+> 1.阅读量不够。	\
+  2.没有找到一种方法来组织从文献中收集的信息。
+
+## 如何阅读论文
+
+### 阅读密码表
+
+#### SPL(Summary of Previous Literature,文献综述)	
+	
+#### CPL(Critique of Previous,文献批评)
+	
+#### GAP(Gaps,研究空白)
+	
+#### RAT(Retional,合理性)
+	
+#### ROF(Result if Finding, 研究发现)
+
+#### RCL(Results Consisitent with Literature, 与现有文献观点一致的研究发现)
+
+#### RTC(Results to the Contraty, 与现有文献观点相反的研究发现)
+
+#### RFW(Recommendations fot Future Works,对未来的建议)
+
+#### RPP(Relevant Point to Pursue,待探讨的相关问题)
+
+#### WTD(What They Do,文中会解决的主要问题，介绍研究所用的材料及方法)
+
+#### WTDD(What They Did,他们做过什么)
+
+#### POC(Point of Critique, 批评点)
+
+#### MOP(Missed Obvious Point,遗漏点)
+
+#### WIL(Will,)	
+
+### 阅读的方法
+
+> 先读摘要，再决定这篇文章是否值得纳入文献综述
+
+### 阅读摘要
+
+
+   
+
+
