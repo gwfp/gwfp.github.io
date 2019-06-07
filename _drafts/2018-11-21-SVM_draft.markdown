@@ -1,0 +1,133 @@
+---
+layout: post
+category: 机器学习模型
+tags: [SVM,模型]
+---
+
+
+支持向量机 Support Vector Machine
+================
+
+## 超平面(hyperplane)
+
+### 二分类问题
+	
+> 给定的各个样本数据分别属于两个类之一，而目标是确定新数据点将归属到哪个类中。
+
+### 线性可分
+
+> 将特征向量完美额分为不同部分。
+
+### 超平面
+
+> 在n维空间中将两类样本分开的n-1维线形子空间。(n 维欧氏空间中维度等于 n-1 的线性子空间)。
+
+> 如果遇到的问题是n维线性不可分的，可以在更高空间(n+1维)线性可分。
+![avatar](https://gwfp.github.io/static/images/18/11/21/separateinhighdemension.jpeg)
+
+### 最佳超平面(Large-Margin Separation Hyperplane)
+
+> GOAl: find largest-margin separation hyperplane	\\
+  1.两类样本分别分隔在该超平面的两侧；	\\
+  2.两侧距离超平面最近的样本点到超平面的距离被最大化了。
+
+## 支持向量积 SVM(Support Vector Machine)
+
+> 一种二元分类模型，它的基本模型是定义在特征空间上的“间隔最大”的线性分类器。
+
+### 原始支持向量积(Primal Hard-Margin SVM)
+
+
+
+### 对偶支持向量积(Dual Hard-Margin SVM)
+
+
+  超平面间的最大间隔距离为\\(\left \| \frac{1}{w} \right \|\\),即在
+$$
+	y_{i}(w^{T}x_{i}+b)\geqslant 1,i=1,2,...,n	
+$$
+时，最小化\\(\left \| w \right \|\\)，又可以转化为求
+$$
+	\frac{1}{2}w^{T}w
+$$a
+(1) 的最小值。
+
+[证明](https://blog.csdn.net/red_stone1/article/details/73526457)	\\	
+![avatar](https://gwfp.github.io/static/images/18/11/21/hyperplane.png){:width='400px' height="400px"}
+
+[^_^]
+这是一个典型的凸二次规划问题(Convex Quadratic Programming,QP).
+	(convex)quadratic objective function of (b,w)
+	linear constrains of (b,w)
+
+[^_^]
+optimal u <- QP(Q,p,A,c)	\\
+$$
+	\underset{u}{min}\frac{1}{2}u^{T}Qu+p^{T}u	\\
+$$
+Subjrct to 
+$$
+	a_{m}^{T}u\geqslant C_{m}
+$$
+for m=1,2,...,M	\\
+
+[^_^]
+1.
+$$
+Q = \begin{bmatrix}
+0 &0_{d}^{T} \\ 
+ 0_{d} & I_{d}
+\end{bmatrix}  ;
+$$
+
+[^_^]
+$$
+p = 0_{d+1};a_{n}^{T}=y_{n}\begin{bmatrix}
+1 & x_{n}^{T} 
+\end{bmatrix};c_{n}=1	\\
+$$
+2.
+$$
+\begin{bmatrix}
+b\\ 
+w
+\end{bmatrix};<-QP(Q,p,A,c)
+$$
+
+[^_^]
+3,retutn b & w as 
+$$
+g_{SVM}
+$$
+
+## 对偶支持向量机(Dual Support Vector Machine)
+
+### 支持向量机
+
+#### 表示为：
+$$
+	\frac{1}{2}\left \| w \right \|^{2}	\\
+$$
+s.t.
+$$
+	y_{i}(w^{T}x_{i}+b)\geqslant 1,i=1,2,...,m
+$$
+
+### 构建拉格朗日函数(Lagrange function)
+
+$$
+	L(w,b,\alpha )=\frac{1}{2}\left \| w \right \|^{2}-\sum_{N}^{i=1}\alpha _{i}y_{i}(w\cdot x_{i}+b)+\sum_{N}^{i=1}\alpha _{i},\alpha =(\alpha _{1},\alpha _{2},...,\alpha _{N})^T
+$$
+
+### KKT(Karush-Kuhn-Tucker)条件
+
+$$
+	\left\{\begin{matrix}
+a_{i} \geqslant 0;\\ 
+y_{i}f(x_{i})-1 \geqslant 0;\\ 
+a_{i} (y_{i}f(x_{i})-1)=1
+\end{matrix}\right.
+$$
+
+
+## 非线性可分支持向量机

@@ -1,0 +1,39 @@
+---
+layout: post
+category: 卷积神经网络
+tags: [深度学习概念]
+---
+
+卷积网络(convolutional network)/卷积神经网络(convolutional neural network,CNN)
+===============
+
+## 概念及意义
+
+### 概念
+
+> 专门用来处理具有类似网络结构的数据的神经网络。例如，时间序列数据，图像数据。
+
+## 过程
+
+### 1. 预处理数据(卷积层)
+
+> 通过在原始图像上平移来提取特征
+
+### 2. 非线性激活函数处理(一般用relua)
+
+> 保留大于0的值，将特征小于0的值舍去, 保留比较好的值
+
+### 3. 池化
+
+> 
+
+### 4. 全连接输出
+
+> 对特征进行加权分类
+
+![avatar](https://gwfp.github.io/static/images/18/11/21/hyperplane.png){:width='400px' height="400px"}
+
+
+
+
+
