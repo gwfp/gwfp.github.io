@@ -31,7 +31,7 @@ tags: [深度学习概念]
 
 > 对特征进行加权分类
 
-![avatar](https://gwfp.github.io/static/images/18/11/21/hyperplane.png){:width='400px' height="400px"}
+![avatar](https://gwfp.github.io/static/images/19/06/07/CNNstep.png){:width='400px' height="400px"}
 
 
 
