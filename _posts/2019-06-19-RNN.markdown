@@ -1,0 +1,19 @@
+---
+layout: post
+category: 卷积神经网络
+tags: [深度学习概念,RNN]
+---
+
+循环神经网络(recurrent neural network,RNN)
+===============
+
+## RNN的作用
+
+> RNN 是一类专门用于处理序列数据的神经网络。可以扩展到更长的序列，也能处理可变长度的序列。
+
+## RNN的模型
+
+
+## RNN的种类
+
+
