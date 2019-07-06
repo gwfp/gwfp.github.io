@@ -6,3 +6,13 @@ tags: [深度学习框架]
 
 KERAS
 ===============
+
+## Sequential model
+
+> passing a list of layer instances to the constructor
+
+
+## 参考资料
+[1] [keras官方文档](https://keras.io)
+[2] [keras源码](https://github.com/keras-team/keras/)
+[3] [keras中文文档](https://keras.io/zh/layers/core/)
