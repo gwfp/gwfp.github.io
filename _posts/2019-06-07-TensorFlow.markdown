@@ -22,9 +22,9 @@ TensorFlow2.0
 
 	pip install --upgrade tensorflow
 
-## tensorflow workflow
+## Tensorflow Workflow
 
-![avatar](https://gwfp.github.io/static/images/19/06/07/tensorflow_workflow.png){:width='400px' height="200px"}
+![avatar](https://gwfp.github.io/static/images/19/06/07/tensorflow_workflow.png){:width='600px' height="200px"}
 
 ## Data Ingestion and Transformation
 
@@ -46,8 +46,12 @@ TensorFlow2.0
 ## Saving
 
 ### SavedModel
+
 ## 参考资料
 
+[1] [Tensorflow 源码](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python)
+[2] [Tensorflow Tutorials](https://tensorflow.google.cn/beta)
+[3] [keras](https://keras.io)
 	
 
 
