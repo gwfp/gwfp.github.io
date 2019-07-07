@@ -1,7 +1,7 @@
 ---
 layout: post
-category: TensoeFlow
-tags: [深度学习框架]
+category: 深度学习框架
+tags: [深度学深度学习框架,Tensorflow2.0]
 ---
 
 TensorFlow2.0

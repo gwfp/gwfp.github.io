@@ -1,7 +1,7 @@
 ---
 layout: post
-category: 卷积神经网络
-tags: [深度学习概念]
+category: 深度学习算法
+tags: [深度学习概念,CNN,卷积网络]
 ---
 
 卷积网络(convolutional network)/卷积神经网络(convolutional neural network,CNN)

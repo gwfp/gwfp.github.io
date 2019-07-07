@@ -1,7 +1,7 @@
 ---
 layout: post
-category: keras
-tags: [深度学习框架]
+category: 深度学习框架
+tags: [keras,深度学习框架]
 ---
 
 KERAS
