@@ -7,9 +7,8 @@ tags: [深度学习概念,CNN,卷积网络]
 卷积网络(convolutional network)/卷积神经网络(convolutional neural network,CNN)
 ===============
 
-## 概念及意义
 
-### 概念
+## 概念
 
 > 专门用来处理具有类似网络结构的数据的神经网络。例如，时间序列数据，图像数据。
 
@@ -17,24 +16,24 @@ tags: [深度学习概念,CNN,卷积网络]
 
 ![avatar](https://gwfp.github.io/static/images/19/06/07/CNNstep.png){:width='400px' height="200px"}
 
-### 1. 预处理数据(输入&积层)
+## 1. 预处理数据(输入&积层)
 
-#### 输入
+### 输入
 
 > 数据的预处理
 1. 去均值
 2. 归一化
 3. PCA/SVD降维
 
-#### 卷积
+### 卷积
 
 > 通过在原始图像上平移来提取特征
 
-### 2. 非线性激活函数处理(一般用relu)
+## 2. 非线性激活函数处理(一般用relu)
 
 > 保留大于0的值，将特征小于0的值舍去, 保留比较好的值
 
-### 3. 池化(pooling)
+## 3. 池化(pooling)
 
 > 也称为欠采样或下采样。主要用于特征降维，压缩数据和参数的数量，减小过拟合，同时提高模型的容错性。(shrinking the image stack)
 1. Pick a window size(usually 2 or 3)
@@ -42,15 +41,13 @@ tags: [深度学习概念,CNN,卷积网络]
 3. walk your window across your filterd images
 4. from each window, take the maximum value
 
-### 4. 全连接输出
+## 4. 全连接输出
 
 > 对特征进行加权分类.(every value gets a vote, vote depends on how strongly a value predicts )
 
 ## 卷积(CONV layer)
 
 ### 卷积运算
-
-
 
 ## 非线性函数激活(RELU(Rectified Linear Units) layer)
 
