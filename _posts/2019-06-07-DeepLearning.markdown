@@ -67,3 +67,18 @@ $$
 ### 深度
 
 > 3 ，链的全长
+
+### 全连接层 （fully-connected Layer，FC，Dense）
+
+> 每一个神经元的输入都来自上一层的所有输出
+
+## CNN 卷积神经网络
+
+> [卷积网络(convolutional network)/卷积神经网络(convolutional neural network,CNN)](https://gwfp.github.io/深度学习算法/2019/06/07/CNN.html)
+
+![avatar](https://gwfp.github.io/static/images/19/06/07/CNN.jpeg){:width='400px' height="200px"}
+
+## 参考资料
+
+[1] 伊恩古德费洛.深度学习[M].北京:人民邮电出版社.2017:34-51
+[2] [深度学习中的常见名词术语(图像方向)](https://www.zhihu.com/lives/904295186979508224)
