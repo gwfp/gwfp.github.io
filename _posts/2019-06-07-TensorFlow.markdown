@@ -28,6 +28,10 @@ TensorFlow2.0
 
 ## Data Ingestion and Transformation
 
+### 预处理
+
+#### pad_sequences
+
 ## Modle Building
 
 ## Training
@@ -52,6 +56,7 @@ TensorFlow2.0
 [1] [Tensorflow 源码](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python)
 [2] [Tensorflow Tutorials](https://tensorflow.google.cn/beta)
 [3] [keras](https://keras.io)
+[4] [tensorflow_datasets](https://github.com/tensorflow/datasets/tree/master/tensorflow_datasets)
 	
 
 
