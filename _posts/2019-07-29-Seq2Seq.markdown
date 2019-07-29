@@ -17,10 +17,9 @@ Seq2Seq (Sequence-to-sequence)
 
 ### Attention Model
 
-> 注意力机制，
+> 为了解决,seq2seq在句子过长时效果不佳的问题，引入注意力机制。
 
 ## RNN Encoder-Decoder
-
 
 
 
@@ -28,5 +27,7 @@ Seq2Seq (Sequence-to-sequence)
 
 
 [1] Dzmitry Bahdanau.Neural Machine Translation by jointly Learning to Align and Translate[J].ICLR,2015. 
-[2] [Learning Phrase Representation using RNN Encoder-Decoder for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078.pdf)
-
+[2] [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf)
+[3] [Learning Phrase Representation using RNN Encoder-Decoder for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078.pdf)
+[4] [legacy_seq2seq Code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/legacy_seq2seq/python/ops/seq2seq.py)
+[5] [seq2seq](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/seq2seq/python/ops)
