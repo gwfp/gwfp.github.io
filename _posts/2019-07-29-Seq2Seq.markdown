@@ -1,0 +1,20 @@
+---
+layout: post
+category: 深度学习模型
+tags: [深度学习模型,Seq2Seq.注意力机制,Attention,Model]
+---
+
+Seq2Seq (Sequence-to-sequence)
+===============
+
+## 概念
+
+> Seq2seq,是一种通用的编码器——解码器框架，可用于机器翻译、文本摘要、会话建模、图像字幕等场景中。
+
+![avatar](https://gwfp.github.io/static/images/19/07/29/seq2seq.jpeg){:width='600px' height="200px"}
+
+## 参考资料
+
+
+[1] Dzmitry Bahdanau.Neural Machine Translation by jointly Learning to Align and Translate[J].ICLR,2015. 
+[2] [深度学习中的常见名词术语(图像方向)](https://www.zhihu.com/lives/904295186979508224)
