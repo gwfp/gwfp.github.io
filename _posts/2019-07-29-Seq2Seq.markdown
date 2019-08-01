@@ -15,6 +15,8 @@ Seq2Seq (Sequence-to-sequence)
 
 ![avatar](https://gwfp.github.io/static/images/19/07/29/seq2seq.png){:width='600px' height="200px"}
 
+![avatar](https://gwfp.github.io/static/images/19/07/29/seq2seqdetail.png){:width='600px' height="300px"}
+
 ### Attention Model
 
 > 为了解决,seq2seq在句子过长时效果不佳的问题，引入注意力机制。

@@ -22,6 +22,33 @@ TensorFlow2.0
 
 	pip install --upgrade tensorflow
 
+## 1.x 与 2.x 不同
+
+### 1.x 通过脚本转换为 2.x
+
+	tf_upgrade_v2 --infile tensorfoo.py --outfile tensorfoo-upgraded.py
+
+### 类
+
+#### BasicLSTMCell -> LSTMCell
+
+	原：from tensorflow.python.ops import rnn_cell_impl
+	    rnn_cell_impl.BasicLSTMCell()
+	现：tf.keras.layers.LSTMCell()
+
+#### MultiRNNCell -> StackedRNNCells
+	
+	原：tf.compat.v1.nn.rnn_cell.MultiRNNCell()
+	现：tf.keras.layers.StackedRNNCells()
+
+### 函数
+
+#### variable_scope
+
+	原 with tf.variable_scope("name"):
+	现 from tensorflow.python.ops import variable_scope
+		with variable_scope("name"):
+
 ## Tensorflow Workflow
 
 ![avatar](https://gwfp.github.io/static/images/19/06/07/tensorflow_workflow.png){:width='600px' height="200px"}
@@ -59,10 +86,10 @@ TensorFlow2.0
 
 ## 参考资料
 
-[1] [Tensorflow 源码](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python)
-[2] [Tensorflow Tutorials](https://tensorflow.google.cn/beta)
-[3] [keras](https://keras.io)
-[4] [tensorflow_datasets](https://github.com/tensorflow/datasets/tree/master/tensorflow_datasets)
+[1] Tensorflow 源码 [code](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python)
+[2] Tensorflow Tutorials [html](https://tensorflow.google.cn/beta)
+[3] keras [html](https://keras.io)
+[4] tensorflow_datasets [code](https://github.com/tensorflow/datasets/tree/master/tensorflow_datasets)
 	
 
 
