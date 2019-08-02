@@ -24,11 +24,11 @@ tags: [深度学习概念,RNN,循环神经网络]
 	(output, next_state) = call(input, state)
   假设我们有一个初始状态h0，还有输入x1，调用call(x1,h0)后就可以得到(output1, h1)：
 
-![avatar](https://gwfp.github.io/static/images/19/06/19/RNNCall1.png){:width='600px' height="200px"}
+![avatar](https://gwfp.github.io/static/images/19/06/19/RNNcallstep1.png){:width='350px' height="150px"}
  
   再调用一次call(x2, h1)就可以得到(output2, h2)：
 
-![avatar](https://gwfp.github.io/static/images/19/06/19/RNNCall2.png){:width='600px' height="200px"}
+![avatar](https://gwfp.github.io/static/images/19/06/19/RNNcallstep2.png){:width='350px' height="130px"}
   
 #### BasicRNNCell
 
