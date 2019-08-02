@@ -13,7 +13,44 @@ tags: [深度学习概念,RNN,循环神经网络]
 
 ## RNN的模型
 
+### RNNCell
+
+> RNN 都具有一种重复神经网络模块的链式的形式,在标准的 RNN 中，这个重复的模块只有一个非常简单的结构，例如一个 tanh 层。
+
+![avatar](https://gwfp.github.io/static/images/19/06/19/RNN.png){:width='450px' height="180px"}
+
+> 每个RNNCell 都有一个 call 方法，使用方式：
+
+	(output, next_state) = call(input, state)
+  假设我们有一个初始状态h0，还有输入x1，调用call(x1,h0)后就可以得到(output1, h1)：
+
+![avatar](https://gwfp.github.io/static/images/19/06/19/RNNCall1.png){:width='600px' height="200px"}
+ 
+  再调用一次call(x2, h1)就可以得到(output2, h2)：
+
+![avatar](https://gwfp.github.io/static/images/19/06/19/RNNCall2.png){:width='600px' height="200px"}
+  
+#### BasicRNNCell
+
+#### BasicLSTMCell 
 
 ## RNN的种类
 
+### many to one
+
+### one to one
+
+### one to many
+
+### many(1) to many(2)  # (1) 不一定等于 (2) 
+
+
+## 参考资料
+
+
+[1] 伊恩古德费洛.深度学习[M].北京:人民邮电出版社.2017:34-51
+[2] TensorFlow中RNN实现的正确打开方式[html] (https://zhuanlan.zhihu.com/p/28196873)
+[3] LSTM（长短期记忆网络）及其tensorflow代码应用 [html](https://www.cnblogs.com/pinking/p/9362966.html)
+[4] 长短期记忆网络（Long Short-Term Memory，LSTM）及其变体双向LSTM和GRU [html](https://blog.csdn.net/weixin_42111770/article/details/80900575)
+[5] RNNCell实现 [code](https://github.com/tensorflow/tensorflow/blob/r2.0/tensorflow/python/ops/rnn_cell_impl.py)
 

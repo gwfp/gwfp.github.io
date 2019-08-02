@@ -1,0 +1,18 @@
+---
+layout: post
+category: 深度学习算法
+tags: [深度学习算法,LSTM]
+---
+
+长期记忆网络 (Long Short Term)
+===============
+
+## 定义
+
+## 参考资料
+
+
+[1] 伊恩古德费洛.深度学习[M].北京:人民邮电出版社.2017:34-51
+[2] Understanding LSTM Networks [html](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+[3] Understanding LSTM in Tensorflow(MNIST dataset) [html](https://www.knowledgemapper.com/knowmap/knowbook/jasdeepchhabra94@gmail.comUnderstandingLSTMinTensorflow(MNISTdataset)
+[4] BasicLSTMCell中num_units参数解释 [html](https://blog.csdn.net/notHeadache/article/details/81164264)

@@ -26,7 +26,7 @@ TensorFlow2.0
 
 ### 1.x 通过脚本转换为 2.x
 
-	tf_upgrade_v2 --infile tensorfoo.py --outfile tensorfoo-upgraded.py
+	~$: tf_upgrade_v2 --infile tensorfoo.py --outfile tensorfoo-upgraded.py
 
 ### 类
 

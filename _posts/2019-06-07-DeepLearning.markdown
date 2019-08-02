@@ -74,9 +74,17 @@ $$
 
 ## CNN 卷积神经网络
 
-> [卷积网络(convolutional network)/卷积神经网络(convolutional neural network,CNN)](https://gwfp.github.io/深度学习算法/2019/06/07/CNN.html)
+> 卷积网络(convolutional network)/卷积神经网络(convolutional neural network,CNN)[link](https://gwfp.github.io/深度学习算法/2019/06/07/CNN.html)
 
 ![avatar](https://gwfp.github.io/static/images/19/06/07/CNN.jpeg){:width='400px' height="200px"}
+
+## RNN 循环神经网络（递归神经网络）
+
+> 循环神经网络(recurrent neural network,RNN)[link](https://gwfp.github.io/深度学习算法/2019/06/19/RNN.html)
+
+## DBN
+
+## GAN
 
 ## 参考资料
 
