@@ -22,6 +22,7 @@ tags: [深度学习概念,RNN,循环神经网络]
 > 每个RNNCell 都有一个 call 方法，使用方式：
 
 	(output, next_state) = call(input, state)
+  
   假设我们有一个初始状态h0，还有输入x1，调用call(x1,h0)后就可以得到(output1, h1)：
 
 ![avatar](https://gwfp.github.io/static/images/19/06/19/RNNcallstep1.png){:width='350px' height="150px"}
@@ -29,10 +30,33 @@ tags: [深度学习概念,RNN,循环神经网络]
   再调用一次call(x2, h1)就可以得到(output2, h2)：
 
 ![avatar](https://gwfp.github.io/static/images/19/06/19/RNNcallstep2.png){:width='350px' height="130px"}
-  
+
+  每调用一次RNNCell的call方法，就相当于在时间上“推进了一步”。代码实现上，RNNCell只是一个抽象类，我们用的时候都是用的它的两个子类BasicRNNCell和BasicLSTMCell。 
+ 
+$$
+	h_{t} = tanh(W_{hh}h_{t-1}+W_{xh}h_{t})
+$$
+
+	def call(self, x):
+		self.h = np.tanh(np.dot(self.w_hh, self.h) + np.dot(self.W_xh, x))
+		y = np.dot(self.W_hy, self.h)
+		return y
+
 #### BasicRNNCell
 
+> RNN的基础类
+
+before
+
+	tf.compat.v1.nn.rnn_cell [code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn_cell_impl.py)
+
+Tf2.0
+
+	tf.keras.layers.SimpleRNNCell [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68eb1a467606ea6d44c733/tensorflow/python/keras/layers/recurrent.py)
+
 #### BasicLSTMCell 
+
+> [LSTM](https://gwfp.github.io/深度学习算法/2019/07/01/LSTM.html) 的基础类
 
 ## RNN的种类
 
