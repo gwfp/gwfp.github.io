@@ -46,13 +46,61 @@ $$
 
 > RNN的基础类
 
-before
+before [code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn_cell_impl.py) ,(base_layer) [code](https://github.com/tensorflow/tensorflow/blob/6b4b4d417db40595d3593802c560420591c3f2bc/tensorflow/python/keras/engine/base_layer.py)
 
-	tf.compat.v1.nn.rnn_cell [code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn_cell_impl.py)
+	tf.compat.v1.nn.rnn_cell.BasicRNNCell
 
-Tf2.0
+	class BasicRNNCell(LayerRNNCell):
 
-	tf.keras.layers.SimpleRNNCell [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68eb1a467606ea6d44c733/tensorflow/python/keras/layers/recurrent.py)
+		def __init__(self,
+			num_units,	#int, The number of units in the RNN cell.
+               		activation=None, #Default: `tanh`
+               		reuse=None,	#
+               		name=None,	#String, when  layer name is same, reuse = True 
+               		dtype=None, 	
+               		**kwargs)
+	
+		...
+
+		def state_size(self):
+    			return self._num_units 	# 隐层的大小
+
+		def output_size(self):
+    			return self._num_units  # 输出的大小
+	'''
+		我们通常是将一个batch送入模型计算，设输入数据的形状为(batch_size, input_size)，那么计算时得到的隐层状态就是(batch_size, state_size)，输出就是(batch_size, output_size)。
+	'''
+
+		def build(self, inputs_shape):
+			... 
+			self._kernel = add_variable('kernel'
+				, shape=[input_shape[-1] + self._num_units
+				, self._num_units])	#num_units: int, The number of units in the RNN cell.
+			self._bias = add_variable('bias'
+				, shape=[self._num_units],
+				, initializer=init_ops.zeros_initializer(dtype=self.dtype))
+			self.built=True
+		
+
+		def call(self, inputs, state)
+			gate_inputs = math_ops.matmul(
+        			array_ops.concat([inputs, state], 1), self._kernel)   # gate_inputs = W * (input + state)
+			gate_inputs = nn_ops.bias_add(gate_inputs, self._bias) # gate_inputs = gete_input + bias
+			output = self._activation(gate_inputs) 
+			return output, output
+
+		def get_config(self):
+			config = {
+				...
+			}
+			base_config = super(BasicRNNCell, self).get_config()
+			return dict(list(base_config.items()) + list(config.items()))	# 合并base_config 和 config
+
+Tf2.0 [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68eb1a467606ea6d44c733/tensorflow/python/keras/layers/recurrent.py)
+
+	tf.keras.layers.SimpleRNNCell
+
+	
 
 #### BasicLSTMCell 
 
