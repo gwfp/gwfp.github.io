@@ -167,6 +167,8 @@ Tf2.0 [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68e
 
 ## RNN的种类
 
+![avatar](https://gwfp.github.io/static/images/19/06/19/kindofRNN.jpeg){:width='300px' height="100px"}
+
 ### many to one
 
 ### one to one

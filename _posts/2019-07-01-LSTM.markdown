@@ -4,10 +4,47 @@ category: 深度学习算法
 tags: [深度学习算法,LSTM]
 ---
 
-长期记忆网络 (Long Short Term)
+长短期记忆网络 (Long Short Term)
 ===============
 
-## 定义
+## 门控RNN
+
+### 长短期记忆 （LSTM）
+
+> 一种特殊的 RNN。传统RNN有两个问题：
+  1. 梯度爆炸 （用cliping 解决）
+  2. 梯度消失，以及梯度消失导致的“长期依赖问题”。 （用LSTM解决）
+
+### 门控循环单元 （GRU, gated recurrent unit）
+
+## LSTM, Long short Term
+
+> The repeating module in an LSTM contains four interacting layer
+
+![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-chain.png){:width='250px' height="100px"}
+
+  每个元素的涵义：
+	
+![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM2-notation.png){:width='500px' height="100px"}
+
+  LSTM之所以能够记住长期的信息，在于设计的“门”结构，“门”结构是一种让信息选择式通过的方法，包括一个sigmoid神经网络层和一个pointwise乘法操作。sigmoid layer 输出0到1之间的数字，0表示“let nothing through”，1表示“let everything through!”。
+
+![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-gate.png){:width='100px' height="125px"}
+
+  在LSTM中，第一阶段是遗忘门，遗忘层决定哪些信息需要从细胞状态中被遗忘，下一阶段是输入门，输入门确定哪些新信息能够被存放到细胞状态中，最后一个阶段是输出门，输出门确定输出什么值。
+
+### 遗忘门
+
+![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-f.png){:width='300px' height="100px"}
+
+### 信息增加门
+
+![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-i.png){:width='300px' height="100px"}
+
+### 输出门
+
+![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-C.png){:width='300px' height="100px"}
+
 
 ## 参考资料
 
