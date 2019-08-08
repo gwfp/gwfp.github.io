@@ -59,7 +59,6 @@ before [code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/py
                		name=None,	#String, when  layer name is same, reuse = True 
                		dtype=None, 	
                		**kwargs)
-	
 		...
 
 		def state_size(self):
@@ -83,9 +82,11 @@ before [code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/py
 		
 
 		def call(self, inputs, state)
+			# gate_inputs = W * (input + state)
 			gate_inputs = math_ops.matmul(
-        			array_ops.concat([inputs, state], 1), self._kernel)   # gate_inputs = W * (input + state)
-			gate_inputs = nn_ops.bias_add(gate_inputs, self._bias) # gate_inputs = gete_input + bias
+        			array_ops.concat([inputs, state], 1), self._kernel)
+			# gate_inputs = gete_input + bias
+			gate_inputs = nn_ops.bias_add(gate_inputs, self._bias) 
 			output = self._activation(gate_inputs) 
 			return output, output
 
@@ -94,7 +95,8 @@ before [code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/py
 				...
 			}
 			base_config = super(BasicRNNCell, self).get_config()
-			return dict(list(base_config.items()) + list(config.items()))	# 合并base_config 和 config
+			# gate_inputs = W * (input + state)
+			return dict(list(base_config.items()) + list(config.items()))
 
 Tf2.0 [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68eb1a467606ea6d44c733/tensorflow/python/keras/layers/recurrent.py)
 
@@ -105,6 +107,63 @@ Tf2.0 [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68e
 #### BasicLSTMCell 
 
 > [LSTM](https://gwfp.github.io/深度学习算法/2019/07/01/LSTM.html) 的基础类
+
+### 一次执行多步RNN
+
+#### dynamic_rnn
+
+	# inputs: shape = (batch_size, time_steps, input_size) ,time_steps表示序列本身的长度
+	# cell: RNNCell
+	# initial_state: shape = (batch_size, cell.state_size)。初始状态。一般可以取零矩阵
+	outputs, state = tf.compat.v1.nn.dynamic_rnn(cell, inputs, initial_state=initial_state)
+
+#### static_bidirectional_rnn
+
+### 堆叠RNNCell
+
+#### before [code]()
+		
+	# 对RNNCell进行堆叠
+	tf.compat.v1.nn.rnn_cell.MultiRNNCell([lstm_cell] * config.num_layers, state_is_tuple=True)
+	# 对MultiRNNCell进行初始化
+	init_state = cell.zero_state(batch_size, tf.float32)
+
+#### Tf2.0  [code]()
+
+	tf.keras.layers.StackedRNNCells
+	‘’‘
+	   Wrapper allowing a stack of RNN cells to behave as a single cell.
+
+	   Example：
+		cells = [
+   		   keras.layers.LSTMCell(output_dim),
+      	   	   keras.layers.LSTMCell(output_dim),
+      		   keras.layers.LSTMCell(output_dim),
+  		]
+	’‘’
+	...
+	def call(self, inputs, states, constants=None, **kwargs):
+		 # Recover per-cell states.
+    		 state_size = (self.state_size[::-1]
+                 if self.reverse_state_order else self.state_size)
+    nested_states = nest.pack_sequence_as(state_size, nest.flatten(states))
+
+    		 # Call the cells in order and store the returned states.
+    		 new_nested_states = []
+    		 for cell, states in zip(self.cells, nested_states):
+      			states = states if nest.is_sequence(states) else [states]
+      			# TF cell does not wrap the state into list when there is only one state.
+      			is_tf_rnn_cell = getattr(cell, '_is_tf_rnn_cell', None) is not None
+      			states = states[0] if len(states) == 1 and is_tf_rnn_cell else states
+      			if generic_utils.has_arg(cell.call, 'constants'):
+        			inputs, states = cell.call(inputs, states, constants=constants,**kwargs)
+      			else:
+        			inputs, states = cell.call(inputs, states, **kwargs)
+      			new_nested_states.append(states)
+
+    		 return inputs, nest.pack_sequence_as(state_size,
+                                nest.flatten(new_nested_states))
+
 
 ## RNN的种类
 
