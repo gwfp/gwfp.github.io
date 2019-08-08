@@ -31,19 +31,31 @@ tags: [深度学习算法,LSTM]
 
 ![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-gate.png){:width='100px' height="125px"}
 
-  在LSTM中，第一阶段是遗忘门，遗忘层决定哪些信息需要从细胞状态中被遗忘，下一阶段是输入门，输入门确定哪些新信息能够被存放到细胞状态中，最后一个阶段是输出门，输出门确定输出什么值。
+  在LSTM中，第一阶段是遗忘门，遗忘层决定哪些信息需要从细胞状态中被遗忘，下一阶段是信息增加门，输入门确定哪些新信息能够被存放到细胞状态中，最后一个阶段是输出门，输出门确定输出什么值。
 
-### 遗忘门
+### 遗忘门 (forget gate layer, decide what information we’re going to throw away from the cell state)
 
 ![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-f.png){:width='300px' height="100px"}
 
-### 信息增加门
+### 信息增加门 (decide what new information we’re going to store in the cell state).
+
+step1 : input gate layer (decides which values we’ll update.),sigmoid决定了什么值需要更新.
+step2 : tanh创建一个新的细胞状态的候选向量Ct，该过程训练两个权值Wi和Wc。
 
 ![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-i.png){:width='300px' height="100px"}
 
-### 输出门
+step3: we’ll combine these two to create an update to the state.
 
 ![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-C.png){:width='300px' height="100px"}
+
+### 输出门(decide what we’re going to output)
+
+step1: we run a sigmoid layer which decides what parts of the cell state we’re going to output.
+step2: put the cell state through tanh
+ (to push the values to be between −1and 1) and multiply it by the output of the sigmoid gate
+
+![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-o.png){:width='300px' height="100px"}
+
 
 
 ## 参考资料
