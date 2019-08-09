@@ -56,7 +56,66 @@ step2: put the cell state through tanh
 
 ![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-o.png){:width='300px' height="100px"}
 
+### 实现
 
+#### BasicLSTMCell
+
+before [code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn_cell_impl.py)
+
+	tf.compat.v1.nn.rnn_cell.BasicLSTMCell
+	
+Tf2.0 [documentation](https://keras.io/layers/recurrent/) [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68eb1a467606ea6d44c733/tensorflow/python/keras/layers/recurrent.py)
+
+	tf.compat.v1.nn.rnn_cell.LSTMCell
+	
+	class LSTMCell(DropoutRNNCellMixin, Layer):
+		def __init__(self,
+			     units,
+			     activation='tanh',
+               		     recurrent_activation='hard_sigmoid',
+               		     use_bias=True,
+			     ...
+			     )
+			super(LSTMCell, self).__init__(**kwargs)
+			...
+			self.state_size = data_structures.NoDependency([self.units, self.units])
+    			self.output_size = self.units
+			
+	
+		def build(self, input_shape):
+			'''
+			初始化 self.kernel, self.recurrent_kernel, self.bias
+			'''
+			...
+
+		def call()
+			h_tm1 = states[0]  # previous memory state
+    			c_tm1 = states[1]  # previous carry state
+			...
+			为每一步创建bias
+			x = (x_i, x_f, x_c, x_o)
+			为每一步创建初始状态
+      			h_tm1 = (h_tm1_i, h_tm1_f, h_tm1_c, h_tm1_o)
+			...
+			# 遗忘门
+			f = self.recurrent_activation(x_f + K.dot(
+       	 			h_tm1_f, self.recurrent_kernel[:, self.units:self.units * 2]))
+			# 信息增加门
+			i = self.recurrent_activation(
+        			x_i + K.dot(h_tm1_i, self.recurrent_kernel[:, :self.units]))
+			c = f * c_tm1 + i * self.activation(x_c + K.dot(
+        			h_tm1_c, self.recurrent_kernel[:, self.units * 2:self.units * 3]))			
+
+			# 输出门
+			o = self.recurrent_activation(
+        			x_o + K.dot(h_tm1_o, self.recurrent_kernel[:, self.units * 3:]))
+			h = o * self.activation(c)
+    			return h, [h, c]
+	
+		def get_config(self):
+			...
+			base_config = super(LSTMCell, self).get_config()
+    			return dict(list(base_config.items()) + list(config.items()))
 
 ## 参考资料
 
