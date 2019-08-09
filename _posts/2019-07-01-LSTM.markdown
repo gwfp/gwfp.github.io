@@ -88,7 +88,7 @@ Tf2.0 [documentation](https://keras.io/layers/recurrent/) [code](https://github.
 			'''
 			...
 
-		def call()
+		def call(self, inputs, states, training=None)
 			h_tm1 = states[0]  # previous memory state
     			c_tm1 = states[1]  # previous carry state
 			...
@@ -109,13 +109,20 @@ Tf2.0 [documentation](https://keras.io/layers/recurrent/) [code](https://github.
 			# 输出门
 			o = self.recurrent_activation(
         			x_o + K.dot(h_tm1_o, self.recurrent_kernel[:, self.units * 3:]))
+			
 			h = o * self.activation(c)
+			# h,c 对应下一个cell的输入状态 state_next = [h,c]
     			return h, [h, c]
 	
 		def get_config(self):
 			...
 			base_config = super(LSTMCell, self).get_config()
     			return dict(list(base_config.items()) + list(config.items()))
+
+## GRU
+
+![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-var-GRU.png){:width='300px' height="100px"}
+
 
 ## 参考资料
 
