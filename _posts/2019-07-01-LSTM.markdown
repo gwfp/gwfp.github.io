@@ -17,6 +17,8 @@ tags: [深度学习算法,LSTM]
 
 ### 门控循环单元 （GRU, gated recurrent unit）
 
+> LSTM最流行的一个变体。
+
 ## LSTM, Long short Term
 
 > The repeating module in an LSTM contains four interacting layer
@@ -39,7 +41,7 @@ tags: [深度学习算法,LSTM]
 
 ### 信息增加门 (decide what new information we’re going to store in the cell state).
 
-step1 : input gate layer (decides which values we’ll update.),sigmoid决定了什么值需要更新.
+step1 : 输入门（input gate layer ，decides which values we’ll update.),sigmoid决定了什么值需要更新.
 step2 : tanh创建一个新的细胞状态的候选向量Ct，该过程训练两个权值Wi和Wc。
 
 ![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-i.png){:width='300px' height="100px"}
@@ -48,7 +50,7 @@ step3: we’ll combine these two to create an update to the state.
 
 ![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-focus-C.png){:width='300px' height="100px"}
 
-### 输出门(decide what we’re going to output)
+### 输出门(output gate，decide what we’re going to output)
 
 step1: we run a sigmoid layer which decides what parts of the cell state we’re going to output.
 step2: put the cell state through tanh
@@ -70,7 +72,7 @@ Tf2.0 [documentation](https://keras.io/layers/recurrent/) [code](https://github.
 	
 	class LSTMCell(DropoutRNNCellMixin, Layer):
 		def __init__(self,
-			     units,
+			     units,	# LSTM输出结果的维度
 			     activation='tanh',
                		     recurrent_activation='hard_sigmoid',
                		     use_bias=True,
@@ -119,6 +121,11 @@ Tf2.0 [documentation](https://keras.io/layers/recurrent/) [code](https://github.
 			base_config = super(LSTMCell, self).get_config()
     			return dict(list(base_config.items()) + list(config.items()))
 
+	
+相关参数：
+	num_units： 个参数的大小就是LSTM输出结果的维度。例如num_units=128， 那么LSTM网络最后输出就是一个128维的向量。[html](https://blog.csdn.net/notHeadache/article/details/81164264)
+	
+
 ## GRU
 
 ![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-var-GRU.png){:width='300px' height="100px"}
@@ -130,4 +137,3 @@ Tf2.0 [documentation](https://keras.io/layers/recurrent/) [code](https://github.
 [1] 伊恩古德费洛.深度学习[M].北京:人民邮电出版社.2017:34-51
 [2] Understanding LSTM Networks [html](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 [3] Understanding LSTM in Tensorflow(MNIST dataset) [html](http://1t.click/5ZK)
-[4] BasicLSTMCell中num_units参数解释 [html](https://blog.csdn.net/notHeadache/article/details/81164264)
