@@ -102,8 +102,6 @@ Tf2.0 [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68e
 
 	tf.keras.layers.SimpleRNNCell
 
-	
-
 #### BasicLSTMCell 
 
 > [LSTM](https://gwfp.github.io/深度学习算法/2019/07/01/LSTM.html) 的基础类
@@ -116,8 +114,6 @@ Tf2.0 [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68e
 	# cell: RNNCell
 	# initial_state: shape = (batch_size, cell.state_size)。初始状态。一般可以取零矩阵
 	outputs, state = tf.compat.v1.nn.dynamic_rnn(cell, inputs, initial_state=initial_state)
-
-#### static_bidirectional_rnn
 
 ### 堆叠RNNCell
 
@@ -164,6 +160,10 @@ Tf2.0 [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68e
     		 return inputs, nest.pack_sequence_as(state_size,
                                 nest.flatten(new_nested_states))
 
+
+### 双向RNN （bidirectional rnn） 
+
+#### static_bidirectional_rnn
 
 ## RNN的种类
 

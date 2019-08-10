@@ -122,13 +122,89 @@ Tf2.0 [documentation](https://keras.io/layers/recurrent/) [code](https://github.
     			return dict(list(base_config.items()) + list(config.items()))
 
 	
-相关参数：
+相关解释：
 	num_units： 个参数的大小就是LSTM输出结果的维度。例如num_units=128， 那么LSTM网络最后输出就是一个128维的向量。[html](https://blog.csdn.net/notHeadache/article/details/81164264)
-	
+	call（）函数return h，和 [h, c]（隐藏层状态），如果我们处理的是分类问题，那么我们还需要对h添加单独的Softmax层才能得到最后的分类概率输出。
 
 ## GRU
 
+> GRU包括两个门，一个重置门(rt, reset gate)和更新门(zt, update gate)。这两个门的激活函数为sigmoid函数，在[0,1]区间取值。
+
 ![avatar](https://gwfp.github.io/static/images/19/07/01/LSTM3-var-GRU.png){:width='300px' height="100px"}
+
+### 重置门
+
+> 决定过去有多少信息被遗忘，有助于捕捉时序数据中短期的依赖关系。
+
+### 更新门
+
+> 有助于捕捉时序数据中中长期的依赖关系。
+
+### 实现
+
+#### GRUCell
+
+before： [code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn_cell_impl.py)
+
+	tf.compat.v1.nn.rnn_cell.GRUCell
+
+Tf2.0:  [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e68eb1a467606ea6d44c733/tensorflow/python/keras/layers/recurrent.py)
+
+	tf.keras.layers.GRUCell
+
+	class GRUCell(DropoutRNNCellMixin, Layer):
+		def __init__(self,
+               		     units,
+               		     activation='tanh',
+               		     recurrent_activation='hard_sigmoid',
+               		     use_bias=True,
+			     ...)
+			...
+			self.state_size = self.units
+    			self.output_size = self.units
+
+		def build(self, input_shape):
+			input_dim = input_shape[-1]
+			'''
+			初始化 self.kernel， self.recurrent_kernel， self.use_bias
+			'''
+		        ...
+			self.built = True
+		
+		def call(self, inputs, states, training=None):
+			h_tm1 = states[0]  # previous memory
+			
+			x_z = K.dot(inputs_z, self.kernel[:, :self.units])
+      			x_r = K.dot(inputs_r, self.kernel[:, self.units:self.units * 2])
+      			x_h = K.dot(inputs_h, self.kernel[:, self.units * 2:])
+
+			recurrent_z = K.dot(h_tm1, self.recurrent_kernel[:, :self.units])
+      			recurrent_r = K.dot(h_tm1,
+                          self.recurrent_kernel[:, self.units:self.units * 2])
+			
+			# update gate
+			z = self.recurrent_activation(x_z + recurrent_z)
+			# reset gate
+			r = self.recurrent_activation(x_r + recurrent_r)
+			# hidden state
+			recurrent_h = K.dot(r * h_tm1,
+                            self.recurrent_kernel[:, 2 * self.units:])
+			hh = self.activation(x_h + recurrent_h)
+			# previous and candidate state mixed by update gate
+    			h = z * h_tm1 + (1 - z) * hh
+			return h, [h]
+			     
+		def get_config(self):
+			config = {'units': self.units,
+        			'activation': 
+					activations.serialize(self.activation),
+        			'recurrent_activation':
+            				activations.serialize(self.recurrent_activation),
+				...}
+			base_config = super(GRUCell, self).get_config()
+    			return dict(list(base_config.items()) + list(config.items()))
+		def get_initial_state(self, inputs=None, batch_size=None, dtype=None):
+    		return _generate_zero_filled_state_for_cell(self, inputs, batch_size, dtype)		
 
 
 ## 参考资料
