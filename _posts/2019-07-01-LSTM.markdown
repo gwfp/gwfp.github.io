@@ -202,9 +202,10 @@ Tf2.0:  [code](https://github.com/tensorflow/tensorflow/blob/d90e521d71b88f469e6
             				activations.serialize(self.recurrent_activation),
 				...}
 			base_config = super(GRUCell, self).get_config()
-    			return dict(list(base_config.items()) + list(config.items()))
+			return dict(list(base_config.items()) + list(config.items()))
+		
 		def get_initial_state(self, inputs=None, batch_size=None, dtype=None):
-    		return _generate_zero_filled_state_for_cell(self, inputs, batch_size, dtype)		
+			return _generate_zero_filled_state_for_cell(self, inputs, batch_size, dtype)		
 
 
 ## 参考资料

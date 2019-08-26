@@ -184,6 +184,9 @@ $$
 ### SVM
 
 
-	
+## 参考资料
+
+[1] 伊恩古德费洛.深度学习[M].北京:人民邮电出版社.2017:34-51
+[2] sciklearn document [html](http://scikit-learn.github.io/stable)
 	
 
