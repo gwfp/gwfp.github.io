@@ -17,7 +17,12 @@ tags: [特征工程]
 >	1. 提出问题
 	2. 理解数据
 	3. 数据清洗
-	4. 特征
+	4. 数据预处理
+	5. 特征选择
+	6. 模型构建
+	7. 
+
+![avatar](https://gwfp.github.io/static/images/19/02/16/step.png){:width='250px' height="100px"}
 
 ## 提出问题
 
@@ -69,13 +74,20 @@ tags: [特征工程]
 	
 ## 数据清洗 (Data cleaning method)
 
-#### 异常值处理
-
 ### 缺失值数据处理
+
+#### 删除多列
+
+	train.drop("SalePrice",axis=1,inplace=True)##删除SalePrice列
+
+#### 检查缺失数据
 
 #### fillna 缺失值填充
 
 ##### 字符型数据 （info ：object）
+
+	# None 值填充
+	train[col].fillna("None",inplace=True)
 
 ##### 数值型数据 （info ：int64 / float64）
 
@@ -83,16 +95,8 @@ tags: [特征工程]
 	train[col].fillna(0, inplace=True)
 	# 均值填充
 	full["LotFrontage"].fillna(np.mean(full["LotFrontage"]),inplace=True)
-	# 众书填充 
+	# 众数填充 
 	full[col].fillna(full[col].mode()[0], inplace=True)
-
-#### dropna 删除缺失值
-
-## 数据预处理
-
-### 选择子集
-
-### 列名重命名
 
 ### 数据类型转换
 
@@ -103,15 +107,21 @@ tags: [特征工程]
 	lab = LabelEncoder()
 	full["Alley"] = lab.fit_transform(full.Alley)
 
-### 数据排序
+#### dropna 删除缺失值
 
-## 数据标准化
+#### 转换时间戳（从字符串到日期时间格式）
 
-### 标准化
+## 数据预处理
 
-### 极差法
+### 数据标准化
 
-### L1 与 L2 正则化
+#### 标准化
+
+#### 极差法
+
+#### L1 与 L2 正则化
+
+### 归一化
 
 ## 特征选择
 
