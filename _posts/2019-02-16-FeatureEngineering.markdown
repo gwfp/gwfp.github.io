@@ -23,6 +23,7 @@ tags: [特征工程]
 	7. 
 
 ![avatar](https://gwfp.github.io/static/images/19/02/16/step.png){:width='250px' height="100px"}
+使用sklearn进行虚线框内的工作
 
 ## 提出问题
 
