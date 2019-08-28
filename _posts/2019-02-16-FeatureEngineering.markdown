@@ -53,7 +53,7 @@ tags: [特征工程]
 #### isnull 统计空值的个数
 
 	miss = train.isnull().sum()	# 统计空值的个数
-	miss[miss>0].sort_values(ascending=False)	# 由高到低排列，accending=True 由高到低排列
+	miss[miss>0].sort_values(ascending=False)	# 由低到高排列，accending=True 由高到低排列
 	
 #### info 发现缺失数据
 
@@ -195,36 +195,125 @@ $$
 
 ## 特征选择
 
-### 特征选择
+### Filter : 过滤法
 
-#### Filter : 过滤法
+#### 方差选择法
 
-##### 方差选择法
+> 先计算各个特征的方差，然后根据阈值，选择方差大于阈值的特征.默认情况下，删除零方差的特征，例如那些只有一个值的样本。例子，假设我们有一个有布尔特征的数据集，然后我们想去掉那些超过80%的样本都是0（或者1）的特征。布尔特征是伯努利随机变量，方差为 p(1-p)。
 
-> 先计算各个特征的方差，然后根据阈值，选择方差大于阈值的特征
+	from sklearn.feature_selection import VarianceThreshold
 
-##### 单变量特征选择
+	X = [[0, 0, 1], [0, 1, 0], [1, 0, 0], [0, 1, 1], [0, 1, 0], [0, 1, 1]]
+	sel = VarianceThreshold(threshold=(.8*(1-.8)))
+	sel.fit_transform(X)
+	array([[0, 1],
+       	      [1, 0],
+       	      [0, 0],
+      	      [1, 1],
+   	      [1, 0],
+   	      [1, 1]])
 
-###### 卡方检验
+第一列里面0的比例为5/6,被去掉
 
-###### pearson相关系数（pearson correlaction）
+#### 单变量特征选择（Univariate feature selection)
+	
+	from sklearn.feature_selection import SelectKBest, SelectPercentile
 
-##### 互信息和最大信息系数（mutual information and maximal information）
+##### SelectBest 只保留K个最高的特征
+
+	sklearn.feature_selection.SelectKBest(score_func=<function f_classif>, k=10）
+
+##### SelectPercentile 只保留用户指定百分比的最高分的特征
+	
+	sklearn.feature_selection.SelectPercentile(score_func=<function f_classif>, percentile=10)
+
+> score_func:
+	For regression: f_regression, mutual_info_regression
+	For classification: chi2, f_classif, mutual_info_classif
+
+###### 卡方检验(chi2)
+
+$$
+	x^{2}=\sum \frac{(A-E)^2}{E}
+$$
+
+\\(A \\) 是实值，\\(E \\) 是理论值
+
+###### 互信息和最大信息系数（mutual_info_classif,mutual information and maximal information）
+
+互信息方法可以捕捉任何一种统计依赖，但是作为非参数方法，需要更多的样本进行准确的估计。
+
+	from minepy import MINE
+	from sklearn.feature_selection import SelectKBest
+	
+	#由于MINE的设计不是函数式的，定义mic方法将其为函数式的，返回一个二元组，二元组的第2项设置成固定的P值0.5 
+	def mic(x, y):
+    		m = MINE()
+    		m.compute_score(x, y)
+    		return (m.mic(), 0.5)
+	#选择K个最好的特征，返回特征选择后的数据
+	SelectKBest(lambda X, Y: array(map(lambda x:mic(x, Y), X.T)).T, k=2).fit_transform(iris.data, iris.target)
+
+##### pearson相关系数（pearson correlaction）
+
+$$
+	p_{x,y}=\frac{cov(X,Y)}{\sigma(X)\sigma (Y)}
+$$
+	
+\\(cov(X,Y) \\) 是X,Y的协方差，\\(\sigma(X) \sigma (Y) \\) 是X,Y个字标准差的乘积
+
+适用于回归问题（y值连续）
+
+	from scipy.stats import pearsonr
+
+	pearsonr(x, y) # 输入为特征矩阵和目标向量
+		       #输出为二元组(sorce, p-value)的数组
+
 
 ##### 距离相关系数
 
-#### Wrapper : 包装法
+距离相关系数是为了克服Pearson相关系数的弱点而生的。即便Pearson相关系数是0，我们 也不能断定这两个变量是独立的(有可能是非线性相关);但如果距离相关系数是0，那么我们就可以说这两个变量 是独立的。
 
-#### Embedded : 嵌入法 
+### Wrapper : 包装法
+
+> 根据目标函数(通常是预测效果评分)，每次选择若干特征，或者排除若干特征。也可以将特征 子集的选择看作是一个搜索寻优问题，生成不同的组合，对组合进行评价，再与其他的组合进行比较。这样就将子集 的选择看作是一个是一个优化问题，这里有很多的优化算法可以解决，尤其是一些启发式的优化算法，如GA， PSO，DE，ABC等
+
+#### 递归特征消除法
+
+使用一个基模型来进行多轮训练，每轮训练后，消除若干权值系数的特征，再基于新的特征集进行下一轮训练.
+
+	from sklearn.feature_selection import RFE
+	from sklearn.linear_model import LogisticRegression	
+
+	#参数n_features_to_select为选择的特征个数
+	rfe = RFE(estimator=LogisticRegression(), n_features_to_select=2).fit_transform(iris.data, iris.target)
+	ranking = rfe.ranking_
+	# 查看特征排名，数值越大，说明重要性越高
+	print (ranking) 
+
+### Embedded : 嵌入法 
+
+> 使用某些机器学习的算法和模型进行训练，得到各个特征的权值系数，根据系数从大到小选择特征。
+
+#### 基于惩罚的特征选择法
+
+	
+
+#### 基于树模型的特征选择法
 
 ### 降维
+
+> PCA是为了让映射后的样本具有最 大的发散性;而LDA是为了让映射后的样本有最好的分类性能。
+
+#### 主成分分许法（PCA）
+
+#### 线性判别分析法(LDA) 
 
 ## 构建模型
 
 ## 模型评估
 
-## 方案实施
-
 ## 参考资料
 
 [1] 一文带你探索性数据分析(EDA) [html](https://www.jianshu.com/p/9325c9f88ee6)
+[2] feature selection [html](https://scikit-learn.org/stable/modules/feature_selection.html)
