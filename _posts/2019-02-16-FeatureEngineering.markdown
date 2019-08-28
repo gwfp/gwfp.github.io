@@ -22,7 +22,8 @@ tags: [特征工程]
 	6. 模型构建
 	7. 
 
-![avatar](https://gwfp.github.io/static/images/19/02/16/step.png){:width='250px' height="100px"}
+![avatar](https://gwfp.github.io/static/images/19/02/16/step.png){:width='500px' height="200px"}
+
 使用sklearn进行虚线框内的工作
 
 ## 提出问题
@@ -116,13 +117,39 @@ tags: [特征工程]
 
 ### 数据标准化
 
-#### 标准化
+#### 方差缩放
 
-#### 极差法
+$$
+	z=\frac{x-\mu }{\sigma }
+$$
 
-#### L1 与 L2 正则化
+\\(\mu \\) 是均值，\\(\sigma \\) 是标准差
+
+	from sklearn.preprocessing import StandardScaler	
+
+	std = StandardScaler()
+	train_scale = std.fit_transform(train)
+
+#### min-max 标准化
+
+$$
+	m=\frac{x-x_{min}}{x_{max}-x_{min}}
+$$
+
+	from sklearn.preprocessing import MinMaxScaler
+
+	min_max =  MinMaxScaler()
+	train_scale = min_max.fit_transform(train)
 
 ### 归一化
+
+#### 行归一化
+
+	from sklearn.preprocessing import Normalizer
+	import pandas as pd
+
+	normalizer = Normalizer()
+	train_normal = pd.DataFrame(normalizer.fit_transform(train))
 
 ## 特征选择
 
