@@ -171,6 +171,7 @@ $$
 ### 二值化
 
 > 设置阈值，大于阈值设置为1，小于阈值设置为0
+
 $$
 	x'=\left\{\begin{matrix}
 	   1, x>threshold \\  0, x\leqslant threshold
@@ -197,6 +198,20 @@ $$
 ### 特征选择
 
 #### Filter : 过滤法
+
+##### 方差选择法
+
+> 先计算各个特征的方差，然后根据阈值，选择方差大于阈值的特征
+
+##### 单变量特征选择
+
+###### 卡方检验
+
+###### pearson相关系数（pearson correlaction）
+
+##### 互信息和最大信息系数（mutual information and maximal information）
+
+##### 距离相关系数
 
 #### Wrapper : 包装法
 
