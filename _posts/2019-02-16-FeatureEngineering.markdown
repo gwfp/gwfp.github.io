@@ -82,8 +82,6 @@ tags: [特征工程]
 
 	train.drop("SalePrice",axis=1,inplace=True)##删除SalePrice列
 
-#### 检查缺失数据
-
 #### fillna 缺失值填充
 
 ##### 字符型数据 （info ：object）
@@ -99,6 +97,15 @@ tags: [特征工程]
 	full["LotFrontage"].fillna(np.mean(full["LotFrontage"]),inplace=True)
 	# 众数填充 
 	full[col].fillna(full[col].mode()[0], inplace=True)
+
+
+#### Imputer 填充缺失值
+
+	from sklearn.preprocessing import Imputer
+
+	# 使用平均数 mean 填充，如需填充众数，将mean 换为 median
+	imp = Imputer(missing_values='NaN', strategy='mean', axis=0)
+	data_imp = imp.fit_transform(data)
 
 ### 数据类型转换
 
@@ -187,15 +194,15 @@ $$
 
 ## 特征选择
 
-### 特征工程
+### 特征选择
 
-#### 特征提取
+#### Filter : 过滤法
 
-##### map 函数 (Series)
+#### Wrapper : 包装法
 
-#### 特征选择
+#### Embedded : 嵌入法 
 
-##### 相关系数法
+### 降维
 
 ## 构建模型
 
