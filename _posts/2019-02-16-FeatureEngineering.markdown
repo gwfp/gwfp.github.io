@@ -20,7 +20,7 @@ tags: [特征工程]
 	4. 数据预处理
 	5. 特征选择
 	6. 模型构建
-	7. 
+	7. 对测试数据集进行预测 
 
 ![avatar](https://gwfp.github.io/static/images/19/02/16/step.png){:width='500px' height="200px"}
 
@@ -109,15 +109,25 @@ tags: [特征工程]
 	lab = LabelEncoder()
 	full["Alley"] = lab.fit_transform(full.Alley)
 
-#### dropna 删除缺失值
+#### 多项式转换
+
+	from sklearn.preprocessing import PolynomialFeatures
+
+	ploy = PolynomialFeatures()
+	ploy.fit_transform(iris.data)
+
+#### 自定义函数（对数）
+
+	from numpy import log1p
+	from sklearn.preprocessing import FunctionTransformer	
+
+	log = FunctionTransformer(log1p).fit_transform(data.data)
 
 #### 转换时间戳（从字符串到日期时间格式）
 
-## 数据预处理
+### 数据标准化/归一化
 
-### 数据标准化
-
-#### 方差缩放
+#### 标准化(z-score standaedization)
 
 $$
 	z=\frac{x-\mu }{\sigma }
@@ -130,7 +140,7 @@ $$
 	std = StandardScaler()
 	train_scale = std.fit_transform(train)
 
-#### min-max 标准化
+#### min-max 归一化
 
 $$
 	m=\frac{x-x_{min}}{x_{max}-x_{min}}
@@ -141,9 +151,9 @@ $$
 	min_max =  MinMaxScaler()
 	train_scale = min_max.fit_transform(train)
 
-### 归一化
+#### 范数归一化
 
-#### 行归一化
+对行向量进行处理
 
 	from sklearn.preprocessing import Normalizer
 	import pandas as pd
@@ -151,13 +161,35 @@ $$
 	normalizer = Normalizer()
 	train_normal = pd.DataFrame(normalizer.fit_transform(train))
 
+### 二值化
+
+> 设置阈值，大于阈值设置为1，小于阈值设置为0
+$$
+	x'=\left\{\begin{matrix}
+	   1, x>threshold \\  0, x\leqslant threshold
+	   \end{matrix}\right.
+$$
+
+	from sklearn.preprocessing import Binarizer
+
+	# 二值化，阈值设置为3
+	binarizer = Binarizer(threshold=3).fit_transform(train_scale)	
+
+### 哑编码
+
+#### 独热编码(OneHotEncoder)
+
+	from sklearn.preprocessing import OneHotEncoder
+
+	data_onehot = OneHotEncoder().fit_transform(data.target.reshape((-1,1)))
+
+### 无量纲化
+
 ## 特征选择
 
 ### 特征工程
 
 #### 特征提取
-
-##### one-hot 编码 （get_dummies）
 
 ##### map 函数 (Series)
 
