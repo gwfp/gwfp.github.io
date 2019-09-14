@@ -301,15 +301,35 @@ $$
 
 #### 基于树模型的特征选择法
 
+	from sklearn.feature_selection import SelectFromModel
+	from sklearn.ensemble import GradientBoostingClassifier
+
+	#GBDT作为基模型的特征选择
+	SelectFromModel(GradientBoostingClassifier()).fit_transform(iris.data, iris.target)
+
 ### 降维
 
 > PCA是为了让映射后的样本具有最 大的发散性;而LDA是为了让映射后的样本有最好的分类性能。
 
 #### 主成分分许法（PCA）
 
+	from sklearn.decomposition import PCA
+
+	#主成分分析法，返回降维后的数据
+	#参数n_components为主成分数目
+	PCA(n_components=2).fit_transform(iris.data)
+
 #### 线性判别分析法(LDA) 
 
+	from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+
+	#线性判别分析法，返回降维后的数据
+	#参数n_components为降维后的维数
+	LDA(n_components=2).fit_transform(iris.data, iris.target)
+
 ## 构建模型
+
+### 集成学习(Ensemble Learning)
 
 ## 模型评估
 
