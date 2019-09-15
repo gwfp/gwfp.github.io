@@ -47,6 +47,8 @@ tags: [集成学习,Bagging,Boosting,Stacking,Blending,AdaBoost,GBDT,XGBoost,Lig
 ### 混合 (Blending)
 
 
+
+
 ## 参考资料
 
 [1] 周志华.机器学习[M].清华大学出版社.2017:171-195 
