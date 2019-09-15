@@ -329,7 +329,7 @@ $$
 
 ## 构建模型
 
-### 集成学习(Ensemble Learning)
+### 集成学习([Ensemble Learning](https://gwfp.github.io/机器学习算法/2019/09/14/EnsembleLearning.html))
 
 ## 模型评估
 

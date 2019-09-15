@@ -24,7 +24,7 @@ tags: [集成学习,Bagging,Boosting,Stacking,Blending,AdaBoost,GBDT,XGBoost,Lig
 
 ## 高级集成学习
 
-### 装袋 （Bagging，bootstrap aggregating/自助采样法)
+### Bagging (bootstrap aggregating/自助采样法)
 
 #### 随机森林(RF, Random Forest)
 
