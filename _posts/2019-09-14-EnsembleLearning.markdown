@@ -39,6 +39,8 @@ tags: [集成学习,Bagging,Boosting,Stacking,Blending,AdaBoost,GBDT,XGBoost,Lig
 	4. 如此重复进行，直到基学习器的数目达到事先制定的值 T ，最终将这 T 个基学习器进行加权结合。
 
 #### AdaBoosting 
+	
+> 基于“加性模型”，即基学习器的线形组合
 
 #### GBDT
 
