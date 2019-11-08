@@ -54,6 +54,8 @@ tags: [特征工程]
 
 	miss = train.isnull().sum()	# 统计空值的个数
 	miss[miss>0].sort_values(ascending=False)	# 由低到高排列，accending=True 由高到低排列
+	## 查看缺失值
+	train.isnull().any()
 	
 #### info 发现缺失数据
 
@@ -330,6 +332,8 @@ $$
 ## 构建模型
 
 ### 集成学习([Ensemble Learning](https://gwfp.github.io/机器学习算法/2019/09/14/EnsembleLearning.html))
+
+![avatar](https://gwfp.github.io/static/images/19/09/14/EnsembleLearning.jpg){:width='350px' height="200px"}
 
 ## 模型评估
 

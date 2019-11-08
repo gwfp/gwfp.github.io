@@ -6,6 +6,24 @@ tags: [统计学,数学基础]
 统计学statistics
 ==============
 
+## 统计学分类
+
+### 推断统计
+
+#### 参数估计
+
+#### 假设检验
+
+### 描述性统计学
+
+#### 集中趋势 (Measure of central tendency)
+  
+#### 离散趋势 (Measure of Dispersion)
+
+## 描述性统计
+
+> A descriptive statistic is a summary statistic that quantitatively describes or summarizes features of a collection of information.
+
 ## 数据分类
 
 ### 不可测量数据
@@ -15,9 +33,9 @@ tags: [统计学,数学基础]
 > 数据间并非相等间隔的数据
 > 例，柔道段位
 
-#### 可测量数据
+### 可测量数据
 
-##### 数值数据
+#### 数值数据
 
 > ps 有些分类数据 会 被当做数值数据处理
 > 例，“非常喜欢，一般，不喜欢” \n会被作为 “1，0，-1”处理
@@ -56,6 +74,10 @@ $$
 $$
 
 > 几何平均数
+
+$$
+ G = \sqrt[\sum f]{X_{1}^{f_{1}}+X_{2}^{f_{2}}+...+X_{n}^{f_{n}}}
+$$
 
 > 调和平均数（harmonic）
 	
