@@ -8,7 +8,7 @@ tags: [统计学,数学基础]
 
 ## 统计学分类
 
-![avatar](https://gwfp.github.io/static/images/19/04/19/classify.png){:width='400px' height="132px"}
+![avatar](https://gwfp.github.io/static/images/18/04/19/classify.png){:width='400px' height="132px"}
 
 ## 描述性统计
 
