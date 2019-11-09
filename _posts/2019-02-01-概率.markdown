@@ -38,6 +38,17 @@ tags: [数学基础,概率与信息论,deep-learning]
 
 ### 期望(expectation)/期望值(expected value)
 
+设P(x) 是一个离散概率分布，自变量的取值范围为{x1,x2,...,xn
+}。其期望被定义为:
+$$
+	E(x)=\sum_{k=1}^{n}x_{k}P(x_{k})
+$$
+
+设P(x) 是一个连续概率密度函数，其期望为：
+$$
+	E(x)=\int_{-\infty }^{+\infty }xP(x_{k})dx
+$$
+
 ### 方差(variance)
 
 ### 协方差(covariance)
@@ -49,6 +60,22 @@ tags: [数学基础,概率与信息论,deep-learning]
 ### Multinoulli 分布
 
 ### 高斯分布(Gaussian distribution)/正态分布(normal distribution)
+
+正态分布概率密度函数 \\（ \mu \\）为平均值， \\( \sigma \\)为方差
+$$
+	f(x)=\frac{1}{\sigma \sqrt{2 \pi }}e^{-\frac{1}{2}[\frac{(x-\mu )}{\sigma }]^{2}}
+$$
+
+当\\（ \mu \\）=0， \\( \sigma \\)=1时，为标准正态分布, 记为 N（0，1）
+$$
+	f(x)=\frac{1}{ \sqrt{2 \pi }}e^{-\frac{x^{2}}{2}
+$$
+
+#### 经验法则(Empirical rule):68-95-99.7rule
+
+	正态分布均值左右1个标准差内的概率为68%，
+	两个标准差内的概论为95%，
+	三个标准差内的概率为99.7%
 
 ### 指数分布和Laplace 分布
 
