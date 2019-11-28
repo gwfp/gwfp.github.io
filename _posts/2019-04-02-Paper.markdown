@@ -26,6 +26,23 @@ tags: [dissertation,thesis]
 
 ## 如何阅读论文
 
+### 阅读的顺序
+
+#### "survey" the Article
+
+	1.title and keywords
+	2.abstract
+	3.conclusion
+
+#### Read the Article
+
+	1.tables and figures
+	2.introduction
+
+#### take some note
+
+	
+
 ### 阅读密码表
 
 #### SPL(Summary of Previous Literature,文献综述)	
@@ -56,11 +73,8 @@ tags: [dissertation,thesis]
 
 #### WIL(Will,)	
 
-### 阅读的方法
 
-> 先读摘要，再决定这篇文章是否值得纳入文献综述
 
-### 阅读摘要
 
 
    
