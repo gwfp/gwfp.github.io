@@ -9,4 +9,81 @@ tags: [统计学,数学基础,推断性统计]
 
 ## 置信区间
 
+### 样本大小与抽样分布
+
+![avatar](https://gwfp.github.io/static/images/19/12/04/Sample.png){:width='340px' height="440px"}
+
+#### 大样本（抽样数大于等于30）
+
+抽样分布符合中心极限定理描述的正态分布
+
+#### 小样本（抽样小于30）
+
+抽样分布符合t分布
+
+### 置信区间的求解步骤
+
+#### 1.确定要求解的问题
+
+#### 2.求样本的平均值和标准误差, 确定置信水平
+
+标准误差SE：
+
+$$
+	SE=\frac{\bar{S}}{\sqrt{n}}	
+$$
+\\( \bar{S} \\) 样本标准差，n 样本大小
+
+置信水平
+
+	常用的置信水平为 95% （两个标准误差）
+
+![avatar](https://gwfp.github.io/static/images/19/12/04/ConfidenceLevel.png){:width='340px' height="280px"}
+
+#### 3.大样本的置信区间(n>30)
+
+确定误差的概率
+$$
+	P(Z-z_{ \alpha }) = （ 1 - 置信水平 ）/ 2
+$$
+
+通过概率P查表确定z值（标准分）
+
+	90% -- 1.64
+	95% -- 1.96
+	99% -- 2.58
+
+确定上下限的值
+
+![avatar](https://gwfp.github.io/static/images/19/12/04/updownline.png){:width='330px' height="250px"}
+
+	a = 总体平均值 - z  * 标准误差
+	b = 总体平均值 + z  * 标准误差	
+
+得到置信区间：[a , b]
+
+#### 4.小样本的置信区间(n<30)
+
+确定自由度 df = n-1 （n为样本大小）
+
+确定检验方式
+
+![avatar](https://gwfp.github.io/static/images/19/12/04/One-tailed.jpg){:width='330px' height="80px"}
+	
+确定误差概率：
+	
+	单侧检验：P = 1-置信水平
+	双侧检验：P = （1-置信水平)/2
+
+通过概率P和自由度df，查表确定t值（标准分）
+
+确定上下限
+
+	a = 样本平均值 - t * 标准误差
+	b = 样本平均值 - t * 标准误差
+
+置信区间: 
+
+	[ a , b ]
+ 
 ## 假设检验
