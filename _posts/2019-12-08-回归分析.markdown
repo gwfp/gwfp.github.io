@@ -15,7 +15,7 @@ tags: [统计学,数学基础,推断性统计,回归分析]
 
 ### 相关术语
 
-![avatar](https://gwfp.github.io/static/images/19/12/04/regressiveanalysis.png){:width='600px' height="400px"}
+![avatar](https://gwfp.github.io/static/images/19/12/08/regressiveanalysis.png){:width='600px' height="400px"}
 
 ## 求解回归分析的流程
 
@@ -29,6 +29,28 @@ tags: [统计学,数学基础,推断性统计,回归分析]
 
 ## 简单线性模型
 
+### 1. 显示散点图、计算相关性，看是否有求解意义
 
+### 2. 求解回归方程
+
+计算：
+
+$$
+	b = \bar{y}-a\bar{x}  \\
+	a = \frac{\sum_{i=1}^{m}(x_{i}-\bar{x})(y_{(i)}-\bar{y})}{\sum_{i=1}^{m}(x_{(i)}-\bar{x})^2}
+$$
+
+### 3. 确认精度
+
+判定系数 \\( R^{2} \\),重相关系数 R
+
+$$
+	R=\frac{(y-\bar{y})(\hat{y}-\bar{\hat{y}})}{\sqrt{(y-\bar{y})^{2}(\hat{y}-\bar{\hat{y}})^{2}}}	\\
+	 =1-\frac{(y-\hat{y})^{2}}{(y-\bar{y})^{2}}
+$$
+
+\\( R^{2} \\) 取值范围 [0，1] , 精度越高越接近 1.
+
+### 4. 
 
 ## 多元线性模型
