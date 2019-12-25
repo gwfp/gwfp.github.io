@@ -47,6 +47,10 @@ tags: [统计学,数学基础,推断性统计,因子分析,主成分分析]
 	4.确认分析结果的精度
 	5.求出因子得分，充分理解每个个体的特征
 
-### 
+## 参考
 
-
+[1] EducationalTestingService/factor_analyzer [code](https://github.com/EducationalTestingService/factor_analyzer)
+[2] FactorAnalyzer documentation [html](https://factor-analyzer.readthedocs.io/en/latest/)
+[3] sklearn.decomposition.FactorAnalysis [code](https://github.com/scikit-learn/scikit-learn/blob/3ca653af128e97b978770f798964260917ee8694/sklearn/decomposition/_factor_analysis.py)
+[4] sklearn.decomposition.PCA [html](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
+[5] PCA sklearn code [code](https://github.com/scikit-learn/scikit-learn/blob/7e85a6d1f/sklearn/decomposition/_pca.py#L104)
