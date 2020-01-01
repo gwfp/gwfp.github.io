@@ -34,6 +34,6 @@ Seq2Seq (Sequence-to-sequence)
 [6] Neural Machine Translation (seq2seq) Tutorial [link](https://github.com/tensorflow/nmt)
 [7] Neural Machine Translation with Attention [link](https://tensorflow.google.cn/beta/tutorials/text/nmt_with_attention)
 [8] W3Cschool Tensorflow 官方文档 [html](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-bm7y28si.html)
-
-
+[9] attention [code](https://github.com/NLP-LOVE/ML-NLP/tree/master/NLP/16.6%20Attention)
+[10] 深度学习项目实战计划 [html](https://blog.csdn.net/chinatelecom08/article/details/83388246)
 
