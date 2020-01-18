@@ -89,8 +89,8 @@ tags: [机器学习]
 
 .|Unsupervised|Supervised|
 -|-|-
-Continuous|Clustering&Dimensionality,Reduction(SVD,PCA,K-means)|Regression(Linear,Polynomial),Decision Tree,Random Forests
-Categorical|Association Analysis(Aproori,FP-Growth),Hidden Markov Model | Classification(KNN,Trees,Logistic Regression,Naive-Bayes,SVM)
+Continuous|Clustering&Dimensionality,<br>Reduction(SVD,PCA,K-means)|Regression(Linear,Polynomial),<br>Decision Tree,<br>Random Forests
+Categorical|Association Analysis(Aproori,FP-Growth),<br>Hidden Markov Model | Classification(KNN,Trees,Logistic Regression,Naive-Bayes,SVM)
 
 
 ## 获取模型的过程

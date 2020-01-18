@@ -7,10 +7,14 @@ tags: [scikit-learn,函数库]
 scikit-learn
 ==============
 
+## scikit-learn algorithm cheat sheet
+
+![avatar](https://gwfp.github.io/static/images/18/04/24/ml_map.png){:width='220px' height="130px"}
+
 ## 基础操作
 
 ### train_test_split
-
+https://scikit-learn.org/stable/_static/ml_map.png
 	from sklearn.model_selection import train_test_split
 	...
 	X_train, X_test, y_train, y_test = train_test_split(X, y, /
