@@ -92,6 +92,32 @@ tags: [机器学习]
 Continuous|Clustering&Dimensionality,<br>Reduction(SVD,PCA,K-means)|Regression(Linear,Polynomial),<br>Decision Tree,<br>Random Forests
 Categorical|Association Analysis(Aproori,FP-Growth),<br>Hidden Markov Model | Classification(KNN,Trees,Logistic Regression,Naive-Bayes,SVM)
 
+##### 回归算法
+
+##### 基于实例的算法（Instance-based Algorithms）
+
+	Ordinary Least Squares Regression(OLSR)
+	Linear Regression
+	Logistic Regression
+	Stepwise Regression
+	Locally Estimated Scatterplot Smoothing(LOESS)
+	Multivariate Adaptive Regression Splines(MARS)
+
+##### 决策树类算法（Decision Tree Algotithms）
+
+##### 贝叶斯类算法(Bayesian Algorithms)
+
+##### 聚类算法（Clustering Algorithms）
+
+##### 关联规则算法(Association Rule Learning Algotithms)
+
+##### 人工神经网络算法（Artificial Neural Network Algorithms）
+
+##### 深度学习（Deep Learning Algorithms）
+
+##### 降维算法（Dimensionality Reduction Algorithms）
+
+##### 模型融合算法(Ensemble Algorithms)
 
 ## 获取模型的过程
 
@@ -265,3 +291,8 @@ $$
 ### 数据稀疏
 
 > 休斯现象：在训练样本固定的情况下，特征维数增加到某一个临界点后，继续增加反而会导致模型预测能力减小。
+
+## 参考
+
+[1] 伊恩古德费洛.深度学习[M].北京:人民邮电出版社.2017:34-51
+[2] 机器学习算法一览 [html](https://blog.csdn.net/han_xiaoyang/article/details/50469334)

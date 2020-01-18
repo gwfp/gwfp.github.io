@@ -7,14 +7,14 @@ tags: [scikit-learn,函数库]
 scikit-learn
 ==============
 
-## scikit-learn algorithm cheat sheet
+## scikit-learn algorithm cheat sheet [html](http://scikit-learn.org/stable/tutorial/machine_learning_map/)
 
 ![avatar](https://gwfp.github.io/static/images/18/04/24/ml_map.png){:width='220px' height="130px"}
 
 ## 基础操作
 
 ### train_test_split
-https://scikit-learn.org/stable/_static/ml_map.png
+
 	from sklearn.model_selection import train_test_split
 	...
 	X_train, X_test, y_train, y_test = train_test_split(X, y, /
@@ -38,6 +38,7 @@ $$
 ### 数据标准化 
 
 > 经过处理的数据符合标准正态分布,即均值为1,方差为0.\\(\mu \\)为样本数据均值，\\( \sigma \\)为样本数据标准差.
+
 $$
 	x^{*} = \frac{x-\mu }{\sigma }
 $$
