@@ -14,13 +14,12 @@ tags: [特征工程]
 
 ## 机器学习的步骤:
 
->	1. 提出问题
+>	1. 提出问题(了解场景和目标，了解评估准则)
 	2. 理解数据
-	3. 数据清洗
-	4. 数据预处理
-	5. 特征选择
-	6. 模型构建
-	7. 对测试数据集进行预测 
+	3. 数据预处理（清洗，调权）
+	4. 特征选择
+	5. 模型构建（调参、状态分析、融合）
+	6. 对测试数据集进行预测 
 
 ![avatar](https://gwfp.github.io/static/images/19/02/16/step.png){:width='500px' height="200px"}
 
@@ -37,14 +36,32 @@ tags: [特征工程]
 #### CSV
 
 	import pandas as pd
-	
 	train = pd.read_csv("data.csv")
-
-### 查看数据
 
 #### head
 
 	train.head() ## 默认查看前5行
+
+### 查看数据类型
+
+少量
+	
+	train.dtypes
+
+大量
+	
+	for col in df.columns:
+    		print(col + ':' + str(df[col].dtype))
+
+只看字符类型
+
+	for col in df.columns:
+    		if str(df[col].dtype) == 'object':
+        		print(col)
+
+### 查看数据类型及列数量
+
+	train.info()
 
 #### describe 描述统计信息
 
@@ -56,17 +73,12 @@ tags: [特征工程]
 	miss[miss>0].sort_values(ascending=False)	# 由低到高排列，accending=True 由高到低排列
 	## 查看缺失值
 	train.isnull().any()
-	
-#### info 发现缺失数据
-
-	train.info()
 
 #### 探索性数据分析 (EDA，Exploratory Data Analysis）
 
 ##### pandas_profiling
 	
 	import pandas_profiling as ppf
-
 	ppf.ProfileReport(train)
 
 #### 查看异常值
@@ -189,8 +201,13 @@ $$
 
 #### 独热编码(OneHotEncoder)
 
-	from sklearn.preprocessing import OneHotEncoder
+pandas
 
+	pd.get_dummies( , prefix=)
+
+sklearn
+
+	from sklearn.preprocessing import OneHotEncoder
 	data_onehot = OneHotEncoder().fit_transform(data.target.reshape((-1,1)))
 
 ### 无量纲化
@@ -331,9 +348,21 @@ $$
 
 ## 构建模型
 
-### 集成学习([Ensemble Learning](https://gwfp.github.io/机器学习算法/2019/09/14/EnsembleLearning.html))
+### 集成学习([Ensemble Learning](https://gwfp.github.io/机器学习算法/2019/09/14/EnsembleLearning.html)) (模型融合)
 
 ![avatar](https://gwfp.github.io/static/images/19/09/14/EnsembleLearning.jpg){:width='350px' height="200px"}
+
+#### Bagging
+
+sklearn bagging [html](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.BaggingClassifier.html#sklearn.ensemble.BaggingClassifier)
+
+	sklearn.ensemble.BaggingClassifier
+
+#### boosting
+
+#### Staking
+
+#### Blending
 
 ## 模型评估
 
