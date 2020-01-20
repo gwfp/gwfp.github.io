@@ -113,7 +113,7 @@ tags: [特征工程]
 	full[col].fillna(full[col].mode()[0], inplace=True)
 
 
-#### Imputer 填充缺失值
+#### Imputer 填充缺失值 (输出结果为 numpy.array)
 
 	from sklearn.preprocessing import Imputer
 
@@ -129,6 +129,10 @@ tags: [特征工程]
 	
 	lab = LabelEncoder()
 	full["Alley"] = lab.fit_transform(full.Alley)
+
+#### 将列从 数字型 转换为 字符型
+
+	full["Alley"] = full["Alley"].astype(str)
 
 #### 多项式转换
 
@@ -156,10 +160,21 @@ $$
 
 \\(\mu \\) 是均值，\\(\sigma \\) 是标准差
 
+sklearn
+
 	from sklearn.preprocessing import StandardScaler	
 
 	std = StandardScaler()
 	train_scale = std.fit_transform(train)
+
+pandas 只归一化 numerical 类型
+
+	# 选择所有非 object 类型
+	numeric_cols = df.columns[df.dtypes != 'object']
+	# 归一化
+	numeric_col_mean = df.loc[:, numeric_cols].mean()
+	numeric_col_std = df.loc[:, numeric_cols].std()
+	df.loc[:,numeric_cols] = (df.loc[:,numeric_cols] - numeric_col_mean) / numeric_col_std
 
 #### min-max 归一化
 
