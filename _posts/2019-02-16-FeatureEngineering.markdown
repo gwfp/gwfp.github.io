@@ -363,6 +363,14 @@ $$
 
 ## 构建模型
 
+### 交叉验证 Cross Validation
+
+#### Holdout 验证
+
+#### K-fold cross-validation
+
+#### 留一验证（Leave-One-Out Cross Validation, LOOCV）
+
 ### 集成学习([Ensemble Learning](https://gwfp.github.io/机器学习算法/2019/09/14/EnsembleLearning.html)) (模型融合)
 
 ![avatar](https://gwfp.github.io/static/images/19/09/14/EnsembleLearning.jpg){:width='350px' height="200px"}

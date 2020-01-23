@@ -1,0 +1,24 @@
+---
+layout: post
+category: 机器学习工具
+tags: [pandas, 函数库]
+---
+
+Pandas
+===========
+
+## 数据类型
+
+### DataFrame 与 Numpy.array 转化
+
+#### DataFrame 转化为 Numpy.array
+
+	data_np = data_df.values
+
+#### Numpy.array 转化为 DataFrame (需保证Numpy.array全是数据类型)
+
+	data_df = pd.DataFrame(data_np.values, columns=['one','two','three'])
+
+## 行内公式test
+
+行内公式 $\sqrt{3x-1}+(1+x)^2$,
