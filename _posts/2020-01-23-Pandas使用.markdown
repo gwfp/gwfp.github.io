@@ -19,6 +19,33 @@ Pandas
 
 	data_df = pd.DataFrame(data_np.values, columns=['one','two','three'])
 
-## 行内公式test
+## Pipline
 
-行内公式 $\sqrt{3x-1}+(1+x)^2$,
+	pip install pdpipe
+
+## 建模库
+
+### statsmodels 
+
+> statsmodels是Python进行拟合多种统计模型、进行统计试验和数据探索可视化的库。Statsmodels包含许多经典的统计方法，但没有贝叶斯方法和机器学习模型。
+
+statsmodels包含的模型有：
+
+	线性模型，广义线性模型和健壮线性模型
+	线性混合效应模型
+	方差（ANOVA）方法分析
+	时间序列过程和状态空间模型
+	广义矩估计
+
+### Patsy
+
+> 描述统计模型，尤其描述statsmodels的线性模型
+
+
+
+
+## 参考
+
+[1] 利用 Python 进行数据分析 第二版 [html](https://wizardforcel.gitbooks.io/pyda-2e/content/13.html)
+
+
