@@ -15,26 +15,17 @@ tags: [统计学,数学基础,描述性统计]
 
 > A descriptive statistic is a summary statistic that quantitatively describes or summarizes features of a collection of information.
 
-## 数据分类
-
-### 不可测量数据
-
-#### 分类数据
+### 分类数据
 
 > 数据间并非相等间隔的数据
 > 例，柔道段位
 
-### 可测量数据
-
-#### 数值数据
+### 数值数据
 
 > ps 有些分类数据 会 被当做数值数据处理
 > 例，“非常喜欢，一般，不喜欢” \n会被作为 “1，0，-1”处理
-  
 
-## 数据状态
-
-### 数值数据
+### 基本数据
 
 #### 总体(population)
 
@@ -52,9 +43,9 @@ $$
 
 #### 组
 
-#### 组中值(class midpoint):分类后范围的中间值
+##### 组中值(class midpoint):分类后范围的中间值
 
-#### 分组
+##### 分组
 
 > 通过“史特吉斯公式”求出组数（经验公式）
 $$
@@ -65,9 +56,9 @@ $$
 
 所在组的数据个数/数据总数
 
-## 集中趋势（central tendency）
+### 集中趋势（central tendency）
 
-### 平均数（mean)
+#### 平均数（mean)
 
 > 算术平均数 \\(\bar{x}=\frac{\sum_{i=0}^{N}X_i}{N}\\)
 
@@ -87,30 +78,33 @@ $$
 	H_{n} = \frac{n}{\sum_{i=1}^{n}\frac{1}{x_{i}}}
 $$
 	
-### 中位数(median)
+#### 中位数(median)
 
 > 数字按小大顺序排列，取中间的值(如为偶数，取中间两个值的平均数)
 
-### 四分位数间距(IQR Inter Quartile Range) :
+#### 四分位数间距(IQR Inter Quartile Range) :
     
 即把所有数值由小到大排列并分成四等份，处于三个分割点位置的数值就是四分位数。第三 "四分位数" 与第一 "四分位数" 的差距又称四分位距. 常和中位数一起做箱型图。	   
-### 众数(mode):出现次数最多的数
+#### 众数(mode):出现次数最多的数
 
-## 离散趋势 Measure of Dispersion
+### 离散趋势 Measure of Dispersion
 
-### 方差(varience)
+#### 方差(varience)
 
-#### 总体方差  
+##### 总体方差
+  
 $$
 	\sigma^2= \frac{ \sum_{i=1}^{N}(x_{i}-\mu )^{2} }{N}
 $$
 
 > 诸方差公式：总体方差的简单算法
+
 $$
 	\frac{\sum_{i=1}^{N}x_{i}^{2}}{N}-\mu ^{2}
 $$
 
-#### 样本方差  
+##### 样本方差
+  
 $$
 	S^2= \frac{ \sum_{i=1}^{n}(x_{i}-\bar{x} )^{2} }{n}
 $$
@@ -133,7 +127,11 @@ $$
  	S = \sqrt{ S^{2}}
 $$
 
-### 协方差
+#### 离差（deviation score）:单项数值与平均值之间的差
+		
+### 相关程度
+
+#### 协方差
 
 度量各个维度偏离其均值的程度。
 $$
@@ -144,7 +142,7 @@ $$
 	结果为负值就说明负相关的
 	如果为0，也是就是统计上说的“相互独立”。
 
-### 相关系数
+#### 相关系数
 
 pearson系数用来描述两组线性的数据一同变化移动的趋势,是标准化后的协方差。
 
@@ -159,9 +157,7 @@ $$
 
 在社会科学研究中，corr=0.1～0.2 为小，corr=0.3～0.4 中等，corr=0.5～0.6为大。
 
-#### 离差（deviation score）:单项数值与平均值之间的差
-		
-#### 标准化(Standardization)
+### 标准化(Standardization)
 			
 #### 标准计分(standard score):标准化后的数据
 
