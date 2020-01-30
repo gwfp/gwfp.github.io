@@ -9,6 +9,8 @@ Pandas
 
 ## 数据类型
 
+## Series
+
 ### DataFrame 与 Numpy.array 转化
 
 #### DataFrame 转化为 Numpy.array
@@ -18,6 +20,20 @@ Pandas
 #### Numpy.array 转化为 DataFrame (需保证Numpy.array全是数据类型)
 
 	data_df = pd.DataFrame(data_np.values, columns=['one','two','three'])
+
+
+## 聚合分组
+
+### groupby
+
+#### 分组后求平均值 
+
+	import numpy as np
+	#grouped = df.groupby('device_type')
+	#for name,group in grouped:
+	#    print(name)
+	#    print(np.mean(group['click']))
+	grouped = df.groupby('device_type').agg({'click':np.mean})
 
 ## Pipline
 
