@@ -45,7 +45,7 @@ Pandas
 
 > statsmodels是Python进行拟合多种统计模型、进行统计试验和数据探索可视化的库。Statsmodels包含许多经典的统计方法，但没有贝叶斯方法和机器学习模型。
 
-statsmodels包含的模型有https://blog.csdn.net/qq_41518277/article/details/80275280：
+statsmodels包含的模型有：
 
 	线性模型，广义线性模型和健壮线性模型
 	线性混合效应模型
@@ -57,8 +57,18 @@ statsmodels包含的模型有https://blog.csdn.net/qq_41518277/article/details/8
 
 > 描述统计模型，尤其描述statsmodels的线性模型
 
+$$
+	y ~ a + C(a) + I(a+b) + a:b + a-b + a*b + (a + b) * 3
+$$
 
-
+	C  : 转化为category型
+	I  : 执行 “+法” 操作
+	+  : 
+	-  :
+	： : 
+	*  : a*b = a + b + a:b
+	/  : a/b = a + a:b
+	** : (a+b) ** 3 = (a+b) * (a+b) * (a+b)
 
 ## 参考
 
