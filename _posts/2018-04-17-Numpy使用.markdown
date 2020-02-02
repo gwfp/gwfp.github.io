@@ -68,6 +68,10 @@ numpy
 
     np.random.normal(10,100,size=10)
 
+#### 创建从1到100之间的随机整数,组成3行4列的矩阵
+
+	np.random.randint(1,10,size=(3,4))
+
 ## 数组的基本属性
 
 ### X=np.arange(15).reshape(3,5)
@@ -111,6 +115,10 @@ numpy
 #### 矩阵取第一列
 
     X[0, :]
+
+#### 将矩阵X对角元素设置为5
+
+	np.fill_diagnonal(X, 5)
 
 ### 子矩阵	　　
 

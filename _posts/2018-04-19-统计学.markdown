@@ -1,4 +1,4 @@
----
+--
 layout: post
 category: 数学基础
 tags: [统计学,数学基础,描述性统计]
@@ -240,6 +240,10 @@ $$
 
 从一个（任意概率分布）均值为 \\( \mu \\),标准差为 \\( \sigma  \\) 的总体中选取一个有n个观测值的随机样本。那么当n足够大时 \\( \bar{x} \\) 的抽样分布将近似服从均值 \\( \mu _{\bar{x}}=\mu \\)、标准差 \\( \sigma _{\bar{x}}=\frac{\sigma}{\sqrt{n}}  \\) ,的正态分布。样本量越大，对 \\( \bar{x} \\) 的抽样分布近似的越好。 
 
+## 推论统计（inferetial statistics）
+
+> 利用较小群体的数据来推论较大群体的特征。
+
 ### 抽样分布
 
 #### 无偏估计 和 有偏估计
@@ -254,8 +258,6 @@ $$
 ##### t 分布
 
 ##### F 分布
-
-## 推断性统计
 
 ### 信度 与 效度
 
@@ -334,4 +336,4 @@ $$
 ## 参考
 
 [1] 用Python学习统计学基础 [html](https://www.cnblogs.com/pupilheart/articles/9683287.html)
-
+[2] factor_analyzer [code] (https://github.com/EducationalTestingService/factor_analyzer)
