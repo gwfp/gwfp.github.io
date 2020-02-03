@@ -12,6 +12,35 @@ mathplotlib
 > import matplotlib as mpl
   import matplotlib.pyplot as plt #部分载入
 
+## 绘制窗口
+
+### plt.show()
+
+	plt.plot(np.random.rand(100))
+	plt.show()
+
+### matplotlib inline 
+
+	%matplotlib inline ## 开头添加一次即可
+	x = np.random.randn(100)
+	y = np.random.randn(100)
+	plt.scatter(x,y)
+
+### matplotlib notebook
+
+	%matplotlib notebook ## 生成动态图，可编辑
+	s = pd.Series(np.random.randn(100))
+	s.plot(style='k--o', figsize=(10,5))
+
+### matplotlib qt5 （新建窗口，生成动态图）
+
+	%matplotlib qt5
+	df = pd.DataFrame(np.random.rand(50,2),columns=['A','B'])
+	df.hist(figsize=(12,5),color='g',alpha=0.8)
+
+	plt.close() #关闭窗口
+	plt.gcf.clear() #清空窗口内容
+
 ## 绘图
 
 ### x =np.linspace(0, 10 ,20)
