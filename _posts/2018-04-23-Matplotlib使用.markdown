@@ -1,13 +1,14 @@
 ---
 layout: post
 category: 机器学习工具
-tags: [mathplotlib,函数库]
+tags: [matplotlib,函数库]
 --- 
 
-mathplotlib
+matplotlib
 ==========
 
-##　载入
+
+## 载入
 
 > import matplotlib as mpl
   import matplotlib.pyplot as plt #部分载入
@@ -110,6 +111,44 @@ mathplotlib
 	frame.axes.get_xaxis().set_visible(False)
 	frame.axes.get_yaxis().set_visible(False)
 
+### 图标样式
+
+#### 线型 (linestyle)
+
+	'-'       solid line style
+	'--'      dashed line style
+	'-.'      dash-dot line style
+	':'       dotted line style
+
+#### 点型（marker）
+
+	'.'       point marker
+	','       pixel marker
+	'o'       circle marker
+	'v'       triangle_down marker
+	'^'       triangle_up marker
+	'<'       triangle_left marker
+	'>'       triangle_right marker
+	'1'       tri_down marker
+	'2'       tri_up marker
+	'3'       tri_left marker
+	'4'       tri_right marker
+	's'       square marker
+	'p'       pentagon marker
+	'*'       star marker
+	'h'       hexagon1 marker
+	'H'       hexagon2 marker
+	'+'       plus marker
+	'x'       x marker
+	'D'       diamond marker
+	'd'       thin_diamond marker
+	'|'       vline marker
+	'_'       hline marker
+
+#### 颜色 （color）
+
+
+
 ## 绘图
 
 ### x =np.linspace(0, 10 ,20)
@@ -169,3 +208,9 @@ mathplotlib
 ### 改变散点图的不透明度
 
 > plt.scatter(x, siny, alpha=0.5)
+
+
+Seaborn
+==============
+
+
