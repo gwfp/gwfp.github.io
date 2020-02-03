@@ -147,6 +147,54 @@ matplotlib
 
 #### 颜色 （color）
 
+	plt.hist(np.random.randn(100), color='red', alpha=0.8)
+	'''
+	 alpha: 0-1 透明度
+	 color: red-r,green-g, black-k, blue-b, yellow-u
+	'''
+#### 颜色渐变 （colormap）
+	
+	df=pd.DataFrame(np.random.randn(50,4), columns=list('ABCD'))
+	df = df.cumsum()
+	df.plot(style='--', alpha=0.8, colormap='afmhot')  # afmhot_r 颜色反向
+
+#### 样式（style）
+
+	import matplotlib.style as psl
+	print(psl.available)
+	psl.use('fast') #一旦样式选择，除非重启，所有图表都将有样式
+	ts=pd.Series(np.random.randn(1000).cumsum(),index=pd.date_range('1/1/2000',periods=1000))
+	ts.plot(style='--g', grid=True, figsize=(10,6))
+	 '''
+         style = ['seaborn-dark', 'seaborn-darkgrid', 'seaborn-ticks', 'fivethirtyeight', 'seaborn-whitegrid', 'classic', '_classic_test', 'fast', 'seaborn-talk', 'seaborn-dark-palette', 'seaborn-bright', 'seaborn-pastel', 'grayscale', 'seaborn-notebook', 'ggplot', 'seaborn-colorblind', 'seaborn-muted', 'seaborn', 'Solarize_Light2', 'seaborn-paper', 'bmh', 'tableau-colorblind10', 'seaborn-white', 'dark_background', 'seaborn-poster', 'seaborn-deep']
+	'''
+
+### 刻度
+
+#### 设置刻度 与 刻度格式
+
+	from matplotlib.ticker import MultipleLocator, FormatStrFormatter
+
+	ax = plt.subplot(111)
+	plt.plot(np.random.rand(100))
+
+	ax.xaxis.set_major_locator(MultipleLocator(40))# 将 x 主刻度标签设置为40的倍数
+	ax.xaxis.set_major_formatter(FormatStrFormatter('%.0f')) # 设置刻度格式
+	ax.xaxis.set_minor_locator(MultipleLocator(20))
+
+	ax.xaxis.grid(True, which='both') # 'major' 主刻度显示网格
+	ax.yaxis.grid(True, which='minor')
+
+#### 设置注释
+
+	plt.text(40,0.6,'text',fontsize=15)
+
+#### 保存图片
+
+	plt.savefig('./pic.png',
+          	   dpi=400,
+           	   bbox_inched='tight' , # 不保留边沿部分
+           	   )
 
 
 ## 绘图
