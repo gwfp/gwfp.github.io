@@ -41,6 +41,75 @@ mathplotlib
 	plt.close() #关闭窗口
 	plt.gcf.clear() #清空窗口内容
 
+## 图表的基本元素
+
+### 作图大小
+
+	fig = df.plot(figsize=(6,4)) 
+
+### 添加名称
+
+#### tittle添加
+
+	plt.title('aa')
+
+#### x轴、y轴名称
+
+	plt.xlabel('x')
+	plt.ylabel('y')
+
+### 添加图例
+
+	plt.legend(loc=0)
+
+	'''
+	loc 对应数值： 
+	'best',	-- 0 (自适应方式)
+	'upper right',	-- 1 
+	'upper left', -- 2
+	'lower left', -- 3
+	'lower right', -- 4
+	'right', 	-- 5
+	'center left', 	-- 6
+	'center right', -- 7
+	'lower center', -- 8
+	'upper center', -- 9
+	'center'-- 10
+
+### 控制x、y轴边界
+
+	plt.xlim([0,12])
+	plt.ylim([0,1.5])
+
+### 设置信x、y轴刻度
+
+#### 设置刻度
+
+	plt.xticks(range(10))
+	plt.yticks([0,0.2,0.4,0.6,0.8,1.0,1.2])
+
+#### 设置刻度显示方式
+
+	# 浮点数显示刻度
+	fig.set_xticklabels("%1f" %i for i in range(10))
+	fig.set_yticklabels("%2f" %i for i in [0,0.2,0.4,0.6,0.8,1.0,1.2])
+
+### 显示设置
+
+#### 添加网格
+
+	plt.grid()
+
+#### 不显示坐标轴
+
+	plt.axis('off')
+
+#### x、y轴单独不可见
+
+	frame = plt.gca()
+	frame.axes.get_xaxis().set_visible(False)
+	frame.axes.get_yaxis().set_visible(False)
+
 ## 绘图
 
 ### x =np.linspace(0, 10 ,20)
