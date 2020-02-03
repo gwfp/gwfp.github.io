@@ -196,6 +196,56 @@ matplotlib
            	   bbox_inched='tight' , # 不保留边沿部分
            	   )
 
+## 生成子图
+
+### figure
+
+	fig1 =plt.figure(num=1, figsize=(4,2)) # 创建子图1
+	plt.plot(np.random.rand(100).cumsum(),'k--')  
+	fig2 =plt.figure(num=2, figsize=(4,2)) # 创建子图2
+	plt.plot(np.random.rand(50).cumsum(),'k--') # plot会自动向上寻找最近的figure
+
+### 常用子图的生成方式
+
+#### 先建figure后再在figure里画图
+
+	fig = plt.figure(figsize=(10,6),facecolor='grey')
+	ax1 = fig.add_subplot(2,2,1) # (2,2,1) ->  2*2 图像中第一行左图
+	plt.plot(np.random.rand(50).cumsum(),'k--')
+	plt.plot(np.random.rand(50).cumsum(),'b--')
+
+	ax2 = fig.add_subplot(2,2,2) # 第一行右图
+	plt.hist(np.random.rand(50), alpha=0.5)
+
+	ax4 = fig.add_subplot(2,2,4) # 第二行右图
+	df = pd.DataFrame(np.random.rand(10,4), columns=['a','b','c','d'])
+	ax4.plot(df, alpha=0.8, linestyle='--',marker='.')
+
+
+#### 先创建新figure，并返回一个subpolt对象的numpy数组，在生成的图里画内容
+
+代码：
+
+	fig,axes =plt.subplots(2,3,figsize=(10,4)) # 生成2行3列的图像
+	ts = pd.Series(np.random.randn(1000).cumsum())
+
+	ax1 =axes[0,1] #在1行2列上画图
+	ax1.plot(ts)
+
+	axes[1,2].plot(np.random.randn(100)) #在2行3列上画图
+
+带参数代码：
+
+	fig,axes =plt.subplots(2,3,sharex=True,sharey=True) # sharex 共享x轴
+	for i in range(2):
+    	    for j in range(3):
+            	axes[i,j].hist(np.random.randn(500), color='k')
+	plt.subplots_adjust(wspace=1,hspace=1) 调整间距
+
+#### 分别绘制多图
+
+	df = pd.DataFrame(np.random.randn(1000,4),columns=list('ABCD'))
+	df.plot(style='--',subplots=True)  # subplots = True 分别显示
 
 ## 绘图
 
