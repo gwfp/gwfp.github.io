@@ -1,0 +1,29 @@
+---
+layout: post
+category: 数学基础
+tags: [统计学,数学基础,推断性统计,结构方程]
+---
+
+结构方程 Structural Equation Model
+==============
+
+## 概念
+
+### 变量 variable
+
+#### 外生 （Independent， Exogenous）
+
+-caused by variables in the system 没有解释前因关系的变量
+
+#### 内生 （dependent， Exogenous）
+
+-caused by variable outside the system 前因包含在结构方程中的变量
+
+#### 结构方程模型 
+
+##### 结构模型(Structural Model)
+
+##### 测量模型(Measurement Model)
+
+
+
