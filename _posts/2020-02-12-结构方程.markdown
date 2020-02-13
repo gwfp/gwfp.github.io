@@ -9,21 +9,47 @@ tags: [统计学,数学基础,推断性统计,结构方程]
 
 ## 概念
 
+	SEM是进行潜在变量之间关系的研究，包含“因果关系” 和 “相关性关系”
+
 ### 变量 variable
 
-#### 外生 （Independent， Exogenous）
+#### 潜在变量（Latent variables, unobservaed variables, factor or construct variables）
 
--caused by variables in the system 没有解释前因关系的变量
+	- 一个潜在变数，至少因有3个或3个以上观察变量
 
-#### 内生 （dependent， Exogenous）
+#### 观察变量(Observed)
 
--caused by variable outside the system 前因包含在结构方程中的变量
+	- 可以观察、测量的变量，每一个题目就是一个观察变量
+
+#### 自变量/ 外生变量 （Independent， Exogenous）
+
+	- caused by variables in the system 模型中没有被箭头射到的变量
+
+#### 因变量/内生 （dependent， Exogenous）
+
+	- caused by variable outside the system 模型中被箭头刺到的变量
+
+#### 误差(Error)
+
+### 参数（parameter）
+
+#### 固定参数(fix parameter)
+
+	- 模型中不予估计的参数，一般设定为0或1
+
+#### 自由参数(free parameter)
+
+	- 模型中所估计的每一个值
+	- 每多估计一个参数，自由度(degree of freedom)就会少1，模型越复杂
 
 #### 结构方程模型 
 
+##### 测量模型(Measurement Model)
+
+	- 包含一个潜变量及数个观察变量
+	
 ##### 结构模型(Structural Model)
 
-##### 测量模型(Measurement Model)
 
 
 
