@@ -1,0 +1,20 @@
+---
+layout: post
+category: 深度学习框架
+tags: [深度学习框架,Pytorch]
+---
+
+Pytorch
+===============
+
+
+
+
+
+## 参考
+
+[1] Pytorch 官方文档(英文) [html](https://pytorch.org/tutorials/)
+[2] Pytorch 官方文档(中文) [html](https://pytorch-cn.readthedocs.io/zh/latest/)
+[3] Pytotch 简明入门手册 [html](https://github.com/fendouai/pytorch1.0-cn)
+[4] pytorch 视频教程 [vedio](https://www.bilibili.com/video/av44164429)
+
