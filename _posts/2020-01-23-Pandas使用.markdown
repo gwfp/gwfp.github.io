@@ -75,7 +75,15 @@ Pandas
 
 #### 行
 
-	
+	new_col = pd.DataFrame({
+		'A': [5],
+                'B': [29],
+                'C': [8]
+		})	
+
+##### 把 new_col 插入最后一行
+
+	df=df.append(new_col, ignore_index=True)
 
 #### 列
 
@@ -129,6 +137,12 @@ statsmodels包含的模型有：
 	方差（ANOVA）方法分析
 	时间序列过程和状态空间模型
 	广义矩估计
+
+#### 多重共线性问题(VIF)
+
+	from statsmodels.stats.outliers_influence import variance_inflation_factor
+	vif = [variance_inflation_factor(df.values, i) for i in range(df.shape[1])]
+	
 
 ### Patsy
 
