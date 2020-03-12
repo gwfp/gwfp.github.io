@@ -9,5 +9,44 @@ NLP文本处理
 
 ## 文本预处理
 
+### 英文处理
+
+	import pandas as pd	
+
+#### 分词
+
+##### Tokenize 分词
+
+#### Pos Tag 词性标注
+
+#### 归一化
+
+##### Stemming
+
+##### Lemmatization
+
+#### stopword 停用词处理
+
+#### word_list 词表
+
+### 中文处理
+
+####  分词
+
+##### jieba
+
+#### 词性标注
+
+## 关键词提取 
+
+### 基于TF-IDF
+
+#### jieba tf-ide
+
+#### sklearn tf-ide
+
+### 基于TextRank
+
+## 词云
 
 

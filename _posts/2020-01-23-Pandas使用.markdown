@@ -107,7 +107,17 @@ Pandas
 
 	df.loc['Row_sum'] = df.apply(lambda x: x.sum())
 
-## 聚合分组
+## 描述统计
+
+### 统计 “C” 列中各个值出现的次数
+
+	df.loc[:,'C'].value_counts()
+
+## 聚合
+
+### 查看 c列 等于 3 的行
+
+	df[df.loc[:,'C']==3]
 
 ### groupby
 
@@ -120,7 +130,17 @@ Pandas
 	#    print(np.mean(group['click']))
 	grouped = df.groupby('device_type').agg({'click':np.mean})
 
-## Pipline
+## 函数
+
+### 拓展函数
+
+### apply()
+
+### agg()
+
+### 其他函数
+
+#### Pipline
 
 	pip install pdpipe
 
