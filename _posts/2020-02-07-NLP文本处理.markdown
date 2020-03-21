@@ -41,6 +41,15 @@ NLP文本处理
 
 ### 基于TF-IDF
 
+$$
+	tf-idf(w)=tf(d,w)*idf(w)	\\
+	=tf(d,w)*log\frac{n}{N(W)}
+$$
+
+tf(d,w):文档d中w的词频
+N:语料库中的文档总数
+N(w):词语w出现在多少个文档
+
 #### jieba tf-ide
 
 #### sklearn tf-ide
