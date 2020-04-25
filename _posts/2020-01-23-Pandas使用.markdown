@@ -97,6 +97,12 @@ Pandas
 
 	df.insert(2,'E',E)
 
+### 删除
+
+#### 行
+
+#### 列
+
 ### 求和
 
 #### 计算各列数据总和并作为新列添加到末尾
@@ -181,8 +187,15 @@ $$
 	/  : a/b = a + a:b
 	** : (a+b) ** 3 = (a+b) * (a+b) * (a+b)
 
+### pandas_datareader 
+
+> 获取金融数据
+
+
+
+
 ## 参考
 
 [1] 利用 Python 进行数据分析 第二版 [html](https://wizardforcel.gitbooks.io/pyda-2e/content/13.html)
 [2] statsmodels [html](https://blog.csdn.net/qq_41518277/article/details/80275280) 
-
+[3] pandas_datareader文档 [html](https://pandas-datareader.readthedocs.io/en/latest/remote_data.html)
