@@ -43,4 +43,55 @@ $$
 	avg_log_returns = PG["log_return"].mean()*250
 	print(str(round(avg_log_returns,5)), '%')
 
+## return of multiple invesetment
+
+	tickers = ["PG", "MSFT", "F", "GE"]
+	mydata = pd.DataFrame()
+	for t in tickers:
+    		mydata[t] = wb.DataReader(t, data_source="yahoo", start="2018-1-1")['Adj Close']
+
+### 计算多种投资组合的收益率
+
+#### 计算投资组合权重
+
+$$
+	w = w_{1} + w_{2}+...+w_{n}
+$$
+
+w : 整个投资组合在总投资中的权重
+	
+	weights = np.array([0.4,0.4,0.15,0.05])
+
+$$
+	p = w_{1}p_{1} + w_{2}p_{2} + ... +w_{n}p_{n}
+$$
+
+#### 计算投资组合年化收益率
+
+	# 计算各组合成员年化收益率
+	annual_return = simple_returns.mean()*250
+	# 计算投资组合年化收益率
+	pfolio = str(round(np.dot(annual_return, weights)*100,3))+ "%"	
+	print(pfolio)
+
+### 比较各投资组合的收益率
+
+#### Normalization
+
+$$
+	p_{normal} = \frac{p_{n}}{p_{0}} * 100
+$$
+
+	p_normal = mydata/ mydata.iloc[0] * 100
+
+#### 比较调整后的净收益收盘价
+
+	p_normal.plot(figsize=(8,6))
+	plt.show()
+	
+![avatar](https://gwfp.github.io/static/images/20/04/23/rateofreturn.png){:width='450px' height="350px"}
+
+
+
+
 
