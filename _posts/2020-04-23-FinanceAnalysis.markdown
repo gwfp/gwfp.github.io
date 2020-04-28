@@ -92,6 +92,27 @@ $$
 ![avatar](https://gwfp.github.io/static/images/20/04/23/rateofreturn.png){:width='450px' height="350px"}
 
 
+## 计算证券风险 Calculating the Risk of Security
 
+	tickers = ["PG", "BEI.DE"]
+	sec_data = pd.DataFrame()
+	for t in tickers:
+    		sec_data[t] = wb.DataReader(t, data_source="yahoo", start="2018-1-1")['Adj Close']
+
+### 风险的标准差衡量(Statistical measures to quantify risk)
+
+$$
+	\sqrt{\frac{\sum (X-\bar{X})^{2}}{N-1}}
+$$
+
+	sec_return[["PG", "BEI.DE"]].std()*250**0.5
+	result:
+		PG        0.253991
+		BEI.DE    0.203546
+		dtype: float64
+
+
+
+	
 
 
