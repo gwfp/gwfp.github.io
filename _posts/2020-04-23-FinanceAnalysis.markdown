@@ -112,7 +112,51 @@ $$
 		dtype: float64
 
 
+### 证券组合的相关性
 
+#### 计算方差和协方差 Calculation Covariance and Correlation
+
+协方差计算公式
+
+$$
+	 \rho_{xy}=\frac{(x-\bar{x})*(y-\bar{y})}{\sigma _{x}\sigma _{y}}
+$$
+
+	# 计算协方差
+	sec_return.cov()*250
+	# 计算收益率的相关性(不同于股票净值的相关性)
+	sec_return.corr()
+
+### 计算投资组合的风险 Calculation Protfolio Risk
+
+	# PG 和 BEI.DE 各占50% 权重
+	weights = np.array([0.5,0.5])
+
+#### 计算两类风险投资组合的风险
+
+$$
+	\sigma_{p} = \sqrt{(w_{1}\sigma _{1}+w_{2}\sigma _{2})^{2}}        \\
+        =\sqrt{w_{1}^2\sigma _{1}^{2}+2w_{1}^2\sigma _{1}^{2}w_{2}^2\sigma _{2}^{2}+ w_{2}^2\sigma _{2}^{2}}
+$$
 	
+	# 投资组合的风险
+	pfolio_vol = (np.dot(weights.T,np.dot(sec_return.cov()*250, weights)))**0.5
+	print(str(round(pfolio_vol ,5)*100)+'%')
 
 
+#### 计投资组合的系统风险和非系统风险 Calculate Diversifiable and Non-Diversifiable Risk of a Protfolio
+
+系统性风险
+
+$$	
+	r_{d}=\sigma_{p}^{2}-w_{1}^{2}*\sigma_{1}^{2}-w_{2}^{2}*\sigma_{2}^{2}+...+w_{n}^{2}*\sigma_{n}^{2}
+$$
+
+	# 计算各类投资的年度方差
+	BEI_var_a = sec_return['BEI.DE'].var()*250
+	PG_var_a = sec_return['PG'].var()*250
+	# 计算总投资方差
+	pfolio_var = (np.dot(weights.T,np.dot(sec_return.cov()*250, weights)))
+	# 投资组合的系统性风险
+	dr =  pfolio_var - (weights[0]**2*PG_var_a)-(weights[1]**2*BEI_var_a)
+		
