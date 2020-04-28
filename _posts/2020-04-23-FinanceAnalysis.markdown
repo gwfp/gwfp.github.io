@@ -136,7 +136,7 @@ $$
 
 $$
 	\sigma_{p} = \sqrt{(w_{1}\sigma _{1}+w_{2}\sigma _{2})^{2}}        \\
-        =\sqrt{w_{1}^2\sigma _{1}^{2}+2w_{1}^2\sigma _{1}^{2}w_{2}^2\sigma _{2}^{2}+ w_{2}^2\sigma _{2}^{2}}
+        =\sqrt{w_{1}^2\sigma _{1}^{2}+2w_{1}^2\sigma _{1}^{2}w_{2}^2\sigma _{2}^{2}\rho_{1,2}+ w_{2}^2\sigma _{2}^{2}}
 $$
 	
 	# 投资组合的风险
@@ -160,3 +160,5 @@ $$
 	# 投资组合的系统性风险
 	dr =  pfolio_var - (weights[0]**2*PG_var_a)-(weights[1]**2*BEI_var_a)
 		
+
+
