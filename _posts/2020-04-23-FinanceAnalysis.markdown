@@ -197,7 +197,7 @@ $$
 	pfolio_returns = np.array(pfolio_returns)
 	pfolio_volatilities = np.array(pfolio_volatilities)
 
-	可视化
+	# 可视化
 	portfolios = pd.DataFrame({'Return':pfolio_returns, 'Volatility':pfolio_volatilities, 'weight':weights})
 
 	%matplotlib inline
@@ -205,5 +205,8 @@ $$
 	plt.xlabel('Expeted volatility')
 	plt.ylabel('Expected Return')
 
-
-
+	# 求风险最小的投资组合
+	for indexs in portfolios.index:
+    		if portfolios.loc[indexs].values[1] == np.min(portfolios['Volatility']):
+        		for i in range(len(portfolios.loc[indexs].values)):
+                		print(portfolios.loc[indexs].values[i])
