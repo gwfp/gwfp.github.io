@@ -210,3 +210,8 @@ $$
     		if portfolios.loc[indexs].values[1] == np.min(portfolios['Volatility']):
         		for i in range(len(portfolios.loc[indexs].values)):
                 		print(portfolios.loc[indexs].values[i])
+
+
+![avatar](https://gwfp.github.io/static/images/20/04/23/touzizuhe.png){:width='600px' height="350px"}
+
+
