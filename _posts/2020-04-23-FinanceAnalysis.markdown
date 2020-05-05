@@ -161,4 +161,49 @@ $$
 	dr =  pfolio_var - (weights[0]**2*PG_var_a)-(weights[1]**2*BEI_var_a)
 		
 
+## 计算投资组合的有效边界
+
+	assets = ['PG', '^GSPC', 'MSFT'] # 可多个添加
+	pf_data = pd.DataFrame()
+
+	for a in assets:
+    		pf_data[a] = wb.DataReader(a,data_source='yahoo', start='2010-1-1')['Adj Close']
+
+	# 计算log收益率
+	log_returns = np.log(pf_data / pf_data.shift(1))
+
+	num_loop = 1000
+	num_assets = len(assets)
+
+	pfolio_returns = []
+	pfolio_volatilities = []
+	weights = [[] for i in range(num_loop)]
+
+	# 计算"num_loop"种权重的组合
+	for x in range(num_loop):
+		# 设置权重
+    		weights_ = np.random.random(num_assets)
+    		weights_ /= np.sum(weights_)
+    
+		for i in range(num_assets):
+        		weights[x].append(weights_[i])
+			# 计算预期收益率
+    			pfolio_returns.append(np.sum(weights_ * log_returns.mean()) * 250)
+    			# 计算期望组合波动性（风险/标准差）
+			pfolio_volatilities.append(np.sqrt(np.dot(weights_.T, np.dot(log_returns.cov()*250, weights_))))
+    
+    
+	# 转化为数组
+	pfolio_returns = np.array(pfolio_returns)
+	pfolio_volatilities = np.array(pfolio_volatilities)
+
+	可视化
+	portfolios = pd.DataFrame({'Return':pfolio_returns, 'Volatility':pfolio_volatilities, 'weight':weights})
+
+	%matplotlib inline
+	portfolios.plot(x= 'Volatility', y = 'Return', kind= 'scatter', figsize=(10,6))
+	plt.xlabel('Expeted volatility')
+	plt.ylabel('Expected Return')
+
+
 
